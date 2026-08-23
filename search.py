@@ -25,4 +25,4 @@ for hit in result["hits"]["hits"]:
     print(f"docid: {src['docid']}")
     print(f"url: {src['url']}")
     print(f"title: {src['title']}")
-    print("-" * 20)
+    print("-" * 40)

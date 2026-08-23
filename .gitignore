@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+multi_hyde_L200.json
+multi_hyde_batch_L200.json

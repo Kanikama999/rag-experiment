@@ -1,0 +1,19 @@
+{
+  "config": {
+    "model": "openai/gpt-5.6-terra",
+    "reasoning": {
+      "effort": "none"
+    },
+    "temperature": 1.0,
+    "words_per_doc": 200,
+    "n_pool": 30,
+    "query_field": "title",
+    "prompt_hash": "79409098a551ea26"
+  },
+  "batch_ids": [
+    "batch-1787388179-TKzfhgQDWNMQexuLZ5ok",
+    "batch-1787388180-gWu1PzXLtLPya1MU0lHJ",
+    "batch-1787388182-yZB7SemnvB8ZAPoUcglA",
+    "batch-1787388183-BdH9r4rNVDeEzCjrn5yY"
+  ]
+}
