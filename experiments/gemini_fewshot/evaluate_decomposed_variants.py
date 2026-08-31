@@ -1,3 +1,20 @@
+"""
+Decomposed_Query の Query2doc 疑似文書を検索クエリにどう組み込むかで3通りを比較する:
+
+- query2doc: narrative（repeat）+ Query2doc疑似文書 を連結して検索（evaluate_decomposed_rep1.py の decomposed_query2doc と同じ構造）
+- dq_pseudodoc: Decomposed_Query（分解質問文）+ Query2doc疑似文書 を連結して検索（narrativeは使わない）
+- query2doc_dq: narrative（repeat）+ Decomposed_Query + Query2doc疑似文書 を連結して検索
+
+narrativeを含む2条件（query2doc, query2doc_dq）は、evaluate_rep5.py と同様
+QUERY_REPEAT 回繰り返してから連結する（dq_pseudodoc は narrative を使わないので対象外）。
+
+いずれも decomposed_query2doc_expansion.py の出力（multi_query2doc_decomposed_L200.json）を
+そのまま使う。新規のLLM生成は不要。
+
+使い方:
+    python evaluate_decomposed_variants.py
+"""
+
 from __future__ import annotations
 
 import json
@@ -9,20 +26,26 @@ import pytrec_eval
 
 from retriever import bm25_body, rrf_fuse
 
-DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
-HYDE_FILE = os.path.join(DATA_DIR, "multi_hyde_200.json")
+RAG_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(RAG_DIR, "..", "..", "..", "data")
+QUERY2DOC_FILE = os.path.join(RAG_DIR, "multi_query2doc_decomposed_L200.json")
 QUERIES_FILE = os.path.join(DATA_DIR, "trec_rag_2025_queries.jsonl")
 
-K_VALUES = [1, 2, 3, 5, 8, 10, 15, 20, 30]
 QREL_SETS = ["coverage", "consensus"]
 TOPK = 1000
-QUERY_REPEAT = 1   # 元クエリをN回繰り返してHyDE文書1本と連結してから検索
+# 個々のBM25検索の深さ。RETRIEVE_K > TOPK にして深く取ってからRRF融合する案を試したが、
+# recall@1000が悪化する結果になったため不採用（RRFは深い順位でもスコア減衰が緩やかで、
+# 「複数質問でそこそこ一致」する文書が「1質問だけ強く一致」する文書を押し出してしまう）。
+# 検証結果: decomposed_query2doc_variants_eval_summary_rep5_deep3000.json
+RETRIEVE_K = TOPK
+QUERY_REPEAT = 5   # narrativeをN回繰り返してから連結する（evaluate_rep5.py と同じ）
 
-VARIANTS = ["hydecat"]
+METHODS = ["baseline", "query2doc", "dq_pseudodoc", "query2doc_dq"]
 
 METRIC_SPECS = ["recall.100", "recall.1000", "ndcg_cut.10", "P.100"]
 METRICS = set(METRIC_SPECS)
 METRIC_KEYS = [s.replace(".", "_") for s in METRIC_SPECS]
+
 
 def load_qrels(path):
     qrels, skipped = {}, 0
@@ -87,26 +110,32 @@ def fuse(lists, topk):
     return {docid: float(score) for docid, score in rrf_fuse(lists, top_n=topk)}
 
 
-def build_run(method, qids, queries, hyde, search):
+def dq_pseudodoc_pairs(entry):
+    """(Decomposed_Query, Query2doc疑似文書) のペアを、欠落文書を除いて返す。"""
+    return [(dq, hd) for dq, hd in zip(entry["decomposed_queries"], entry["query2doc_docs"])
+            if hd and hd.strip()]
+
+
+def build_run(method, qids, queries, q2d, search):
     """1 条件ぶんの run {qid: {docid: score}} を作る。"""
     run, t0 = {}, time.time()
     for i, qid in enumerate(qids, 1):
         q = queries[qid]
+        repeated_q = " ".join([q] * QUERY_REPEAT)
 
         if method == "baseline":
             lists = [search(q)]
+        elif method == "query2doc":
+            pairs = dq_pseudodoc_pairs(q2d[qid])
+            lists = [search(f"{repeated_q} {hd}") for dq, hd in pairs]
+        elif method == "dq_pseudodoc":
+            pairs = dq_pseudodoc_pairs(q2d[qid])
+            lists = [search(f"{dq} {hd}") for dq, hd in pairs]
+        elif method == "query2doc_dq":
+            pairs = dq_pseudodoc_pairs(q2d[qid])
+            lists = [search(f"{repeated_q} {dq} {hd}") for dq, hd in pairs]
         else:
-            variant, k = method.rsplit("_", 1)
-            docs = [d for d in hyde[qid]["hyde_results"][f"hyde_{int(k)}"] if d.strip()]
-            if variant == "hyde":
-                lists = [search(d) for d in docs]
-            elif variant == "hydecat":
-                repeated_q = " ".join([q] * QUERY_REPEAT)
-                lists = [search(f"{repeated_q} {d}") for d in docs]
-            elif variant == "hydeq":
-                lists = [search(q)] + [search(d) for d in docs]
-            else:
-                raise ValueError(f"未知の variant: {variant}")
+            raise ValueError(f"未知の method: {method}")
 
         run[qid] = fuse(lists, TOPK)
 
@@ -117,11 +146,7 @@ def build_run(method, qids, queries, hyde, search):
     return run
 
 
-# ============================================================
-# 評価
-# ============================================================
 def evaluate(run, qrels, eval_qids, label):
-    """eval_qids に固定して採点する。対象集合が条件間でズレないことを保証する。"""
     target = [q for q in eval_qids if q in qrels]
     if not target:
         print(f"[{label}] 採点対象なし")
@@ -137,10 +162,6 @@ def evaluate(run, qrels, eval_qids, label):
 
 
 def check_docid_overlap(run, qrels, eval_qids, label):
-    """
-    qrels と run の docid 粒度が食い違っていないか確認する。
-    セグメント ID と文書 ID が混ざっていると全指標が静かに 0 付近に張り付く。
-    """
     run_ids, qrel_ids = set(), set()
     for qid in eval_qids:
         if qid in qrels:
@@ -159,36 +180,36 @@ def check_docid_overlap(run, qrels, eval_qids, label):
 
 def main():
     print("読み込み中...")
-    with open(HYDE_FILE) as f:
-        hyde = json.load(f)["results"]
+    with open(QUERY2DOC_FILE) as f:
+        q2d = json.load(f)["results"]
     queries = load_queries(QUERIES_FILE)
     qrels = {name: load_qrels(os.path.join(DATA_DIR, f"keystone_qrels_{name}.txt"))
              for name in QREL_SETS}
 
     valid_qids = sorted(
-        qid for qid, entry in hyde.items()
+        qid for qid, entry in q2d.items()
         if qid in queries
-        and all(len(entry.get("hyde_results", {}).get(f"hyde_{k}", [])) == k
-                for k in K_VALUES)
+        and entry.get("decomposed_queries")
+        and all(d and d.strip() for d in entry.get("query2doc_docs", []))
     )
-    print(f"\nB方式: K={K_VALUES} が全て揃った {len(valid_qids)} クエリ "
-          f"（除外 {len(hyde) - len(valid_qids)}）")
+    print(f"\n分解質問すべてでQuery2doc生成が揃った {len(valid_qids)} クエリ "
+          f"（除外 {len(q2d) - len(valid_qids)}）")
     for name in QREL_SETS:
         print(f"  qrels[{name}]: {len(qrels[name])} qids / "
               f"うち対象内 {len(set(valid_qids) & set(qrels[name]))} qids")
     if not valid_qids:
-        print("採点対象が空。HyDE ファイルの生成枚数を確認すること。", file=sys.stderr)
+        print("採点対象が空。decomposed Query2doc ファイルの生成状況を確認すること。",
+              file=sys.stderr)
         return
 
-    methods = ["baseline"] + [f"{v}_{k}" for k in K_VALUES for v in VARIANTS]
-    print(f"条件: {', '.join(methods)}   TOPK={TOPK}   QUERY_REPEAT={QUERY_REPEAT}")
+    print(f"条件: {', '.join(METHODS)}   TOPK={TOPK}   RETRIEVE_K={RETRIEVE_K}")
     print("=" * 72)
 
-    search = CachedBM25(TOPK)
-    runs = {m: build_run(m, valid_qids, queries, hyde, search) for m in methods}
+    search = CachedBM25(RETRIEVE_K)
+    runs = {m: build_run(m, valid_qids, queries, q2d, search) for m in METHODS}
     print(f"\n{search.stats()}")
 
-    eval_qids = [q for q in valid_qids if all(runs[m].get(q) for m in methods)]
+    eval_qids = [q for q in valid_qids if all(runs[m].get(q) for m in METHODS)]
     if len(eval_qids) < len(valid_qids):
         print(f"[warn] 検索結果が空になった {len(valid_qids) - len(eval_qids)} クエリを"
               f"全条件から除外", file=sys.stderr)
@@ -199,7 +220,7 @@ def main():
         check_docid_overlap(runs["baseline"], qrels[name], eval_qids, name)
 
     summary, n_seen = {}, {}
-    for method in methods:
+    for method in METHODS:
         print(f"\n### {method} ###")
         for name in QREL_SETS:
             agg, n = evaluate(runs[method], qrels[name], eval_qids, f"{method} / {name}")
@@ -212,19 +233,19 @@ def main():
                   file=sys.stderr)
 
     print("\n" + "=" * 72)
-    print(f"SUMMARY   対象: {len(eval_qids)} クエリ   QUERY_REPEAT={QUERY_REPEAT}")
+    print(f"SUMMARY   対象: {len(eval_qids)} クエリ")
     for name in QREL_SETS:
         print(f"\n[{name}]")
         labels = {"recall_100": "recall@100", "recall_1000": "recall@1000",
                   "ndcg_cut_10": "nDCG@10", "P_100": "precision@100"}
-        header = "method".ljust(12) + "".join(
+        header = "method".ljust(18) + "".join(
             labels[k].ljust(16) for k in METRIC_KEYS)
         print(header)
         print("-" * len(header))
         base = summary[name].get("baseline")
-        for method in methods:
+        for method in METHODS:
             agg = summary[name].get(method)
-            row = method.ljust(12)
+            row = method.ljust(18)
             if agg is None:
                 print(row + "-")
                 continue
@@ -236,10 +257,10 @@ def main():
             print(row)
     print("=" * 72)
 
-    out_path = os.path.join(DATA_DIR, f"hyde_eval_summary_rep{QUERY_REPEAT}.json")
+    suffix = f"_deep{RETRIEVE_K}" if RETRIEVE_K != TOPK else ""
+    out_path = os.path.join(RAG_DIR, f"decomposed_query2doc_variants_eval_summary_rep{QUERY_REPEAT}{suffix}.json")
     with open(out_path, "w") as f:
         json.dump({"n_queries": len(eval_qids), "topk": TOPK,
-                   "query_repeat": QUERY_REPEAT,
                    "qids": eval_qids, "summary": summary},
                   f, ensure_ascii=False, indent=2)
     print(f"集計値を保存: {out_path}")

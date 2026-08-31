@@ -1,3 +1,18 @@
+"""
+evaluate_rep1.py と同じ評価パイプラインを、LLM生成のQuery2doc疑似文書ではなく
+qrel_segment_pool.py で作った「実際にqrelで正解判定されているセグメント本文」で走らせる。
+
+つまり query2doc_k は「正解セグメントの上位k件（qrelスコア降順）を元クエリと連結して
+msmarco-v21-doc を検索した場合、recall/nDCGはどこまで伸びるか」というオラクル上限の実験。
+検索対象は通常通りmsmarco-v21-doc（bm25_body）で、qrel-segment-poolインデックスは使わない
+（qrel-segment-poolは正解文書しか入っていないので検索先にすると自明にrecallが埋まってしまう）。
+
+対象は qrel_segment_pool.json に含まれる22トピックのみ（105トピック全部ではない）。
+
+使い方:
+    python evaluate_qrelpool.py
+"""
+
 from __future__ import annotations
 
 import json
@@ -6,23 +21,26 @@ import sys
 import time
 
 import pytrec_eval
+from opensearchpy.exceptions import RequestError
 
 from retriever import bm25_body, rrf_fuse
 
-DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
-HYDE_FILE = os.path.join(DATA_DIR, "multi_hyde_200.json")
+RAG_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(RAG_DIR, "..", "..", "..", "data")
+QUERY2DOC_FILE = os.path.join(RAG_DIR, "qrel_segment_pool.json")
 QUERIES_FILE = os.path.join(DATA_DIR, "trec_rag_2025_queries.jsonl")
 
 K_VALUES = [1, 2, 3, 5, 8, 10, 15, 20, 30]
 QREL_SETS = ["coverage", "consensus"]
 TOPK = 1000
-QUERY_REPEAT = 5   # 元クエリをN回繰り返してHyDE文書1本と連結してから検索
+QUERY_REPEAT = 5
 
-VARIANTS = ["hydecat"]
+VARIANTS = ["query2doc"]
 
 METRIC_SPECS = ["recall.100", "recall.1000", "ndcg_cut.10", "P.100"]
 METRICS = set(METRIC_SPECS)
 METRIC_KEYS = [s.replace(".", "_") for s in METRIC_SPECS]
+
 
 def load_qrels(path):
     qrels, skipped = {}, 0
@@ -72,7 +90,12 @@ class CachedBM25:
             self.hits += 1
             return self._cache[key]
         self.calls += 1
-        self._cache[key] = bm25_body(key, k=self.topk)
+        try:
+            self._cache[key] = bm25_body(key, k=self.topk)
+        except RequestError as e:
+            print(f"  [warn] BM25検索失敗（{len(key.split())}語のクエリ）: {e}",
+                  file=sys.stderr)
+            self._cache[key] = []
         return self._cache[key]
 
     def stats(self):
@@ -80,15 +103,13 @@ class CachedBM25:
 
 
 def fuse(lists, topk):
-    """空リストを除いて RRF 融合する。1 本だけなら順位はそのまま。"""
     lists = [lst for lst in lists if lst]
     if not lists:
         return {}
     return {docid: float(score) for docid, score in rrf_fuse(lists, top_n=topk)}
 
 
-def build_run(method, qids, queries, hyde, search):
-    """1 条件ぶんの run {qid: {docid: score}} を作る。"""
+def build_run(method, qids, queries, pool, search):
     run, t0 = {}, time.time()
     for i, qid in enumerate(qids, 1):
         q = queries[qid]
@@ -97,13 +118,13 @@ def build_run(method, qids, queries, hyde, search):
             lists = [search(q)]
         else:
             variant, k = method.rsplit("_", 1)
-            docs = [d for d in hyde[qid]["hyde_results"][f"hyde_{int(k)}"] if d.strip()]
-            if variant == "hyde":
+            docs = [d for d in pool[qid]["query2doc_results"][f"query2doc_{int(k)}"] if d.strip()]
+            if variant == "pseudodoc":
                 lists = [search(d) for d in docs]
-            elif variant == "hydecat":
+            elif variant == "query2doc":
                 repeated_q = " ".join([q] * QUERY_REPEAT)
                 lists = [search(f"{repeated_q} {d}") for d in docs]
-            elif variant == "hydeq":
+            elif variant == "pseudodocq":
                 lists = [search(q)] + [search(d) for d in docs]
             else:
                 raise ValueError(f"未知の variant: {variant}")
@@ -117,11 +138,7 @@ def build_run(method, qids, queries, hyde, search):
     return run
 
 
-# ============================================================
-# 評価
-# ============================================================
 def evaluate(run, qrels, eval_qids, label):
-    """eval_qids に固定して採点する。対象集合が条件間でズレないことを保証する。"""
     target = [q for q in eval_qids if q in qrels]
     if not target:
         print(f"[{label}] 採点対象なし")
@@ -137,10 +154,6 @@ def evaluate(run, qrels, eval_qids, label):
 
 
 def check_docid_overlap(run, qrels, eval_qids, label):
-    """
-    qrels と run の docid 粒度が食い違っていないか確認する。
-    セグメント ID と文書 ID が混ざっていると全指標が静かに 0 付近に張り付く。
-    """
     run_ids, qrel_ids = set(), set()
     for qid in eval_qids:
         if qid in qrels:
@@ -153,31 +166,29 @@ def check_docid_overlap(run, qrels, eval_qids, label):
     if overlap == 0:
         print(f"  [ERROR/{label}] docid が 1 件も一致しない。粒度を確認すること。",
               file=sys.stderr)
-        print(f"    qrels 例: {sorted(qrel_ids)[:2]}", file=sys.stderr)
-        print(f"    run   例: {sorted(run_ids)[:2]}", file=sys.stderr)
 
 
 def main():
     print("読み込み中...")
-    with open(HYDE_FILE) as f:
-        hyde = json.load(f)["results"]
+    with open(QUERY2DOC_FILE) as f:
+        pool = json.load(f)["results"]
     queries = load_queries(QUERIES_FILE)
     qrels = {name: load_qrels(os.path.join(DATA_DIR, f"keystone_qrels_{name}.txt"))
              for name in QREL_SETS}
 
     valid_qids = sorted(
-        qid for qid, entry in hyde.items()
+        qid for qid, entry in pool.items()
         if qid in queries
-        and all(len(entry.get("hyde_results", {}).get(f"hyde_{k}", [])) == k
+        and all(len(entry.get("query2doc_results", {}).get(f"query2doc_{k}", [])) == k
                 for k in K_VALUES)
     )
-    print(f"\nB方式: K={K_VALUES} が全て揃った {len(valid_qids)} クエリ "
-          f"（除外 {len(hyde) - len(valid_qids)}）")
+    print(f"オラクル(qrel正解セグメント)方式: K={K_VALUES} が全て揃った {len(valid_qids)} クエリ "
+          f"（除外 {len(pool) - len(valid_qids)}）")
     for name in QREL_SETS:
         print(f"  qrels[{name}]: {len(qrels[name])} qids / "
               f"うち対象内 {len(set(valid_qids) & set(qrels[name]))} qids")
     if not valid_qids:
-        print("採点対象が空。HyDE ファイルの生成枚数を確認すること。", file=sys.stderr)
+        print("採点対象が空。qrel_segment_pool.json の中身を確認すること。", file=sys.stderr)
         return
 
     methods = ["baseline"] + [f"{v}_{k}" for k in K_VALUES for v in VARIANTS]
@@ -185,7 +196,7 @@ def main():
     print("=" * 72)
 
     search = CachedBM25(TOPK)
-    runs = {m: build_run(m, valid_qids, queries, hyde, search) for m in methods}
+    runs = {m: build_run(m, valid_qids, queries, pool, search) for m in methods}
     print(f"\n{search.stats()}")
 
     eval_qids = [q for q in valid_qids if all(runs[m].get(q) for m in methods)]
@@ -212,7 +223,8 @@ def main():
                   file=sys.stderr)
 
     print("\n" + "=" * 72)
-    print(f"SUMMARY   対象: {len(eval_qids)} クエリ   QUERY_REPEAT={QUERY_REPEAT}")
+    print(f"SUMMARY（オラクル: qrel正解セグメント使用）   対象: {len(eval_qids)} クエリ   "
+          f"QUERY_REPEAT={QUERY_REPEAT}")
     for name in QREL_SETS:
         print(f"\n[{name}]")
         labels = {"recall_100": "recall@100", "recall_1000": "recall@1000",
@@ -236,7 +248,7 @@ def main():
             print(row)
     print("=" * 72)
 
-    out_path = os.path.join(DATA_DIR, f"hyde_eval_summary_rep{QUERY_REPEAT}.json")
+    out_path = os.path.join(RAG_DIR, "qrelpool_eval_summary_rep5.json")
     with open(out_path, "w") as f:
         json.dump({"n_queries": len(eval_qids), "topk": TOPK,
                    "query_repeat": QUERY_REPEAT,

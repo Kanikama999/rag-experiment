@@ -1,15 +1,17 @@
 """
-TREC 2025 RAG のナラティブから HyDE 文書を生成する。
+TREC 2025 RAG のナラティブを、わかりやすく簡潔な質問文（Decomposed_Query）に分解する。
 
-OpenRouter の Batch API を使い、105トピック x 50本 = 5,250本 を作る。
-1リクエスト = 1文書。まとめて生成せず個別に生成するので、
-「k本使う」実験は後から pool[:k] を切り出すだけで済む。
+narrative_expansion.py が narrative 全体から直接 Query2doc 疑似文書を作っていたのに対し、
+こちらは Query2doc の前段として「narrative が扱っている論点ごとに、単独で検索クエリとして
+使える簡潔な質問文」に分解するだけを行う。分解数はトピックごとに可変（LLM に任せる）。
+
+出力は decomposed_query2doc_expansion.py の入力になる。
 
 使い方:
-    python multi_hyde_terra_batch.py smoke    # 2件だけ試す
-    python multi_hyde_terra_batch.py submit   # 本番投入
-    python multi_hyde_terra_batch.py poll     # 進捗確認
-    python multi_hyde_terra_batch.py fetch    # 結果回収
+    python decompose_narrative.py smoke    # 2件だけ試す
+    python decompose_narrative.py submit   # 本番投入
+    python decompose_narrative.py poll     # 進捗確認
+    python decompose_narrative.py fetch    # 結果回収
 """
 
 import json
@@ -26,20 +28,16 @@ import requests
 API_KEY = os.environ["OPENROUTER_API_KEY"]
 BASE = "https://openrouter.ai/api/beta/batches"
 
-MODEL = "openai/gpt-5.6-terra"
-REASONING = {"effort": "none"}   # HyDEに推論は不要。生成の多様性を保つため
-TEMPERATURE = 1.0                # 50本の中身を散らすために必要
+MODEL = "google/gemini-3.7-flash:batch"
+REASONING = {"effort": "low"}    # このモデルはreasoning必須（"none"不可）。最小のlowを指定
+TEMPERATURE = 0.0                # 分解は再現性重視。多様性は不要
 
-WORDS_PER_DOC = 200               # 1文書あたりの目標語数
-N_POOL = 30                      # 1トピックあたり生成する本数
-K_VALUES = [1, 2, 3, 5, 8, 10, 15, 20, 30]   # 出力に切り出す本数
-
-QUERY_FIELD = "title"            # ナラティブ本文は title フィールドに入っている
+QUERY_FIELD = "title"
 INPUT_FILE = os.path.expanduser("~/data/trec_rag_2025_queries.jsonl")
 
-CHUNK = 1000                     # 1バッチに詰めるリクエスト数
-IDS_FILE = "batch_ids.json"
-OUT_FILE = f"multi_hyde_L{WORDS_PER_DOC}.json"
+CHUNK = 1000
+IDS_FILE = "batch_ids_decompose.json"
+OUT_FILE = "decomposed_queries.json"
 
 HEADERS = {
     "Authorization": f"Bearer {API_KEY}",
@@ -49,22 +47,20 @@ HEADERS = {
 # ============================================================
 # プロンプト
 # ============================================================
-PROMPT = """Write one hypothetical document (a single paragraph) that would
-answer the following search query. Target length: approximately {words} words.
+PROMPT = """The following is a narrative-style search query describing an information need.
+Decompose it into a small number of clear, self-contained, concise questions that
+together cover the distinct facets it is asking about. Each question must be
+understandable and answerable on its own, without seeing the narrative.
 
-Write in English. Start immediately with the body text as declarative sentences
-of fact. Do not include a title, heading, or any label ending in a colon. Do not
-use numbering, bullets, or prefixes such as "Document 1:". Write the document as
-a single continuous paragraph with no line breaks.
+Output exactly one question per line, in English. Do not include numbering,
+bullets, labels, or blank lines. Output nothing except the questions themselves.
 
-Search query: {query}"""
+Narrative: {narrative}"""
 
 CONFIG = {
     "model": MODEL,
     "reasoning": REASONING,
     "temperature": TEMPERATURE,
-    "words_per_doc": WORDS_PER_DOC,
-    "n_pool": N_POOL,
     "query_field": QUERY_FIELD,
     "prompt_hash": hashlib.sha256(PROMPT.encode()).hexdigest()[:16],
 }
@@ -86,11 +82,10 @@ def load_queries():
     return out
 
 
-def make_body(query):
+def make_body(narrative):
     return {
         "messages": [
-            {"role": "user",
-             "content": PROMPT.format(words=WORDS_PER_DOC, query=query)}
+            {"role": "user", "content": PROMPT.format(narrative=narrative)}
         ],
         "reasoning": REASONING,
         "temperature": TEMPERATURE,
@@ -98,22 +93,20 @@ def make_body(query):
 
 
 def build_requests(queries):
-    """1文書 = 1リクエスト。custom_id は '<qid>__d<番号>' 形式。"""
-    reqs = []
-    for qid, query in queries:
-        for i in range(N_POOL):
-            reqs.append({
-                "custom_id": f"{qid}__d{i}",
-                "body": make_body(query),
-            })
-    return reqs
+    """1トピック = 1リクエスト。custom_id はそのまま qid。"""
+    return [{"custom_id": qid, "body": make_body(narrative)}
+            for qid, narrative in queries]
+
+
+def parse_questions(content):
+    """1行1質問として分割する。空行は無視する。"""
+    return [line.strip() for line in content.splitlines() if line.strip()]
 
 
 # ============================================================
 # API 呼び出し
 # ============================================================
 def submit_chunk(reqs):
-    # endpoint と model を requests より前に置く（順序依存。逆だと400が返る）
     payload = {
         "endpoint": "/v1/chat/completions",
         "model": MODEL,
@@ -125,21 +118,26 @@ def submit_chunk(reqs):
     return r.json()["id"]
 
 
-def get_batch(bid):
-    r = requests.get(f"{BASE}/{bid}", headers=HEADERS)
-    r.raise_for_status()
-    return r.json()
+def get_batch(bid, retries=5, backoff=3):
+    """投入直後は反映が遅延して404が返ることがあるのでリトライする。"""
+    for attempt in range(retries):
+        r = requests.get(f"{BASE}/{bid}", headers=HEADERS)
+        if r.status_code == 404 and attempt < retries - 1:
+            print(f"  ({bid} がまだ見つからない。{backoff}秒待って再試行 "
+                  f"{attempt + 1}/{retries})")
+            time.sleep(backoff)
+            continue
+        r.raise_for_status()
+        return r.json()
 
 
 # ============================================================
 # コマンド
 # ============================================================
 def cmd_smoke():
-    """2件だけ生成して、中身と課金額を確認する"""
-    reqs = [
-        {"custom_id": "smoke__d0", "body": make_body("what is BM25 ranking")},
-        {"custom_id": "smoke__d1", "body": make_body("what is dense retrieval")},
-    ]
+    """2件だけ分解して、中身を確認する"""
+    queries = load_queries()[:2]
+    reqs = [{"custom_id": qid, "body": make_body(narrative)} for qid, narrative in queries]
     bid = submit_chunk(reqs)
     print(f"batch {bid} を投入しました。完了まで待ちます...")
 
@@ -160,8 +158,11 @@ def cmd_smoke():
         if item.get("error"):
             print(f"\n[{item['custom_id']}] ERROR: {item['error']}")
             continue
-        t = item["response"]["body"]["choices"][0]["message"]["content"].strip()
-        print(f"\n--- {item['custom_id']} ({len(t.split())} words) ---\n{t}")
+        content = item["response"]["body"]["choices"][0]["message"]["content"]
+        qs = parse_questions(content)
+        print(f"\n=== {item['custom_id']}: {len(qs)}問 ===")
+        for i, q in enumerate(qs):
+            print(f"  {i}: {q}")
 
 
 def cmd_submit():
@@ -170,7 +171,7 @@ def cmd_submit():
 
     queries = load_queries()
     reqs = build_requests(queries)
-    print(f"{len(queries)} topics x {N_POOL} docs = {len(reqs)} requests")
+    print(f"{len(queries)} topics x 1 request（各トピックを分解）")
 
     ids = []
     for i in range(0, len(reqs), CHUNK):
@@ -204,44 +205,35 @@ def cmd_fetch():
             continue
         cost += (b.get("usage") or {}).get("cost", 0.0)
         for item in b["results"]:
+            qid = item["custom_id"]
             if item.get("error") or not item.get("response"):
-                print(f"  ERROR {item['custom_id']}: {item.get('error')}")
+                print(f"  ERROR {qid}: {item.get('error')}")
                 n_err += 1
                 continue
-            body = item["response"]["body"]
-            texts[item["custom_id"]] = \
-                body["choices"][0]["message"]["content"].strip()
+            content = item["response"]["body"]["choices"][0]["message"]["content"]
+            texts[qid] = content
 
-    # qid ごとに、生成順に並べ直す
     queries = dict(load_queries())
-    pools = {}
-    for cid, txt in texts.items():
-        qid, slot = cid.split("__")
-        pools.setdefault(qid, []).append((int(slot[1:]), txt))
-
     results = {}
-    for qid, pairs in pools.items():
-        pool = [t for _, t in sorted(pairs)]
-        if len(pool) != N_POOL:
-            print(f"  WARN {qid}: {len(pool)}/{N_POOL} 本しかありません")
+    for qid, content in texts.items():
+        qs = parse_questions(content)
+        if not qs:
+            print(f"  WARN {qid}: 分解結果が0件")
         results[qid] = {
             "original_query": queries.get(qid),
-            "pool": pool,
-            # pool の先頭k本を切り出したもの（k本使う実験用）
-            "hyde_results": {f"hyde_{k}": pool[:k] for k in K_VALUES},
-            "word_counts": [len(t.split()) for t in pool],
+            "decomposed_queries": qs,
         }
 
     json.dump({"config": store["config"], "results": results},
               open(OUT_FILE, "w", encoding="utf-8"),
               ensure_ascii=False, indent=2)
 
-    wc = sorted(w for r in results.values() for w in r["word_counts"])
-    if wc:
-        n = len(wc)
-        print(f"\n生成語長: 中央値={wc[n // 2]}, "
-              f"25%={wc[n // 4]}, 75%={wc[3 * n // 4]}  (目標={WORDS_PER_DOC})")
-    print(f"トピック数={len(results)}  文書数={len(texts)}  エラー={n_err}")
+    counts = sorted(len(r["decomposed_queries"]) for r in results.values())
+    if counts:
+        n = len(counts)
+        print(f"\n分解数: 中央値={counts[n // 2]}, "
+              f"最小={counts[0]}, 最大={counts[-1]}")
+    print(f"トピック数={len(results)}  エラー={n_err}")
     print(f"課金額=${cost:.4f}")
     print(f"-> {OUT_FILE}")
 

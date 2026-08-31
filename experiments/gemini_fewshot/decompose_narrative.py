@@ -1,26 +1,21 @@
 """
-TREC 2025 RAG のナラティブから HyDE 文書をまとめて生成する（バッチ内多様性版）。
+TREC 2025 RAG のナラティブを、わかりやすく簡潔な質問文（Decomposed_Query）に分解する。
 
-narrative_expansion.py は 1トピック x N_POOL本 を「1文書=1リクエスト」で
-独立に生成していたが、温度1.0でも同じテンプレートに収束しやすいことが分かった。
-このスクリプトは 1トピック=1リクエスト にして、N_POOL本すべてを同じコンテキスト内で
-まとめて書かせる。モデルが「自分が既に書いた内容と重複しないように」書き分けることで
-プール全体の多様性が上がるか比較するのが狙い。
+narrative_expansion.py が narrative 全体から直接 Query2doc 疑似文書を作っていたのに対し、
+こちらは Query2doc の前段として「narrative が扱っている論点ごとに、単独で検索クエリとして
+使える簡潔な質問文」に分解するだけを行う。分解数はトピックごとに可変（LLM に任せる）。
 
-出力フォーマットは narrative_expansion.py と同じ（config + results、
-results[qid].hyde_results.hyde_k）なので、evaluate.py の HYDE_FILE を
-差し替えるだけでそのまま比較評価できる。
+出力は decomposed_query2doc_expansion.py の入力になる。
 
 使い方:
-    python narrative_expansion_batch.py smoke    # 2トピック x 5本だけ試す
-    python narrative_expansion_batch.py submit   # 本番投入
-    python narrative_expansion_batch.py poll     # 進捗確認
-    python narrative_expansion_batch.py fetch    # 結果回収
+    python decompose_narrative.py smoke    # 2件だけ試す
+    python decompose_narrative.py submit   # 本番投入
+    python decompose_narrative.py poll     # 進捗確認
+    python decompose_narrative.py fetch    # 結果回収
 """
 
 import json
 import os
-import re
 import sys
 import time
 import hashlib
@@ -33,24 +28,16 @@ import requests
 API_KEY = os.environ["OPENROUTER_API_KEY"]
 BASE = "https://openrouter.ai/api/beta/batches"
 
-MODEL = "openai/gpt-5.6-terra"
-REASONING = {"effort": "none"}
-TEMPERATURE = 1.0
-
-WORDS_PER_DOC = 200
-N_POOL = 30                      # 1トピックあたり生成する本数（1リクエストにまとめて生成）
-K_VALUES = [1, 2, 3, 5, 8, 10, 15, 20, 30]
-
-SMOKE_N = 5                      # smoke で試す本数（本番より少なくして安く確認する）
+MODEL = "google/gemini-3.7-flash:batch"
+REASONING = {"effort": "low"}    # このモデルはreasoning必須（"none"不可）。最小のlowを指定
+TEMPERATURE = 0.0                # 分解は再現性重視。多様性は不要
 
 QUERY_FIELD = "title"
 INPUT_FILE = os.path.expanduser("~/data/trec_rag_2025_queries.jsonl")
 
 CHUNK = 1000
-IDS_FILE = "batch_ids_batch.json"
-OUT_FILE = f"multi_hyde_batch_L{WORDS_PER_DOC}.json"
-
-DELIM = "@@@---@@@"               # 文書同士の区切り。本文に出てくる見込みはほぼ無い記号列
+IDS_FILE = "batch_ids_decompose.json"
+OUT_FILE = "decomposed_queries.json"
 
 HEADERS = {
     "Authorization": f"Bearer {API_KEY}",
@@ -60,35 +47,21 @@ HEADERS = {
 # ============================================================
 # プロンプト
 # ============================================================
-PROMPT = """Write {n} independent hypothetical documents that would each answer the
-following search query. Each document should be a single paragraph of approximately
-{words} words, written in English as declarative sentences of fact. Do not include a
-title, heading, or any label ending in a colon, and do not use numbering or bullets
-within a document.
+PROMPT = """The following is a narrative-style search query describing an information need.
+Decompose it into a small number of clear, self-contained, concise questions that
+together cover the distinct facets it is asking about. Each question must be
+understandable and answerable on its own, without seeing the narrative.
 
-Make the {n} documents meaningfully different from one another: vary the opening
-angle, sentence structure, vocabulary, and which facts are emphasized first, so that
-together they cover the topic from diverse perspectives rather than repeating the
-same template. Do not summarize or refer to the other documents.
+Output exactly one question per line, in English. Do not include numbering,
+bullets, labels, or blank lines. Output nothing except the questions themselves.
 
-Separate the documents with a line that contains only this exact marker and nothing
-else: {delim}
-Do not put the marker before the first document or after the last document.
-
-Search query: {query}"""
-
-def max_tokens_for(n):
-    return int(n * WORDS_PER_DOC * 1.6) + 500
+Narrative: {narrative}"""
 
 CONFIG = {
     "model": MODEL,
     "reasoning": REASONING,
     "temperature": TEMPERATURE,
-    "words_per_doc": WORDS_PER_DOC,
-    "n_pool": N_POOL,
     "query_field": QUERY_FIELD,
-    "generation_mode": "batched_single_request",
-    "delim": DELIM,
     "prompt_hash": hashlib.sha256(PROMPT.encode()).hexdigest()[:16],
 }
 
@@ -109,31 +82,25 @@ def load_queries():
     return out
 
 
-def make_body(query, n):
+def make_body(narrative):
     return {
         "messages": [
-            {"role": "user",
-             "content": PROMPT.format(n=n, words=WORDS_PER_DOC, delim=DELIM, query=query)}
+            {"role": "user", "content": PROMPT.format(narrative=narrative)}
         ],
         "reasoning": REASONING,
         "temperature": TEMPERATURE,
-        "max_tokens": max_tokens_for(n),
     }
 
 
 def build_requests(queries):
     """1トピック = 1リクエスト。custom_id はそのまま qid。"""
-    return [{"custom_id": qid, "body": make_body(query, N_POOL)}
-            for qid, query in queries]
+    return [{"custom_id": qid, "body": make_body(narrative)}
+            for qid, narrative in queries]
 
 
-def split_docs(content, expect_n):
-    """区切り記号でN本に分割する。前後の空白・空行のゆらぎを許容する。"""
-    parts = re.split(r"\n?\s*" + re.escape(DELIM) + r"\s*\n?", content)
-    docs = [p.strip() for p in parts if p.strip()]
-    if len(docs) != expect_n:
-        print(f"  WARN 区切りで{len(docs)}本しか取れなかった（期待{expect_n}本）")
-    return docs
+def parse_questions(content):
+    """1行1質問として分割する。空行は無視する。"""
+    return [line.strip() for line in content.splitlines() if line.strip()]
 
 
 # ============================================================
@@ -168,11 +135,9 @@ def get_batch(bid, retries=5, backoff=3):
 # コマンド
 # ============================================================
 def cmd_smoke():
-    """2トピック x SMOKE_N本だけ生成して、区切り分割と中身を確認する"""
-    reqs = [
-        {"custom_id": "smoke_bm25", "body": make_body("what is BM25 ranking", SMOKE_N)},
-        {"custom_id": "smoke_dense", "body": make_body("what is dense retrieval", SMOKE_N)},
-    ]
+    """2件だけ分解して、中身を確認する"""
+    queries = load_queries()[:2]
+    reqs = [{"custom_id": qid, "body": make_body(narrative)} for qid, narrative in queries]
     bid = submit_chunk(reqs)
     print(f"batch {bid} を投入しました。完了まで待ちます...")
 
@@ -194,10 +159,10 @@ def cmd_smoke():
             print(f"\n[{item['custom_id']}] ERROR: {item['error']}")
             continue
         content = item["response"]["body"]["choices"][0]["message"]["content"]
-        docs = split_docs(content, SMOKE_N)
-        print(f"\n=== {item['custom_id']}: {len(docs)}本 ===")
-        for i, d in enumerate(docs):
-            print(f"\n--- doc {i} ({len(d.split())} words) ---\n{d}")
+        qs = parse_questions(content)
+        print(f"\n=== {item['custom_id']}: {len(qs)}問 ===")
+        for i, q in enumerate(qs):
+            print(f"  {i}: {q}")
 
 
 def cmd_submit():
@@ -206,7 +171,7 @@ def cmd_submit():
 
     queries = load_queries()
     reqs = build_requests(queries)
-    print(f"{len(queries)} topics x 1 request（各リクエストで{N_POOL}本まとめて生成）")
+    print(f"{len(queries)} topics x 1 request（各トピックを分解）")
 
     ids = []
     for i in range(0, len(reqs), CHUNK):
@@ -232,7 +197,7 @@ def cmd_poll():
 def cmd_fetch():
     store = json.load(open(IDS_FILE))
 
-    pools, cost, n_err = {}, 0.0, 0
+    texts, cost, n_err = {}, 0.0, 0
     for bid in store["batch_ids"]:
         b = get_batch(bid)
         if b["status"] != "completed":
@@ -246,31 +211,29 @@ def cmd_fetch():
                 n_err += 1
                 continue
             content = item["response"]["body"]["choices"][0]["message"]["content"]
-            docs = split_docs(content, N_POOL)
-            pools[qid] = docs
+            texts[qid] = content
 
     queries = dict(load_queries())
     results = {}
-    for qid, pool in pools.items():
-        if len(pool) != N_POOL:
-            print(f"  WARN {qid}: {len(pool)}/{N_POOL} 本しかありません")
+    for qid, content in texts.items():
+        qs = parse_questions(content)
+        if not qs:
+            print(f"  WARN {qid}: 分解結果が0件")
         results[qid] = {
             "original_query": queries.get(qid),
-            "pool": pool,
-            "hyde_results": {f"hyde_{k}": pool[:k] for k in K_VALUES if k <= len(pool)},
-            "word_counts": [len(t.split()) for t in pool],
+            "decomposed_queries": qs,
         }
 
     json.dump({"config": store["config"], "results": results},
               open(OUT_FILE, "w", encoding="utf-8"),
               ensure_ascii=False, indent=2)
 
-    wc = sorted(w for r in results.values() for w in r["word_counts"])
-    if wc:
-        n = len(wc)
-        print(f"\n生成語長: 中央値={wc[n // 2]}, "
-              f"25%={wc[n // 4]}, 75%={wc[3 * n // 4]}  (目標={WORDS_PER_DOC})")
-    print(f"トピック数={len(results)}  文書数={sum(len(r['pool']) for r in results.values())}  エラー={n_err}")
+    counts = sorted(len(r["decomposed_queries"]) for r in results.values())
+    if counts:
+        n = len(counts)
+        print(f"\n分解数: 中央値={counts[n // 2]}, "
+              f"最小={counts[0]}, 最大={counts[-1]}")
+    print(f"トピック数={len(results)}  エラー={n_err}")
     print(f"課金額=${cost:.4f}")
     print(f"-> {OUT_FILE}")
 

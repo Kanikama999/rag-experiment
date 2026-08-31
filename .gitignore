@@ -1,4 +1,8 @@
 __pycache__/
 *.pyc
-multi_hyde_L200.json
-multi_hyde_batch_L200.json
+experiments/*/decomposed_queries.json
+experiments/*/multi_query2doc_L200.json
+experiments/*/multi_query2doc_decomposed_L200.json
+experiments/*/qrel_segment_pool.json
+experiments/*/batch_ids*.json
+unused_narrative_expansion_batch/
