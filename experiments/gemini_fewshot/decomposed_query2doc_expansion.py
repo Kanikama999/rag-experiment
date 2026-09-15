@@ -1,5 +1,5 @@
 """
-decompose_narrative.py が作った Decomposed_Query（narrative を分解した簡潔な質問文）
+decompose_narrative.py が作った Subquery（narrative を分解した簡潔な質問文）
 1問ごとに、Query2doc 疑似文書を1本だけ生成する。
 
 Query2doc論文の本来の設定に合わせ、few-shot（(query, document)の例を3件プロンプトに

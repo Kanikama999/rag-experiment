@@ -1,10 +1,10 @@
 """
-decompose_narrative.py が作った Decomposed_Query（narrative を分解した簡潔な質問文）
+decompose_narrative.py が作った Subquery（narrative を分解した簡潔な質問文）
 1問ごとに、Query2doc 疑似文書を1本だけ生成する。
 
 decomposed_query2doc_webstyle_expansion.py との違い: プロンプトに「元のnarrativeが
-どうDecomposed_Queryへ分解されたか」の文脈を含める。decomposed_query2doc_webstyle_expansion.py
-はDecomposed_Query単体しか見せていなかったため、LLMがnarrative固有の文脈（ユーザーが
+どうSubqueryへ分解されたか」の文脈を含める。decomposed_query2doc_webstyle_expansion.py
+はSubquery単体しか見せていなかったため、LLMがnarrative固有の文脈（ユーザーが
 本当に知りたい広い意図・スコープ）を無視して一般論的な疑似文書を書きやすい、という
 問題があった（evaluate_decomposed_webstyle.py の結果で、narrativeを使わないdq_pseudodoc系が
 baselineよりrecall@1000で一貫して劣ったことから示唆される）。narrativeをプロンプトに

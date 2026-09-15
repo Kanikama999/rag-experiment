@@ -19,6 +19,36 @@ def bm25_body(query_text, k=100):
     })
     return [(h["_id"], h["_score"]) for h in res["hits"]["hits"]]
 
+def bm25_title(query_text, k=100):
+    """titleフィールドだけをmatchする（フィールド別寄与の切り分け用）。"""
+    res = client.search(index=INDEX, body={
+        "size": k,
+        "_source": False,
+        "query": {
+            "match": {
+                "title": {
+                    "query": query_text
+                }
+            }
+        }
+    })
+    return [(h["_id"], h["_score"]) for h in res["hits"]["hits"]]
+
+def bm25_headings(query_text, k=100):
+    """headingsフィールドだけをmatchする（フィールド別寄与の切り分け用）。"""
+    res = client.search(index=INDEX, body={
+        "size": k,
+        "_source": False,
+        "query": {
+            "match": {
+                "headings": {
+                    "query": query_text
+                }
+            }
+        }
+    })
+    return [(h["_id"], h["_score"]) for h in res["hits"]["hits"]]
+
 def bm25_keyterms(query_text, k=100):
     res = client.search(index=INDEX, body={
         "size": k,
@@ -27,6 +57,31 @@ def bm25_keyterms(query_text, k=100):
             "multi_match": {
                 "query": query_text,
                 "fields": ["title^3", "headings^2", "body^1"]
+            }
+        }
+    })
+    return [(h["_id"], h["_score"]) for h in res["hits"]["hits"]]
+
+def bm25_fielded(title_text, headings_text, body_text, k=100,
+                  title_boost=3, headings_boost=2, body_boost=1):
+    """title/headings/bodyそれぞれ別のテキストを対応するフィールドにmatchし、
+    bool/shouldで線形和（デフォルトはtitle^3 + headings^2 + body^1）にして検索する。
+    bm25_keytermsが同じquery_textを3フィールドにぶつけてmax(best_fields)を取るのに対し、
+    こちらはフィールドごとに別々のテキストを渡し、3フィールド分のスコアを全て合算する。
+    ブースト値はtitle_boost/headings_boost/body_boostで変更できる（比率の見直し用）。"""
+    should = []
+    if title_text and title_text.strip():
+        should.append({"match": {"title": {"query": title_text, "boost": title_boost}}})
+    if headings_text and headings_text.strip():
+        should.append({"match": {"headings": {"query": headings_text, "boost": headings_boost}}})
+    if body_text and body_text.strip():
+        should.append({"match": {"body": {"query": body_text, "boost": body_boost}}})
+    res = client.search(index=INDEX, body={
+        "size": k,
+        "_source": False,
+        "query": {
+            "bool": {
+                "should": should
             }
         }
     })

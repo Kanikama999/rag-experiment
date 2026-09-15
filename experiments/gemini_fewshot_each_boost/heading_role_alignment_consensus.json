@@ -1,0 +1,87 @@
+{
+  "topics": "consensus",
+  "n_topics": 105,
+  "n_subqueries": 451,
+  "intent_hist": {
+    "definition": 175,
+    "(none)": 231,
+    "cause": 52,
+    "comparison": 14,
+    "caution": 16,
+    "origin": 10,
+    "detail": 2,
+    "summary": 2,
+    "procedure": 2
+  },
+  "totals": {
+    "pos": 15750,
+    "neg": 15750
+  },
+  "result": {
+    "any": {
+      "rel_pct": 41.23,
+      "nonrel_pct": 24.71,
+      "lift": 1.668
+    },
+    "plain": {
+      "rel_pct": 36.29,
+      "nonrel_pct": 22.88,
+      "lift": 1.586
+    },
+    "crossed": {
+      "rel_pct": 11.63,
+      "nonrel_pct": 4.54,
+      "lift": 2.561
+    },
+    "aligned": {
+      "rel_pct": 3.83,
+      "nonrel_pct": 0.78,
+      "lift": 4.902
+    },
+    "aligned:definition": {
+      "rel_pct": 2.15,
+      "nonrel_pct": 0.43,
+      "lift": 4.985
+    },
+    "aligned:detail": {
+      "rel_pct": 0.03,
+      "nonrel_pct": 0.03,
+      "lift": 1.0
+    },
+    "aligned:origin": {
+      "rel_pct": 0.09,
+      "nonrel_pct": 0.04,
+      "lift": 2.333
+    },
+    "aligned:qa": {
+      "rel_pct": 0.0,
+      "nonrel_pct": 0.0,
+      "lift": NaN
+    },
+    "aligned:summary": {
+      "rel_pct": 0.01,
+      "nonrel_pct": 0.0,
+      "lift": NaN
+    },
+    "aligned:caution": {
+      "rel_pct": 0.23,
+      "nonrel_pct": 0.08,
+      "lift": 3.083
+    },
+    "aligned:comparison": {
+      "rel_pct": 0.17,
+      "nonrel_pct": 0.05,
+      "lift": 3.25
+    },
+    "aligned:procedure": {
+      "rel_pct": 0.06,
+      "nonrel_pct": 0.01,
+      "lift": 10.0
+    },
+    "aligned:cause": {
+      "rel_pct": 1.45,
+      "nonrel_pct": 0.21,
+      "lift": 6.909
+    }
+  }
+}

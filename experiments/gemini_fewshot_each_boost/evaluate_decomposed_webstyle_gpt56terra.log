@@ -1,0 +1,49 @@
+読み込み中...
+
+疑似文書がある 105 クエリ
+  qrels[coverage]: 22 qids / うち対象内 22 qids
+  qrels[consensus]: 105 qids / うち対象内 105 qids
+条件: baseline, webstyle_narrative_fielded_recallopt   TOPK=1000   RETRIEVE_K=3000   QUERY_REPEAT=5
+========================================================================
+  baseline: 20/105 (15s)  baseline: 40/105 (30s)  baseline: 60/105 (44s)  baseline: 80/105 (58s)  baseline: 100/105 (73s)  baseline: 105/105 (76s)
+  webstyle_narrative_fielded_recallopt: 20/105 (199s)  webstyle_narrative_fielded_recallopt: 40/105 (395s)  webstyle_narrative_fielded_recallopt: 60/105 (606s)  webstyle_narrative_fielded_recallopt: 80/105 (805s)  webstyle_narrative_fielded_recallopt: 100/105 (984s)  webstyle_narrative_fielded_recallopt: 105/105 (1020s)
+
+bm25_body: 呼び出し 105 回 / キャッシュヒット 0 回
+bm25_keyterms: 呼び出し 0 回 / キャッシュヒット 0 回
+bm25_title: 呼び出し 0 回 / キャッシュヒット 0 回
+bm25_headings: 呼び出し 0 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded: 呼び出し 0 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded_hboost: 呼び出し 0 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded_regboost: 呼び出し 0 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded_recallopt: 呼び出し 451 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded_ndcgopt: 呼び出し 0 回 / キャッシュヒット 0 回
+最終採点対象: 105 クエリ（全条件共通）
+
+--- docid 粒度チェック ---
+  [check/coverage] qrels docid 5599 件中 1447 件が run に出現
+  [check/consensus] qrels docid 119209 件中 20130 件が run に出現
+
+### baseline ###
+[baseline / coverage] n=22  recall_100=0.0942  recall_1000=0.2884  ndcg_cut_10=0.1569  P_100=0.1505
+[baseline / consensus] n=105  recall_100=0.0327  recall_1000=0.1495  ndcg_cut_10=0.2649  P_100=0.3737
+
+### webstyle_narrative_fielded_recallopt ###
+[webstyle_narrative_fielded_recallopt / coverage] n=22  recall_100=0.2193  recall_1000=0.5574  ndcg_cut_10=0.4094  P_100=0.3459
+[webstyle_narrative_fielded_recallopt / consensus] n=105  recall_100=0.0627  recall_1000=0.2749  ndcg_cut_10=0.4972  P_100=0.7079
+
+========================================================================
+SUMMARY   対象: 105 クエリ
+
+[coverage]
+method                      recall@100      recall@1000     nDCG@10         precision@100   
+--------------------------------------------------------------------------------------------
+baseline                    0.0942          0.2884          0.1569          0.1505          
+webstyle_narrative_fielded_recallopt0.2193 (+0.1250)0.5574 (+0.2690)0.4094 (+0.2525)0.3459 (+0.1955)
+
+[consensus]
+method                      recall@100      recall@1000     nDCG@10         precision@100   
+--------------------------------------------------------------------------------------------
+baseline                    0.0327          0.1495          0.2649          0.3737          
+webstyle_narrative_fielded_recallopt0.0627 (+0.0300)0.2749 (+0.1254)0.4972 (+0.2322)0.7079 (+0.3342)
+========================================================================
+集計値を保存: /home/takeuchi/rag-experiment-doc/experiments/gemini_fewshot_each_boost/decomposed_query2doc_webstyle_gpt56terra_eval_summary_rep5.json

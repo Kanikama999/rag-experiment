@@ -1,0 +1,12 @@
+読み込み中...
+対象 105 クエリ
+RETRIEVE_K=3000 QUERY_REPEAT=5 weights=(2.0,1.0,1.0) b=(0.0,0.8,1.0) k1=[0.9, 3.0]（疑似文書なし: narrative×5+Subqueryのみを3フィールド共通で使用）
+  10/105  経過6.1分  残り約58分  20/105  経過13.6分  残り約58分  30/105  経過20.9分  残り約52分  40/105  経過33.5分  残り約54分  50/105  経過54.0分  残り約59分  60/105  経過74.0分  残り約56分  70/105  経過92.0分  残り約46分  80/105  経過107.1分  残り約33分  90/105  経過123.3分  残り約21分  100/105  経過138.1分  残り約7分  105/105  経過140.8分  残り約0分
+[norerank_nopseudo / coverage] n=22  recall_100=0.1975  recall_1000=0.4906  ndcg_cut_10=0.3818  P_100=0.3173
+[norerank_nopseudo / consensus] n=105  recall_100=0.0600  recall_1000=0.2527  ndcg_cut_10=0.4896  P_100=0.6840
+[k1b0.9_nopseudo / coverage] n=22  recall_100=0.1800  recall_1000=0.5250  ndcg_cut_10=0.3074  P_100=0.2886
+[k1b0.9_nopseudo / consensus] n=105  recall_100=0.0580  recall_1000=0.2722  ndcg_cut_10=0.4241  P_100=0.6630
+[k1b3_nopseudo / coverage] n=22  recall_100=0.2331  recall_1000=0.5863  ndcg_cut_10=0.4207  P_100=0.3755
+[k1b3_nopseudo / consensus] n=105  recall_100=0.0692  recall_1000=0.3096  ndcg_cut_10=0.5199  P_100=0.7903
+
+結果を保存: /home/takeuchi/rag-experiment-doc/experiments/gemini_fewshot_each_boost/bm25f_nopseudo_result.json

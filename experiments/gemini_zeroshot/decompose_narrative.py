@@ -1,5 +1,5 @@
 """
-TREC 2025 RAG のナラティブを、わかりやすく簡潔な質問文（Decomposed_Query）に分解する。
+TREC 2025 RAG のナラティブを、わかりやすく簡潔な質問文（Subquery）に分解する。
 
 narrative_expansion.py が narrative 全体から直接 Query2doc 疑似文書を作っていたのに対し、
 こちらは Query2doc の前段として「narrative が扱っている論点ごとに、単独で検索クエリとして

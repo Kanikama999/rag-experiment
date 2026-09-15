@@ -1,0 +1,61 @@
+{
+  "topics": "consensus",
+  "n_topics": 105,
+  "min_overlap": 2,
+  "totals": {
+    "pos": 15750,
+    "neg": 15750
+  },
+  "result": {
+    "any": {
+      "rel_pct": 41.23,
+      "nonrel_pct": 24.71,
+      "lift": 1.668
+    },
+    "definition": {
+      "rel_pct": 3.86,
+      "nonrel_pct": 1.16,
+      "lift": 3.341
+    },
+    "detail": {
+      "rel_pct": 2.28,
+      "nonrel_pct": 1.19,
+      "lift": 1.91
+    },
+    "origin": {
+      "rel_pct": 1.26,
+      "nonrel_pct": 0.61,
+      "lift": 2.062
+    },
+    "qa": {
+      "rel_pct": 0.3,
+      "nonrel_pct": 0.17,
+      "lift": 1.778
+    },
+    "summary": {
+      "rel_pct": 0.34,
+      "nonrel_pct": 0.16,
+      "lift": 2.12
+    },
+    "caution": {
+      "rel_pct": 1.54,
+      "nonrel_pct": 0.77,
+      "lift": 1.984
+    },
+    "comparison": {
+      "rel_pct": 1.42,
+      "nonrel_pct": 0.53,
+      "lift": 2.687
+    },
+    "procedure": {
+      "rel_pct": 1.42,
+      "nonrel_pct": 0.51,
+      "lift": 2.765
+    },
+    "cause": {
+      "rel_pct": 4.56,
+      "nonrel_pct": 1.45,
+      "lift": 3.149
+    }
+  }
+}

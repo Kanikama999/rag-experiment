@@ -29,7 +29,7 @@ narrative(クエリ) --[LLMでQuery2doc疑似文書生成]--> multi_query2doc_*.
                               qrelsで採点(recall/nDCG/precision)
 ```
 
-もう一段階として、narrativeを複数の Decomposed_Query（簡潔な質問文）に分解し、
+もう一段階として、narrativeを複数の Subquery（簡潔な質問文）に分解し、
 質問ごとにQuery2doc疑似文書を1本ずつ生成する実験系列もある。
 
 オラクル実験は、LLM生成の疑似文書の代わりに**TRECの人間が正解判定した本物のセグメント
@@ -65,7 +65,7 @@ experiments/
    zero-shot→few-shot（(query, document)の例を3件添付）に変更 → `experiments/gemini_fewshot/`（現行）
 
 **結論（2026-08-30時点）**: narrativeを分解しない方式（`query2doc_k`）の方が、
-分解する方式（Decomposed_Query系）より全指標で一貫して優位。few-shot化・
+分解する方式（Subquery系）より全指標で一貫して優位。few-shot化・
 QUERY_REPEAT=5はどちらの方式にも効くが、優劣自体は逆転しない。詳細は
 [`query2doc_bm25_experiment_summary.md`](query2doc_bm25_experiment_summary.md)参照。
 

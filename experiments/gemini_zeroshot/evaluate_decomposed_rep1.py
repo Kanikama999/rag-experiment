@@ -1,9 +1,9 @@
 """
-narrative を Decomposed_Query（分解した簡潔な質問文）に分割し、各 Decomposed_Query
+narrative を Subquery（分解した簡潔な質問文）に分割し、各 Subquery
 1問につき Query2doc 疑似文書を1本生成したもの（decomposed_query2doc_expansion.py の出力）を使う評価。
 
 evaluate_rep1.py の query2doc_k と同様、各 Query2doc 疑似文書を narrative（元クエリ）と連結してから
-検索し、トピック内の全 Decomposed_Query 分を RRF 融合する方式（decomposed_query2doc）。
+検索し、トピック内の全 Subquery 分を RRF 融合する方式（decomposed_query2doc）。
 
 使い方:
     python evaluate_decomposed_rep1.py

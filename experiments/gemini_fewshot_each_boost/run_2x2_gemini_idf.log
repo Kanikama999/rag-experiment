@@ -1,0 +1,79 @@
+読み込み中... model=gemini weighting=idf
+疑似文書がある 105 クエリ
+条件: baseline, champion_ref, tw_uniform, tw_uniform_posboost, tw_weighted, tw_weighted_posboost
+TOPK=1000 RETRIEVE_K=1000 QUERY_REPEAT=5 SPAN_END=100 SPAN_BOOST=15.0 TEMPERATURE=0.2
+========================================================================
+項重みとspan_termsを準備中...
+  10/105 (7s)  20/105 (13s)  30/105 (17s)  40/105 (20s)  50/105 (23s)  60/105 (26s)  70/105 (28s)  80/105 (30s)  90/105 (33s)  100/105 (34s)  105/105 (35s)
+  疑似文書 451 本、平均 4.3 本/トピック
+  baseline: 10/105 (5s)  baseline: 20/105 (11s)  baseline: 30/105 (17s)  baseline: 40/105 (22s)  baseline: 50/105 (27s)  baseline: 60/105 (33s)  baseline: 70/105 (38s)  baseline: 80/105 (43s)  baseline: 90/105 (48s)  baseline: 100/105 (53s)  baseline: 105/105 (55s)
+  champion_ref: 10/105 (105s)  champion_ref: 20/105 (224s)  champion_ref: 30/105 (352s)  champion_ref: 40/105 (460s)  champion_ref: 50/105 (586s)  champion_ref: 60/105 (744s)  champion_ref: 70/105 (894s)  champion_ref: 80/105 (1040s)  champion_ref: 90/105 (1158s)  champion_ref: 100/105 (1285s)  champion_ref: 105/105 (1336s)
+  tw_uniform: 10/105 (64s)  tw_uniform: 20/105 (142s)  tw_uniform: 30/105 (222s)  tw_uniform: 40/105 (287s)  tw_uniform: 50/105 (356s)  tw_uniform: 60/105 (439s)  tw_uniform: 70/105 (512s)  tw_uniform: 80/105 (586s)  tw_uniform: 90/105 (654s)  tw_uniform: 100/105 (721s)  tw_uniform: 105/105 (749s)
+  tw_uniform_posboost: 10/105 (144s)  tw_uniform_posboost: 20/105 (315s)  tw_uniform_posboost: 30/105 (485s)  tw_uniform_posboost: 40/105 (628s)  tw_uniform_posboost: 50/105 (782s)  tw_uniform_posboost: 60/105 (950s)  tw_uniform_posboost: 70/105 (1105s)  tw_uniform_posboost: 80/105 (1252s)  tw_uniform_posboost: 90/105 (1398s)  tw_uniform_posboost: 100/105 (1541s)  tw_uniform_posboost: 105/105 (1599s)
+  tw_weighted: 10/105 (55s)  tw_weighted: 20/105 (126s)  tw_weighted: 30/105 (199s)  tw_weighted: 40/105 (257s)  tw_weighted: 50/105 (321s)  tw_weighted: 60/105 (395s)  tw_weighted: 70/105 (462s)  tw_weighted: 80/105 (527s)  tw_weighted: 90/105 (584s)  tw_weighted: 100/105 (639s)  tw_weighted: 105/105 (661s)
+  tw_weighted_posboost: 10/105 (133s)  tw_weighted_posboost: 20/105 (296s)  tw_weighted_posboost: 30/105 (467s)  tw_weighted_posboost: 40/105 (606s)  tw_weighted_posboost: 50/105 (741s)  tw_weighted_posboost: 60/105 (885s)  tw_weighted_posboost: 70/105 (1016s)  tw_weighted_posboost: 80/105 (1144s)  tw_weighted_posboost: 90/105 (1277s)  tw_weighted_posboost: 100/105 (1408s)  tw_weighted_posboost: 105/105 (1458s)
+  bm25_body: 検索 105 回 / キャッシュヒット 0 回
+  bm25_fielded_weighted_posboost: 検索 1804 回 / キャッシュヒット 0 回
+  bm25_equalweight_posboost_discourseboost: 検索 451 回 / キャッシュヒット 0 回
+最終採点対象: 105 クエリ（全条件共通）
+
+### baseline ###
+[baseline / coverage] n=22  recall_100=0.0942  recall_1000=0.2884  ndcg_cut_10=0.1569  P_100=0.1505
+[baseline / consensus] n=105  recall_100=0.0327  recall_1000=0.1495  ndcg_cut_10=0.2649  P_100=0.3737
+
+### champion_ref ###
+[champion_ref / coverage] n=22  recall_100=0.2373  recall_1000=0.5995  ndcg_cut_10=0.4049  P_100=0.3768
+[champion_ref / consensus] n=105  recall_100=0.0689  recall_1000=0.3095  ndcg_cut_10=0.5251  P_100=0.7769
+
+### tw_uniform ###
+[tw_uniform / coverage] n=22  recall_100=0.1922  recall_1000=0.5342  ndcg_cut_10=0.4092  P_100=0.2973
+[tw_uniform / consensus] n=105  recall_100=0.0587  recall_1000=0.2556  ndcg_cut_10=0.4765  P_100=0.6644
+
+### tw_uniform_posboost ###
+[tw_uniform_posboost / coverage] n=22  recall_100=0.2378  recall_1000=0.5984  ndcg_cut_10=0.4049  P_100=0.3777
+[tw_uniform_posboost / consensus] n=105  recall_100=0.0690  recall_1000=0.3095  ndcg_cut_10=0.5257  P_100=0.7770
+
+### tw_weighted ###
+[tw_weighted / coverage] n=22  recall_100=0.1973  recall_1000=0.5537  ndcg_cut_10=0.4053  P_100=0.3050
+[tw_weighted / consensus] n=105  recall_100=0.0584  recall_1000=0.2605  ndcg_cut_10=0.4658  P_100=0.6610
+
+### tw_weighted_posboost ###
+[tw_weighted_posboost / coverage] n=22  recall_100=0.2375  recall_1000=0.6208  ndcg_cut_10=0.4154  P_100=0.3782
+[tw_weighted_posboost / consensus] n=105  recall_100=0.0690  recall_1000=0.3176  ndcg_cut_10=0.5182  P_100=0.7788
+
+========================================================================
+SUMMARY  model=gemini weighting=idf  対象 105 クエリ
+
+[coverage]
+method                  recall@100       recall@1000      nDCG@10          precision@100    
+--------------------------------------------------------------------------------------------
+baseline                0.0942           0.2884           0.1569           0.1505           
+champion_ref            0.2373 (+0.1431) 0.5995 (+0.3110) 0.4049 (+0.2480) 0.3768 (+0.2264) 
+tw_uniform              0.1922 (+0.0980) 0.5342 (+0.2457) 0.4092 (+0.2523) 0.2973 (+0.1468) 
+tw_uniform_posboost     0.2378 (+0.1435) 0.5984 (+0.3099) 0.4049 (+0.2480) 0.3777 (+0.2273) 
+tw_weighted             0.1973 (+0.1031) 0.5537 (+0.2653) 0.4053 (+0.2484) 0.3050 (+0.1545) 
+tw_weighted_posboost    0.2375 (+0.1433) 0.6208 (+0.3324) 0.4154 (+0.2585) 0.3782 (+0.2277) 
+
+  [coverage / 交互作用] posboostによる改善幅
+    recall@100     重み付けなし +0.0455 / 重み付けあり +0.0402  (差 -0.0053)
+    recall@1000    重み付けなし +0.0642 / 重み付けあり +0.0671  (差 +0.0029)
+    nDCG@10        重み付けなし -0.0043 / 重み付けあり +0.0101  (差 +0.0144)
+    precision@100  重み付けなし +0.0805 / 重み付けあり +0.0732  (差 -0.0073)
+
+[consensus]
+method                  recall@100       recall@1000      nDCG@10          precision@100    
+--------------------------------------------------------------------------------------------
+baseline                0.0327           0.1495           0.2649           0.3737           
+champion_ref            0.0689 (+0.0362) 0.3095 (+0.1601) 0.5251 (+0.2602) 0.7769 (+0.4031) 
+tw_uniform              0.0587 (+0.0259) 0.2556 (+0.1061) 0.4765 (+0.2116) 0.6644 (+0.2907) 
+tw_uniform_posboost     0.0690 (+0.0362) 0.3095 (+0.1600) 0.5257 (+0.2607) 0.7770 (+0.4033) 
+tw_weighted             0.0584 (+0.0257) 0.2605 (+0.1110) 0.4658 (+0.2009) 0.6610 (+0.2872) 
+tw_weighted_posboost    0.0690 (+0.0362) 0.3176 (+0.1681) 0.5182 (+0.2533) 0.7788 (+0.4050) 
+
+  [consensus / 交互作用] posboostによる改善幅
+    recall@100     重み付けなし +0.0103 / 重み付けあり +0.0105  (差 +0.0003)
+    recall@1000    重み付けなし +0.0539 / 重み付けあり +0.0571  (差 +0.0032)
+    nDCG@10        重み付けなし +0.0491 / 重み付けあり +0.0524  (差 +0.0032)
+    precision@100  重み付けなし +0.1127 / 重み付けあり +0.1178  (差 +0.0051)
+========================================================================
+集計値を保存: /home/takeuchi/rag-experiment-doc/experiments/gemini_fewshot_each_boost/termweight_posboost_2x2_gemini_idf_rep5.json

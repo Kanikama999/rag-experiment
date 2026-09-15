@@ -1,0 +1,56 @@
+読み込み中...
+オラクル素材があるトピック: 22
+条件: baseline, oracle_flat, long_pos_fielded, champion, oracle_matched, oracle_body, oracle_rich
+RETRIEVE_K=1000 QUERY_REPEAT=5 SPAN_END=100 SPAN_BOOST=15.0 ORACLE_FLAT_K=10 ORACLE_SEGS_PER_SUB=3
+========================================================================
+  baseline: 5/22 (9s)  baseline: 10/22 (17s)  baseline: 15/22 (28s)  baseline: 20/22 (36s)  baseline: 22/22 (40s)
+  oracle_flat: 5/22 (162s)  oracle_flat: 10/22 (362s)  oracle_flat: 15/22 (562s)  oracle_flat: 20/22 (866s)  oracle_flat: 22/22 (998s)
+  long_pos_fielded: 5/22 (163s)  long_pos_fielded: 10/22 (327s)  long_pos_fielded: 15/22 (466s)  long_pos_fielded: 20/22 (575s)  long_pos_fielded: 22/22 (619s)
+  champion: 5/22 (150s)  champion: 10/22 (291s)  champion: 15/22 (410s)  champion: 20/22 (535s)  champion: 22/22 (586s)
+  oracle_matched: 5/22 (117s)  oracle_matched: 10/22 (236s)  oracle_matched: 15/22 (345s)  oracle_matched: 20/22 (470s)  oracle_matched: 22/22 (523s)
+  oracle_body: 5/22 (140s)  oracle_body: 10/22 (280s)  oracle_body: 15/22 (422s)  oracle_body: 20/22 (575s)  oracle_body: 22/22 (623s)
+  oracle_rich: 5/22 (199s)  oracle_rich: 10/22 (435s)  oracle_rich: 15/22 (648s)  oracle_rich: 20/22 (904s)  oracle_rich: 22/22 (1009s)
+
+========================================================================
+SUMMARY  対象 22 トピック
+
+[coverage]
+method            recall@100     recall@1000    nDCG@10        precision@100  n
+-------------------------------------------------------------------------------
+baseline          0.0942         0.2884         0.1569         0.1505         22
+oracle_flat       0.1235         0.3922         0.2735         0.1914         22
+long_pos_fielded  0.2110         0.5311         0.3613         0.3409         22
+champion          0.2373         0.5995         0.4049         0.3768         22
+oracle_matched    0.2479         0.6030         0.4442         0.3973         22
+oracle_body       0.2517         0.6142         0.4417         0.4005         22
+oracle_rich       0.2361         0.5987         0.4517         0.3709         22
+
+  [coverage] champion との差
+    baseline           recall@100: -0.1431  recall@1000: -0.3110  nDCG@10: -0.2480  precision@100: -0.2264
+    oracle_flat        recall@100: -0.1138  recall@1000: -0.2073  nDCG@10: -0.1313  precision@100: -0.1855
+    long_pos_fielded   recall@100: -0.0263  recall@1000: -0.0683  nDCG@10: -0.0436  precision@100: -0.0359
+    oracle_matched     recall@100: +0.0105  recall@1000: +0.0035  nDCG@10: +0.0394  precision@100: +0.0205
+    oracle_body        recall@100: +0.0144  recall@1000: +0.0148  nDCG@10: +0.0368  precision@100: +0.0236
+    oracle_rich        recall@100: -0.0013  recall@1000: -0.0008  nDCG@10: +0.0469  precision@100: -0.0059
+
+[consensus]
+method            recall@100     recall@1000    nDCG@10        precision@100  n
+-------------------------------------------------------------------------------
+baseline          0.0412         0.1673         0.2863         0.3909         22
+oracle_flat       0.0473         0.2057         0.3620         0.4427         22
+long_pos_fielded  0.0779         0.3034         0.4947         0.7377         22
+champion          0.0801         0.3367         0.5074         0.7709         22
+oracle_matched    0.0827         0.3488         0.5344         0.7950         22
+oracle_body       0.0830         0.3541         0.5283         0.7982         22
+oracle_rich       0.0786         0.3464         0.4933         0.7414         22
+
+  [consensus] champion との差
+    baseline           recall@100: -0.0390  recall@1000: -0.1694  nDCG@10: -0.2211  precision@100: -0.3800
+    oracle_flat        recall@100: -0.0328  recall@1000: -0.1311  nDCG@10: -0.1454  precision@100: -0.3282
+    long_pos_fielded   recall@100: -0.0022  recall@1000: -0.0333  nDCG@10: -0.0127  precision@100: -0.0332
+    oracle_matched     recall@100: +0.0025  recall@1000: +0.0121  nDCG@10: +0.0270  precision@100: +0.0241
+    oracle_body        recall@100: +0.0028  recall@1000: +0.0174  nDCG@10: +0.0209  precision@100: +0.0273
+    oracle_rich        recall@100: -0.0015  recall@1000: +0.0097  nDCG@10: -0.0141  precision@100: -0.0295
+========================================================================
+
+集計値を保存: /home/takeuchi/rag-experiment-doc/experiments/gemini_fewshot_each_boost/oracle_current_pipeline_result.json

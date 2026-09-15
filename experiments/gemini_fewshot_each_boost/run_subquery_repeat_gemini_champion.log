@@ -1,0 +1,79 @@
+読み込み中... model=gemini
+span_terms を準備中...
+  105 クエリ / 疑似文書 451 本
+条件: baseline, n5_s1, n5_s5, n0_s1, n0_s5   検索構成: champion
+TOPK=1000 RETRIEVE_K=1000 SPAN_END=100 SPAN_BOOST=15.0
+========================================================================
+  baseline: 10/105 (4s)  baseline: 20/105 (9s)  baseline: 30/105 (13s)  baseline: 40/105 (17s)  baseline: 50/105 (21s)  baseline: 60/105 (26s)  baseline: 70/105 (29s)  baseline: 80/105 (33s)  baseline: 90/105 (37s)  baseline: 100/105 (41s)  baseline: 105/105 (42s)
+  n5_s1: 10/105 (131s)  n5_s1: 20/105 (301s)  n5_s1: 30/105 (477s)  n5_s1: 40/105 (613s)  n5_s1: 50/105 (752s)  n5_s1: 60/105 (910s)  n5_s1: 70/105 (1058s)  n5_s1: 80/105 (1196s)  n5_s1: 90/105 (1329s)  n5_s1: 100/105 (1466s)  n5_s1: 105/105 (1520s)
+  n5_s5: 10/105 (129s)  n5_s5: 20/105 (277s)  n5_s5: 30/105 (439s)  n5_s5: 40/105 (578s)  n5_s5: 50/105 (718s)  n5_s5: 60/105 (874s)  n5_s5: 70/105 (1001s)  n5_s5: 80/105 (1117s)  n5_s5: 90/105 (1238s)  n5_s5: 100/105 (1346s)  n5_s5: 105/105 (1393s)
+  n0_s1: 10/105 (112s)  n0_s1: 20/105 (237s)  n0_s1: 30/105 (366s)  n0_s1: 40/105 (471s)  n0_s1: 50/105 (601s)  n0_s1: 60/105 (751s)  n0_s1: 70/105 (881s)  n0_s1: 80/105 (1006s)  n0_s1: 90/105 (1117s)  n0_s1: 100/105 (1219s)  n0_s1: 105/105 (1261s)
+  n0_s5: 10/105 (100s)  n0_s5: 20/105 (221s)  n0_s5: 30/105 (349s)  n0_s5: 40/105 (448s)  n0_s5: 50/105 (558s)  n0_s5: 60/105 (669s)  n0_s5: 70/105 (769s)  n0_s5: 80/105 (877s)  n0_s5: 90/105 (984s)  n0_s5: 100/105 (1084s)  n0_s5: 105/105 (1128s)
+  bm25_body: 検索 105 回 / キャッシュヒット 0 回
+  bm25_equalweight_posboost_discourseboost: 検索 1804 回 / キャッシュヒット 0 回
+最終採点対象: 105 クエリ（全条件共通）
+
+### baseline ###
+[baseline / coverage] n=22  recall_100=0.0942  recall_1000=0.2884  ndcg_cut_10=0.1569  P_100=0.1505
+[baseline / consensus] n=105  recall_100=0.0327  recall_1000=0.1495  ndcg_cut_10=0.2649  P_100=0.3737
+
+### n5_s1 ###
+[n5_s1 / coverage] n=22  recall_100=0.2373  recall_1000=0.5995  ndcg_cut_10=0.4049  P_100=0.3768
+[n5_s1 / consensus] n=105  recall_100=0.0689  recall_1000=0.3095  ndcg_cut_10=0.5251  P_100=0.7769
+
+### n5_s5 ###
+[n5_s5 / coverage] n=22  recall_100=0.2429  recall_1000=0.6068  ndcg_cut_10=0.4149  P_100=0.3882
+[n5_s5 / consensus] n=105  recall_100=0.0693  recall_1000=0.3111  ndcg_cut_10=0.5177  P_100=0.7792
+
+### n0_s1 ###
+[n0_s1 / coverage] n=22  recall_100=0.2014  recall_1000=0.5695  ndcg_cut_10=0.3359  P_100=0.3191
+[n0_s1 / consensus] n=105  recall_100=0.0598  recall_1000=0.2737  ndcg_cut_10=0.3906  P_100=0.6664
+
+### n0_s5 ###
+[n0_s5 / coverage] n=22  recall_100=0.2254  recall_1000=0.5843  ndcg_cut_10=0.3930  P_100=0.3573
+[n0_s5 / consensus] n=105  recall_100=0.0641  recall_1000=0.2847  ndcg_cut_10=0.4324  P_100=0.7128
+
+========================================================================
+SUMMARY  model=gemini retrieval=champion  対象 105 クエリ
+
+[coverage]
+method      recall@100       recall@1000      nDCG@10          precision@100    
+--------------------------------------------------------------------------------
+baseline    0.0942           0.2884           0.1569           0.1505           
+n5_s1       0.2373 (+0.1431) 0.5995 (+0.3110) 0.4049 (+0.2480) 0.3768 (+0.2264) 
+n5_s5       0.2429 (+0.1486) 0.6068 (+0.3184) 0.4149 (+0.2580) 0.3882 (+0.2377) 
+n0_s1       0.2014 (+0.1072) 0.5695 (+0.2810) 0.3359 (+0.1790) 0.3191 (+0.1686) 
+n0_s5       0.2254 (+0.1312) 0.5843 (+0.2959) 0.3930 (+0.2361) 0.3573 (+0.2068) 
+
+  [coverage / 2x2] Subquery を1回→5回にしたときの改善幅
+    recall@100     narrativeあり +0.0056 / narrativeなし +0.0240
+    recall@1000    narrativeあり +0.0074 / narrativeなし +0.0148
+    nDCG@10        narrativeあり +0.0101 / narrativeなし +0.0572
+    precision@100  narrativeあり +0.0114 / narrativeなし +0.0382
+  [coverage / 2x2] narrative を外したときの変化
+    recall@100     Subquery×1 -0.0359 / Subquery×5 -0.0175
+    recall@1000    Subquery×1 -0.0300 / Subquery×5 -0.0225
+    nDCG@10        Subquery×1 -0.0690 / Subquery×5 -0.0219
+    precision@100  Subquery×1 -0.0577 / Subquery×5 -0.0309
+
+[consensus]
+method      recall@100       recall@1000      nDCG@10          precision@100    
+--------------------------------------------------------------------------------
+baseline    0.0327           0.1495           0.2649           0.3737           
+n5_s1       0.0689 (+0.0362) 0.3095 (+0.1601) 0.5251 (+0.2602) 0.7769 (+0.4031) 
+n5_s5       0.0693 (+0.0365) 0.3111 (+0.1616) 0.5177 (+0.2528) 0.7792 (+0.4055) 
+n0_s1       0.0598 (+0.0271) 0.2737 (+0.1242) 0.3906 (+0.1257) 0.6664 (+0.2927) 
+n0_s5       0.0641 (+0.0313) 0.2847 (+0.1353) 0.4324 (+0.1675) 0.7128 (+0.3390) 
+
+  [consensus / 2x2] Subquery を1回→5回にしたときの改善幅
+    recall@100     narrativeあり +0.0003 / narrativeなし +0.0042
+    recall@1000    narrativeあり +0.0016 / narrativeなし +0.0110
+    nDCG@10        narrativeあり -0.0074 / narrativeなし +0.0418
+    precision@100  narrativeあり +0.0024 / narrativeなし +0.0464
+  [consensus / 2x2] narrative を外したときの変化
+    recall@100     Subquery×1 -0.0091 / Subquery×5 -0.0052
+    recall@1000    Subquery×1 -0.0358 / Subquery×5 -0.0264
+    nDCG@10        Subquery×1 -0.1344 / Subquery×5 -0.0852
+    precision@100  Subquery×1 -0.1105 / Subquery×5 -0.0665
+========================================================================
+集計値を保存: /home/takeuchi/rag-experiment-doc/experiments/gemini_fewshot_each_boost/subquery_repeat_2x2_gemini_champion.json

@@ -1,0 +1,79 @@
+読み込み中... model=gpt56terra weighting=confidence
+疑似文書がある 105 クエリ
+条件: baseline, champion_ref, tw_uniform, tw_uniform_posboost, tw_weighted, tw_weighted_posboost
+TOPK=1000 RETRIEVE_K=1000 QUERY_REPEAT=5 SPAN_END=100 SPAN_BOOST=15.0 TEMPERATURE=0.2
+========================================================================
+項重みとspan_termsを準備中...
+  10/105 (0s)  20/105 (1s)  30/105 (1s)  40/105 (2s)  50/105 (2s)  60/105 (2s)  70/105 (2s)  80/105 (3s)  90/105 (3s)  100/105 (3s)  105/105 (3s)
+  疑似文書 451 本、平均 4.3 本/トピック
+  baseline: 10/105 (4s)  baseline: 20/105 (8s)  baseline: 30/105 (12s)  baseline: 40/105 (16s)  baseline: 50/105 (20s)  baseline: 60/105 (25s)  baseline: 70/105 (28s)  baseline: 80/105 (32s)  baseline: 90/105 (36s)  baseline: 100/105 (40s)  baseline: 105/105 (42s)
+  champion_ref: 10/105 (134s)  champion_ref: 20/105 (294s)  champion_ref: 30/105 (467s)  champion_ref: 40/105 (606s)  champion_ref: 50/105 (753s)  champion_ref: 60/105 (920s)  champion_ref: 70/105 (1061s)  champion_ref: 80/105 (1189s)  champion_ref: 90/105 (1321s)  champion_ref: 100/105 (1432s)  champion_ref: 105/105 (1483s)
+  tw_uniform: 10/105 (72s)  tw_uniform: 20/105 (161s)  tw_uniform: 30/105 (252s)  tw_uniform: 40/105 (327s)  tw_uniform: 50/105 (408s)  tw_uniform: 60/105 (498s)  tw_uniform: 70/105 (581s)  tw_uniform: 80/105 (662s)  tw_uniform: 90/105 (735s)  tw_uniform: 100/105 (804s)  tw_uniform: 105/105 (835s)
+  tw_uniform_posboost: 10/105 (131s)  tw_uniform_posboost: 20/105 (278s)  tw_uniform_posboost: 30/105 (416s)  tw_uniform_posboost: 40/105 (534s)  tw_uniform_posboost: 50/105 (685s)  tw_uniform_posboost: 60/105 (866s)  tw_uniform_posboost: 70/105 (1017s)  tw_uniform_posboost: 80/105 (1171s)  tw_uniform_posboost: 90/105 (1298s)  tw_uniform_posboost: 100/105 (1431s)  tw_uniform_posboost: 105/105 (1483s)
+  tw_weighted: 10/105 (68s)  tw_weighted: 20/105 (153s)  tw_weighted: 30/105 (241s)  tw_weighted: 40/105 (307s)  tw_weighted: 50/105 (382s)  tw_weighted: 60/105 (469s)  tw_weighted: 70/105 (546s)  tw_weighted: 80/105 (620s)  tw_weighted: 90/105 (687s)  tw_weighted: 100/105 (751s)  tw_weighted: 105/105 (778s)
+  tw_weighted_posboost: 10/105 (139s)  tw_weighted_posboost: 20/105 (303s)  tw_weighted_posboost: 30/105 (469s)  tw_weighted_posboost: 40/105 (599s)  tw_weighted_posboost: 50/105 (731s)  tw_weighted_posboost: 60/105 (881s)  tw_weighted_posboost: 70/105 (1024s)  tw_weighted_posboost: 80/105 (1172s)  tw_weighted_posboost: 90/105 (1321s)  tw_weighted_posboost: 100/105 (1456s)  tw_weighted_posboost: 105/105 (1516s)
+  bm25_body: 検索 105 回 / キャッシュヒット 0 回
+  bm25_fielded_weighted_posboost: 検索 1804 回 / キャッシュヒット 0 回
+  bm25_equalweight_posboost_discourseboost: 検索 451 回 / キャッシュヒット 0 回
+最終採点対象: 105 クエリ（全条件共通）
+
+### baseline ###
+[baseline / coverage] n=22  recall_100=0.0942  recall_1000=0.2884  ndcg_cut_10=0.1569  P_100=0.1505
+[baseline / consensus] n=105  recall_100=0.0327  recall_1000=0.1495  ndcg_cut_10=0.2649  P_100=0.3737
+
+### champion_ref ###
+[champion_ref / coverage] n=22  recall_100=0.2375  recall_1000=0.6120  ndcg_cut_10=0.4039  P_100=0.3768
+[champion_ref / consensus] n=105  recall_100=0.0689  recall_1000=0.3141  ndcg_cut_10=0.5174  P_100=0.7744
+
+### tw_uniform ###
+[tw_uniform / coverage] n=22  recall_100=0.1964  recall_1000=0.5459  ndcg_cut_10=0.3994  P_100=0.3059
+[tw_uniform / consensus] n=105  recall_100=0.0591  recall_1000=0.2601  ndcg_cut_10=0.4792  P_100=0.6662
+
+### tw_uniform_posboost ###
+[tw_uniform_posboost / coverage] n=22  recall_100=0.2374  recall_1000=0.6112  ndcg_cut_10=0.4031  P_100=0.3764
+[tw_uniform_posboost / consensus] n=105  recall_100=0.0688  recall_1000=0.3140  ndcg_cut_10=0.5185  P_100=0.7742
+
+### tw_weighted ###
+[tw_weighted / coverage] n=22  recall_100=0.2017  recall_1000=0.5570  ndcg_cut_10=0.4105  P_100=0.3155
+[tw_weighted / consensus] n=105  recall_100=0.0603  recall_1000=0.2664  ndcg_cut_10=0.4841  P_100=0.6792
+
+### tw_weighted_posboost ###
+[tw_weighted_posboost / coverage] n=22  recall_100=0.2379  recall_1000=0.6123  ndcg_cut_10=0.4044  P_100=0.3791
+[tw_weighted_posboost / consensus] n=105  recall_100=0.0691  recall_1000=0.3160  ndcg_cut_10=0.5197  P_100=0.7774
+
+========================================================================
+SUMMARY  model=gpt56terra weighting=confidence  対象 105 クエリ
+
+[coverage]
+method                  recall@100       recall@1000      nDCG@10          precision@100    
+--------------------------------------------------------------------------------------------
+baseline                0.0942           0.2884           0.1569           0.1505           
+champion_ref            0.2375 (+0.1433) 0.6120 (+0.3236) 0.4039 (+0.2470) 0.3768 (+0.2264) 
+tw_uniform              0.1964 (+0.1022) 0.5459 (+0.2575) 0.3994 (+0.2425) 0.3059 (+0.1555) 
+tw_uniform_posboost     0.2374 (+0.1431) 0.6112 (+0.3228) 0.4031 (+0.2462) 0.3764 (+0.2259) 
+tw_weighted             0.2017 (+0.1075) 0.5570 (+0.2686) 0.4105 (+0.2536) 0.3155 (+0.1650) 
+tw_weighted_posboost    0.2379 (+0.1437) 0.6123 (+0.3238) 0.4044 (+0.2475) 0.3791 (+0.2286) 
+
+  [coverage / 交互作用] posboostによる改善幅
+    recall@100     重み付けなし +0.0409 / 重み付けあり +0.0362  (差 -0.0048)
+    recall@1000    重み付けなし +0.0653 / 重み付けあり +0.0552  (差 -0.0100)
+    nDCG@10        重み付けなし +0.0037 / 重み付けあり -0.0061  (差 -0.0098)
+    precision@100  重み付けなし +0.0705 / 重み付けあり +0.0636  (差 -0.0068)
+
+[consensus]
+method                  recall@100       recall@1000      nDCG@10          precision@100    
+--------------------------------------------------------------------------------------------
+baseline                0.0327           0.1495           0.2649           0.3737           
+champion_ref            0.0689 (+0.0361) 0.3141 (+0.1646) 0.5174 (+0.2524) 0.7744 (+0.4007) 
+tw_uniform              0.0591 (+0.0264) 0.2601 (+0.1107) 0.4792 (+0.2142) 0.6662 (+0.2925) 
+tw_uniform_posboost     0.0688 (+0.0361) 0.3140 (+0.1645) 0.5185 (+0.2536) 0.7742 (+0.4005) 
+tw_weighted             0.0603 (+0.0275) 0.2664 (+0.1169) 0.4841 (+0.2192) 0.6792 (+0.3055) 
+tw_weighted_posboost    0.0691 (+0.0363) 0.3160 (+0.1665) 0.5197 (+0.2548) 0.7774 (+0.4037) 
+
+  [consensus / 交互作用] posboostによる改善幅
+    recall@100     重み付けなし +0.0097 / 重み付けあり +0.0088  (差 -0.0009)
+    recall@1000    重み付けなし +0.0539 / 重み付けあり +0.0496  (差 -0.0043)
+    nDCG@10        重み付けなし +0.0393 / 重み付けあり +0.0356  (差 -0.0038)
+    precision@100  重み付けなし +0.1080 / 重み付けあり +0.0982  (差 -0.0098)
+========================================================================
+集計値を保存: /home/takeuchi/rag-experiment-doc/experiments/gemini_fewshot_each_boost/termweight_posboost_2x2_gpt56terra_confidence_rep5.json

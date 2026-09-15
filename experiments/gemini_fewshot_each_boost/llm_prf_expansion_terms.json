@@ -1,0 +1,5571 @@
+{
+  "config": {
+    "model": "openai/gpt-5.6-terra",
+    "reasoning": {
+      "effort": "none"
+    },
+    "temperature": 1.0,
+    "query_repeat": 5,
+    "prf_depth": 10,
+    "prf_terms": 10,
+    "field_boosts": {
+      "title": 2,
+      "headings": 1,
+      "body": 1
+    },
+    "prompt_hash": "fa26d828b9c249e2"
+  },
+  "results": {
+    "100": {
+      "0": [
+        "employment discrimination",
+        "equal employment opportunity commission",
+        "title vii",
+        "age discrimination in employment act",
+        "protected categories",
+        "sexual harassment",
+        "unequal pay",
+        "discriminatory hiring",
+        "fair housing",
+        "intersectional discrimination"
+      ],
+      "1": [
+        "institutional racism",
+        "structural racism",
+        "internalized oppression",
+        "employment discrimination",
+        "housing discrimination",
+        "health disparities",
+        "economic oppression",
+        "racial inequality",
+        "intersectionality",
+        "structural violence"
+      ],
+      "2": [
+        "title vii",
+        "equal employment opportunity commission",
+        "civil rights act of 1991",
+        "americans with disabilities act",
+        "age discrimination in employment act",
+        "genetic information nondiscrimination act",
+        "equal pay act",
+        "affirmative action",
+        "fair housing act",
+        "religious accommodation"
+      ]
+    },
+    "1001": {
+      "0": [
+        "greenhouse effect",
+        "greenhouse gas emissions",
+        "fossil fuel consumption",
+        "anthropogenic emissions",
+        "carbon sources and sinks",
+        "atmospheric co2 concentrations",
+        "industrial revolution",
+        "energy production and consumption",
+        "deforestation",
+        "earth's energy budget"
+      ],
+      "1": [
+        "ecosystem impacts",
+        "biodiversity loss",
+        "species migration",
+        "species adaptation",
+        "coral bleaching",
+        "ocean acidification",
+        "invasive species",
+        "extinction risk",
+        "pests and disease",
+        "changing ecosystems"
+      ],
+      "2": [
+        "ocean acidification",
+        "ocean warming",
+        "ocean deoxygenation",
+        "coral bleaching",
+        "calcifying organisms",
+        "marine biodiversity",
+        "sea level rise",
+        "ocean circulation",
+        "dissolved oxygen",
+        "multiple stressors"
+      ],
+      "3": [
+        "drought",
+        "increased evaporation",
+        "precipitation changes",
+        "extreme weather",
+        "wildfires",
+        "dust clouds",
+        "desert expansion",
+        "species migration",
+        "biodiversity",
+        "invasive species"
+      ]
+    },
+    "102": {
+      "0": [
+        "bubonic plague",
+        "pneumonic plague",
+        "septicaemic plague",
+        "buboes",
+        "swollen lymph nodes",
+        "miasma theory",
+        "bloodletting",
+        "herbal remedies",
+        "flagellation",
+        "medieval medicine"
+      ],
+      "1": [
+        "bubonic plague",
+        "flagellants",
+        "persecutions",
+        "labor shortages",
+        "peasantry",
+        "urban workers",
+        "popular rebellion",
+        "religious change",
+        "cultural effect",
+        "black death in literature"
+      ],
+      "2": [
+        "recurrences",
+        "second plague pandemic",
+        "y pestis",
+        "disease transmission",
+        "european outbreak",
+        "population decline",
+        "plague mortality",
+        "bubonic plague"
+      ],
+      "3": [
+        "quarantine",
+        "isolation",
+        "disease prevention",
+        "bills of mortality",
+        "girolamo fracastoro",
+        "epidemiology",
+        "sanitary practices",
+        "contagion",
+        "plague control",
+        "social distancing"
+      ]
+    },
+    "125": {
+      "0": [
+        "private ownership of the means of production",
+        "free market",
+        "profit motive",
+        "economic planning",
+        "social ownership",
+        "wealth redistribution",
+        "centrally planned economies",
+        "market competition",
+        "income inequality",
+        "mixed economy"
+      ],
+      "1": [
+        "capitalist globalization",
+        "health care struggles",
+        "immigrants",
+        "economic systems",
+        "wealth redistribution",
+        "free market",
+        "private ownership",
+        "international solidarity",
+        "economic globalization",
+        "anti-monopoly program"
+      ],
+      "2": [
+        "industrial revolution",
+        "working class",
+        "labor unions",
+        "trade unions",
+        "proletariat",
+        "bourgeoisie",
+        "factory acts",
+        "economic planning",
+        "mixed economies",
+        "social democracy"
+      ],
+      "3": [
+        "economic systems",
+        "government economic intervention",
+        "social democratic mixed economies",
+        "economic planning",
+        "wealth redistribution",
+        "labor unions",
+        "social welfare",
+        "public services",
+        "state regulation",
+        "market socialism"
+      ]
+    },
+    "129": {
+      "0": [
+        "fossil fuel combustion",
+        "transportation emissions",
+        "industrial waste",
+        "sewage and wastewater",
+        "agricultural runoff",
+        "chemical fertilizers and pesticides",
+        "oil spills",
+        "plastic waste",
+        "mining operations",
+        "landfills"
+      ],
+      "1": [
+        "air pollution",
+        "water pollution",
+        "health effects",
+        "respiratory health",
+        "cardiovascular disease",
+        "ecosystem destruction",
+        "food chain disruption",
+        "economic effects",
+        "agricultural effects",
+        "toxic pollutants"
+      ],
+      "2": [
+        "air pollution",
+        "water pollution",
+        "human health",
+        "climate change",
+        "acid rain",
+        "ecosystem destruction",
+        "food chain disruption",
+        "economic effects",
+        "social prosperity",
+        "agricultural effects"
+      ],
+      "3": [
+        "clean air act",
+        "environmental justice",
+        "air toxics",
+        "environmental racism",
+        "low socioeconomic communities",
+        "water pollution legislation",
+        "epa",
+        "states and tribes",
+        "cumulative environmental burdens",
+        "drinking water access"
+      ]
+    },
+    "14": {
+      "0": [
+        "gender equity",
+        "cultural competence",
+        "inclusive excellence",
+        "race and ethnicity",
+        "sexual prejudice",
+        "stereotype threat",
+        "weight stigma",
+        "title ix",
+        "lgbtq inclusion",
+        "women's sports exposure"
+      ],
+      "1": [
+        "college athlete compensation",
+        "ncaa finances",
+        "sports sponsorship deals",
+        "athlete exploitation",
+        "name image and likeness",
+        "player compensation proposals",
+        "sports agents",
+        "athlete biometric data",
+        "publicity rights",
+        "commercialization of college sports"
+      ],
+      "2": [
+        "athlete development",
+        "intensive training",
+        "sports specialization",
+        "periodization",
+        "sport-specific training",
+        "acceleration training",
+        "mental toughness",
+        "attentional focus",
+        "behavioral coaching",
+        "mental skills training"
+      ],
+      "3": [
+        "sports globalization",
+        "mass media",
+        "commercialization of sports",
+        "national identity",
+        "sport and culture",
+        "gender and sports",
+        "race and ethnicity",
+        "elite sports systems",
+        "labour migration",
+        "professional sports"
+      ]
+    },
+    "140": {
+      "0": [
+        "apostolic age",
+        "missionary activity",
+        "paul and gentiles",
+        "roman empire",
+        "constantine",
+        "edict of thessalonica",
+        "church of the east",
+        "western missionary expansion",
+        "eastern orthodox",
+        "ethiopia"
+      ],
+      "1": [
+        "religious pluralism",
+        "secularism",
+        "ecumenism",
+        "christian apologetics",
+        "persecution of christians",
+        "christian denominations",
+        "interfaith cooperation",
+        "modernism",
+        "cultural change",
+        "syncretism"
+      ],
+      "2": [
+        "christianity and society",
+        "modern christian views",
+        "post-enlightenment christianity",
+        "religious pluralism",
+        "sociological aspects",
+        "catholicism",
+        "protestantism",
+        "cultural influence",
+        "western civilization",
+        "relationship with other religions"
+      ],
+      "3": [
+        "abrahamic religions",
+        "monotheism",
+        "trinity",
+        "jesus christ",
+        "salvation",
+        "scripture",
+        "worship and religious rites",
+        "sacraments",
+        "eschatology",
+        "religious pluralism"
+      ],
+      "4": [
+        "role of christianity in civilization",
+        "politics and law",
+        "canon law",
+        "natural law and human rights",
+        "medieval universities",
+        "christianity in the roman empire",
+        "protestant work ethic",
+        "social justice and hospitals",
+        "christian influence on education",
+        "christianity and western civilization"
+      ]
+    },
+    "144": {
+      "0": [
+        "liquidity risk",
+        "market risk",
+        "bank balance sheet",
+        "how banks go bankrupt",
+        "financial crisis",
+        "interest rate risk",
+        "unrealized losses",
+        "deposit outflows",
+        "capitalization",
+        "bank regulation"
+      ],
+      "1": [
+        "fdic deposit insurance",
+        "ncua share insurance",
+        "membership eligibility",
+        "nonprofit ownership",
+        "branch and atm networks",
+        "mobile banking technology",
+        "financial products and services",
+        "interest rates and fees",
+        "customer service",
+        "federal regulatory oversight"
+      ],
+      "2": [
+        "financial intermediaries",
+        "capital formation",
+        "credit flow",
+        "small and medium enterprises",
+        "agricultural credit",
+        "deposit mobilization",
+        "monetary and credit system",
+        "commercial lending",
+        "cooperative banking",
+        "community development lending"
+      ]
+    },
+    "147": {
+      "0": [
+        "autocracy",
+        "authoritarianism",
+        "totalitarianism",
+        "representative democracy",
+        "constitutional monarchy",
+        "direct democracy",
+        "non-democratic governments",
+        "power defined",
+        "democratic republic",
+        "governance structure"
+      ],
+      "1": [
+        "athenian democracy",
+        "roman republic",
+        "proto-democratic societies",
+        "middle ages",
+        "early modern era",
+        "constitutional democracy",
+        "representative democracy",
+        "waves of democracy",
+        "decolonisation",
+        "civil rights movements"
+      ],
+      "2": [
+        "citizen dignity",
+        "government accountability",
+        "peaceful conflict resolution",
+        "scope for rectification",
+        "political equality",
+        "meaningful voting",
+        "representative democracy",
+        "fair competition",
+        "minority rights",
+        "rule of law"
+      ],
+      "3": [
+        "parliamentary democracy",
+        "parliamentary republic",
+        "representative democracy",
+        "constitutional republic",
+        "constitutional democracy",
+        "presidential system",
+        "direct democracy",
+        "constitutional monarchy",
+        "cabinet-parliamentary government",
+        "consensus democracy"
+      ]
+    },
+    "149": {
+      "0": [
+        "human trafficking",
+        "sex trafficking",
+        "commercial sexual exploitation",
+        "prohibitionism",
+        "neo-abolitionism",
+        "coercion",
+        "exploitation",
+        "transplant tourism",
+        "organ selling",
+        "respect for autonomy"
+      ],
+      "1": [
+        "sex trafficking",
+        "trafficking for organ trade",
+        "commercial sexual exploitation",
+        "forced prostitution",
+        "transnational crime",
+        "money laundering",
+        "criminal networks",
+        "human smuggling",
+        "commercial demand for sex",
+        "children in drug trades"
+      ],
+      "2": [
+        "forced labor",
+        "sex trafficking",
+        "poverty and globalization",
+        "force fraud or coercion",
+        "vulnerable groups",
+        "commercial demand for sex",
+        "psychological trauma",
+        "economic impacts",
+        "political and institutional challenges",
+        "social norms"
+      ],
+      "3": [
+        "trafficking victims protection act",
+        "palermo protocol",
+        "prosecution protection prevention",
+        "victim identification",
+        "trauma-informed approach",
+        "anti-trafficking task forces",
+        "forced labor",
+        "sex trafficking",
+        "national human trafficking hotline",
+        "international conventions"
+      ]
+    },
+    "161": {
+      "0": [
+        "fetal personhood",
+        "bodily autonomy",
+        "right to privacy",
+        "right to life",
+        "women's equality",
+        "reproductive rights",
+        "criminalization",
+        "legalization",
+        "fetal pain",
+        "religious beliefs"
+      ],
+      "1": [
+        "criminalization",
+        "law reform",
+        "roe v. wade",
+        "religious beliefs",
+        "church and state",
+        "fetal personhood",
+        "right to privacy",
+        "abortion-rights movement",
+        "legalization",
+        "political parties"
+      ],
+      "2": [
+        "mifepristone",
+        "misoprostol",
+        "surgical abortion",
+        "in-clinic abortion",
+        "dilation and evacuation",
+        "dilation and curettage",
+        "first-trimester abortion",
+        "second-trimester abortion",
+        "abortion pill eligibility",
+        "abortion follow-up"
+      ],
+      "3": [
+        "reproductive rights",
+        "planned parenthood",
+        "naral pro-choice america",
+        "medication abortion",
+        "telemedicine abortion",
+        "abortion funding",
+        "hyde amendment",
+        "state abortion restrictions",
+        "legal protection",
+        "abortion access"
+      ]
+    },
+    "176": {
+      "0": [
+        "global burden of disease",
+        "daly",
+        "disability",
+        "depression",
+        "anxiety disorders",
+        "substance use disorders",
+        "global prevalence",
+        "economic burden",
+        "lost productivity",
+        "who"
+      ],
+      "1": [
+        "global mental health",
+        "social determinants",
+        "stigma and discrimination",
+        "mental health policy",
+        "public health",
+        "access to treatment",
+        "disease burden",
+        "health inequities",
+        "cultural considerations",
+        "community-based care"
+      ],
+      "2": [
+        "cultural bias",
+        "cultural construction of reality",
+        "cultural differences",
+        "historical development",
+        "psychiatric classification",
+        "diagnostic criteria",
+        "biomedical model",
+        "ethnocentrism",
+        "stigma",
+        "normality and abnormality"
+      ],
+      "3": [
+        "gender incongruence",
+        "dsm-5",
+        "icd-11",
+        "diagnostic classification",
+        "history of diagnosis",
+        "classification as a disorder",
+        "world health organization",
+        "gender identity",
+        "transgender healthcare",
+        "wpath standards of care"
+      ]
+    },
+    "18": {
+      "0": [
+        "geneva accords",
+        "french indochina",
+        "ho chi minh",
+        "viet minh",
+        "ngo dinh diem",
+        "cold war containment",
+        "domino theory",
+        "gulf of tonkin",
+        "south vietnam insurgency",
+        "u.s. military advisors"
+      ],
+      "1": [
+        "draft resistance",
+        "moratorium to end the war in vietnam",
+        "student activism",
+        "college campus protests",
+        "teach-ins",
+        "gulf of tonkin",
+        "tet offensive",
+        "kent state shootings",
+        "war crimes",
+        "antiwar movement"
+      ],
+      "2": [
+        "african americans",
+        "black servicemen",
+        "women",
+        "students",
+        "american veterans",
+        "vietnamese veterans",
+        "refugees and boat people",
+        "chemical defoliation",
+        "draft protests",
+        "antiwar movement"
+      ],
+      "3": [
+        "vietnam syndrome",
+        "american veterans",
+        "vietnamese veterans",
+        "refugees and boat people",
+        "chemical defoliation",
+        "agent orange",
+        "war cost",
+        "all-volunteer force",
+        "antiwar movement",
+        "popular culture"
+      ],
+      "4": [
+        "commemorating the war",
+        "historiography and memory",
+        "vietnamese veterans",
+        "american veterans",
+        "pow mia crusade",
+        "vietnam war memorial",
+        "war legacy",
+        "popular culture",
+        "lessons and legacies",
+        "vietnam syndrome"
+      ]
+    },
+    "182": {
+      "0": [
+        "self-determination theory",
+        "intrinsic and extrinsic motivation",
+        "maslow's hierarchy of needs",
+        "expectancy theory",
+        "drive-reduction theory",
+        "arousal theory",
+        "incentive theory",
+        "achievement motivation",
+        "goal-setting theory",
+        "operant conditioning"
+      ],
+      "1": [
+        "intrinsic motivation",
+        "extrinsic motivation",
+        "self-determination theory",
+        "self-efficacy",
+        "expectancy theory",
+        "goal-setting theory",
+        "reinforcement theory",
+        "achievement motivation",
+        "autonomy",
+        "psychological needs"
+      ],
+      "2": [
+        "self-determination theory",
+        "intrinsic and extrinsic motivation",
+        "maslow's hierarchy of needs",
+        "achievement motivation",
+        "self-efficacy",
+        "goal-setting theory",
+        "expectancy theory",
+        "autonomy competence relatedness",
+        "incentive theory",
+        "cognitive dissonance"
+      ],
+      "3": [
+        "intrinsic motivation",
+        "extrinsic motivation",
+        "self-determination theory",
+        "self-efficacy",
+        "self-actualization",
+        "achievement motivation",
+        "expectancy theory",
+        "valence",
+        "psychological needs",
+        "self-regulation"
+      ],
+      "4": [
+        "self-determination theory",
+        "intrinsic motivation",
+        "self-efficacy",
+        "growth mindset",
+        "psychological needs",
+        "self-actualization",
+        "autonomy",
+        "perceived competence",
+        "subjective vitality",
+        "self-acceptance"
+      ]
+    },
+    "183": {
+      "0": [
+        "social and economic factors",
+        "psychological disorders",
+        "peer influence",
+        "drugs and alcohol",
+        "parental relations",
+        "income and education",
+        "self-control theory",
+        "social bond theory",
+        "heredity and brain activity",
+        "biological theories"
+      ],
+      "1": [
+        "law enforcement",
+        "prosecution",
+        "courts",
+        "corrections",
+        "criminal procedure",
+        "arrest",
+        "sentencing",
+        "reasonable doubt",
+        "due process",
+        "crime control model"
+      ],
+      "2": [
+        "public perception of crime",
+        "media influence",
+        "procedural justice",
+        "police legitimacy",
+        "public attitudes",
+        "law enforcement outcomes",
+        "crime statistics",
+        "dark figure of crime",
+        "racial bias",
+        "crime reporting"
+      ],
+      "3": [
+        "evidence-based practice",
+        "policy evaluation",
+        "crime prevention",
+        "offender rehabilitation",
+        "recidivism",
+        "criminal justice policy",
+        "applied research",
+        "empirical tests",
+        "crime statistics",
+        "community corrections"
+      ],
+      "4": [
+        "criminal courts",
+        "prosecutor",
+        "sentencing",
+        "defendants' rights",
+        "coercive manipulation",
+        "innocent accused",
+        "cost of justice",
+        "recidivism",
+        "corrections",
+        "criminal procedures"
+      ],
+      "5": [
+        "political corruption",
+        "labor racketeering",
+        "drug trafficking",
+        "white-collar crime",
+        "criminal justice agencies",
+        "law enforcement",
+        "courts",
+        "corrections",
+        "crime statistics",
+        "dark figure of crime"
+      ]
+    },
+    "187": {
+      "0": [
+        "captive breeding",
+        "animal welfare",
+        "conservation programs",
+        "species reintroduction",
+        "animal rights",
+        "behavioral restriction",
+        "abnormal behavior",
+        "endangered species",
+        "zoo accreditation",
+        "animal liberty"
+      ],
+      "1": [
+        "captive breeding programs",
+        "species reintroduction",
+        "abnormal behavior",
+        "behavioral restriction",
+        "environmental enrichment",
+        "animal welfare standards",
+        "specialized veterinary care",
+        "space constraints",
+        "stereotypic behavior",
+        "zoo accreditation"
+      ],
+      "2": [
+        "captive breeding programs",
+        "species reintroduction",
+        "conservation breeding",
+        "in situ conservation",
+        "endangered species protection",
+        "education programs",
+        "ambassador animals",
+        "wildlife research",
+        "aza accreditation",
+        "zoo conservation strategy"
+      ],
+      "3": [
+        "aza accreditation",
+        "waza",
+        "animal welfare",
+        "voluntary standards",
+        "zoo animal management",
+        "environmental enrichment",
+        "specialized veterinary care",
+        "captive breeding programs",
+        "conservation breeding",
+        "animal welfare assessment"
+      ],
+      "4": [
+        "aza accredited",
+        "captive breeding programs",
+        "species reintroduction",
+        "conservation programs in the field",
+        "animal enrichment",
+        "specialized care",
+        "animal welfare standards",
+        "education programs",
+        "endangered species",
+        "conservation breeding"
+      ]
+    },
+    "188": {
+      "0": [
+        "campus activism",
+        "student strike",
+        "antiwar movement",
+        "racial justice",
+        "police violence",
+        "university complicity",
+        "student debt",
+        "tuition hikes",
+        "sexual assault",
+        "white supremacy"
+      ],
+      "1": [
+        "open society foundations",
+        "black lives matter",
+        "ferguson protests",
+        "funding allegations",
+        "conspiracy theories",
+        "political philanthropy",
+        "protest organizers",
+        "fact check",
+        "university campus protests",
+        "grant transparency"
+      ],
+      "2": [
+        "public universities",
+        "private universities",
+        "symbolic speech",
+        "time, place, and manner restrictions",
+        "campus speech",
+        "student protesters",
+        "disruptive conduct",
+        "civil disobedience",
+        "permit process",
+        "fighting words"
+      ],
+      "3": [
+        "police response",
+        "police use of force",
+        "counter-protests",
+        "non-state actors",
+        "extremist involvement",
+        "outside agitators",
+        "militarized response",
+        "de-escalation",
+        "campus civil disobedience",
+        "protester-police interactions"
+      ],
+      "4": [
+        "student strike",
+        "campus activism",
+        "university administration",
+        "academic disruption",
+        "campus closures",
+        "institutional reform",
+        "student occupations",
+        "university complicity",
+        "long-term effects",
+        "ro tc"
+      ]
+    },
+    "191": {
+      "0": [
+        "marihuana tax act",
+        "controlled substances act",
+        "federal bureau of narcotics",
+        "harry anslinger",
+        "reefer madness",
+        "uniform state narcotic drug act",
+        "war on drugs",
+        "shafer commission",
+        "boggs act",
+        "narcotics control act"
+      ],
+      "1": [
+        "state-by-state",
+        "cannabis legalization",
+        "medical cannabis",
+        "recreational cannabis",
+        "decriminalization",
+        "federal prohibition",
+        "controlled substances act",
+        "qualifying conditions",
+        "dispensary regulations",
+        "legalization map"
+      ],
+      "2": [
+        "compassionate use act",
+        "texas medical cannabis program",
+        "low-thc cannabis",
+        "qualifying conditions",
+        "marijuana possession penalties",
+        "marijuana sale penalties",
+        "texas decriminalization",
+        "licensed dispensaries",
+        "hemp-derived cbd",
+        "cannabis cultivation"
+      ],
+      "3": [
+        "recreational marijuana",
+        "medical marijuana",
+        "prohibition enforcement",
+        "tax revenue",
+        "black market",
+        "teen marijuana use",
+        "impaired driving",
+        "public health",
+        "criminal justice",
+        "marijuana addiction"
+      ],
+      "4": [
+        "cannabis use disorder",
+        "withdrawal symptoms",
+        "tolerance",
+        "compulsive use",
+        "addictive potential",
+        "behavioral signs",
+        "physical dependence",
+        "psychological dependence",
+        "adolescent cannabis use",
+        "marijuana addiction treatment"
+      ]
+    },
+    "2": {
+      "0": [
+        "greenhouse gases",
+        "greenhouse effect",
+        "anthropogenic causes",
+        "carbon dioxide emissions",
+        "fossil fuels",
+        "methane emissions",
+        "land-use change",
+        "deforestation",
+        "volcanic aerosols",
+        "solar output variations"
+      ],
+      "1": [
+        "sea level rise",
+        "extreme weather",
+        "heatwaves and droughts",
+        "food security",
+        "human health",
+        "infectious diseases",
+        "displacement and migration",
+        "ocean acidification",
+        "ecosystem impacts",
+        "agricultural output"
+      ],
+      "2": [
+        "sea level rise",
+        "glacier retreat",
+        "ocean acidification",
+        "extreme weather events",
+        "heatwaves and droughts",
+        "ocean heat content",
+        "ecosystem impacts",
+        "greenhouse gas emissions",
+        "human-induced warming",
+        "empirical evidence"
+      ],
+      "3": [
+        "paris agreement",
+        "kyoto protocol",
+        "united nations framework convention on climate change",
+        "national climate policy",
+        "climate mitigation",
+        "climate adaptation",
+        "nationally determined contributions",
+        "climate finance",
+        "renewable energy",
+        "greenhouse gas emissions"
+      ],
+      "4": [
+        "climate change mitigation",
+        "greenhouse gas emissions",
+        "renewable energy",
+        "energy efficiency",
+        "carbon dioxide capture and sequestration",
+        "adaptation strategies",
+        "industry response",
+        "energy conservation",
+        "low-emission alternatives",
+        "climate engineering"
+      ]
+    },
+    "200": {
+      "0": [
+        "final solution",
+        "nazi germany",
+        "adolf hitler",
+        "antisemitism",
+        "nuremberg laws",
+        "wannsee conference",
+        "extermination camps",
+        "gas chambers",
+        "einsatzgruppen",
+        "ghettos"
+      ],
+      "1": [
+        "death marches",
+        "liberation",
+        "allied forces",
+        "displaced persons camps",
+        "nazi rule comes to an end",
+        "end of the war",
+        "concentration camp prisoners",
+        "trauma of liberation",
+        "sh'erit ha-pletah",
+        "immediate aftermath"
+      ],
+      "2": [
+        "displaced persons",
+        "sh'erit ha-pletah",
+        "post-war jewish communities",
+        "holocaust survivors",
+        "restitution and reparations",
+        "emigration to palestine and israel",
+        "yizkor books",
+        "survivor testimonies",
+        "holocaust theology",
+        "impact on culture"
+      ],
+      "3": [
+        "genocide",
+        "nazi persecution",
+        "final solution",
+        "historical interpretation",
+        "holocaust theology",
+        "biblical judgment",
+        "genesis 19",
+        "religious views",
+        "collective punishment",
+        "mass destruction"
+      ]
+    },
+    "202": {
+      "0": [
+        "educational neuroscience",
+        "brain plasticity",
+        "neurodevelopment",
+        "synaptogenesis",
+        "attention and executive control",
+        "memory processes",
+        "information-processing approaches",
+        "developmental cognitive neuroscience",
+        "experiences and environments",
+        "role of instruction"
+      ],
+      "1": [
+        "language and literacy",
+        "educational neuroscience",
+        "brain imaging evidence",
+        "neuroimaging",
+        "functional magnetic resonance imaging",
+        "electroencephalography",
+        "cognitive neuroscience",
+        "brain plasticity",
+        "learning and memory",
+        "emotion-cognition interactions"
+      ],
+      "2": [
+        "event-related potentials",
+        "eeg rhythms and oscillations",
+        "frequency bands",
+        "neural activity",
+        "functional brain mapping",
+        "motor recovery",
+        "neurofeedback",
+        "brain-computer interfaces",
+        "electrophysiological studies",
+        "cognitive retraining"
+      ]
+    },
+    "203": {
+      "0": [
+        "capital punishment",
+        "constitutional",
+        "capital offenses",
+        "capital murder",
+        "sentencing",
+        "u.s. supreme court",
+        "federal death penalty",
+        "state laws",
+        "lethal injection",
+        "death row"
+      ],
+      "1": [
+        "death penalty",
+        "retribution",
+        "deterrence",
+        "execution of the innocent",
+        "wrongful convictions",
+        "racial bias",
+        "life imprisonment",
+        "victims' families",
+        "closure and vindication",
+        "cruel and unusual punishment"
+      ],
+      "2": [
+        "capital punishment",
+        "retribution versus vengeance",
+        "execution of the innocent",
+        "right to life",
+        "racial discrimination",
+        "wrongful convictions",
+        "cruel and inhumane punishment",
+        "deterrence",
+        "proportionality of justice",
+        "religious perspectives"
+      ],
+      "3": [
+        "capital punishment",
+        "deterrence",
+        "general deterrence",
+        "violent crime",
+        "murder rates",
+        "empirical evidence",
+        "national research council",
+        "certainty of punishment",
+        "law enforcement perspectives",
+        "deterrence studies"
+      ],
+      "4": [
+        "death penalty",
+        "life without parole",
+        "capital punishment",
+        "cost of trial",
+        "appeals",
+        "incarceration costs",
+        "financial costs",
+        "cost to local governments",
+        "justice system expenditure",
+        "cost-effective crime prevention"
+      ],
+      "5": [
+        "deterrence",
+        "wrongful convictions",
+        "racial justice",
+        "criminal justice costs",
+        "law enforcement perspectives",
+        "resource allocation",
+        "brutalising society",
+        "public opinion",
+        "systemic inequities",
+        "state power to execute"
+      ],
+      "6": [
+        "death row",
+        "appeal",
+        "wrongful convictions",
+        "innocence",
+        "limited defense resources",
+        "prosecutorial misconduct",
+        "supreme court",
+        "capital case",
+        "death sentence",
+        "exonerations"
+      ]
+    },
+    "213": {
+      "0": [
+        "38th parallel",
+        "north korean invasion",
+        "soviet union",
+        "kim il-sung",
+        "syngman rhee",
+        "postwar division of korea",
+        "japanese occupation",
+        "united nations intervention",
+        "cold war containment",
+        "chinese civil war"
+      ],
+      "1": [
+        "containment",
+        "truman doctrine",
+        "military implementation of containment",
+        "38th parallel",
+        "north korean invasion",
+        "united nations intervention",
+        "truman administration",
+        "soviet expansion",
+        "communist aggression",
+        "domino theory"
+      ],
+      "2": [
+        "korean war armistice agreement",
+        "panmunjom",
+        "demilitarized zone",
+        "38th parallel",
+        "prisoner of war repatriation",
+        "ceasefire",
+        "peace treaty",
+        "armistice negotiations",
+        "july 27 1953",
+        "military demarcation line"
+      ],
+      "3": [
+        "unpreparedness for war",
+        "pusan perimeter",
+        "inchon landing",
+        "macarthur",
+        "chinese intervention",
+        "38th parallel",
+        "un command",
+        "truman",
+        "stalemate",
+        "armistice negotiations"
+      ],
+      "4": [
+        "containment",
+        "mccarthyism",
+        "second red scare",
+        "1952 election",
+        "truman doctrine",
+        "eisenhower",
+        "armistice",
+        "united nations intervention",
+        "38th parallel",
+        "cold war policy"
+      ],
+      "5": [
+        "harry s. truman",
+        "dwight d. eisenhower",
+        "douglas macarthur",
+        "truman doctrine",
+        "containment",
+        "eisenhower and the war's end",
+        "armistice negotiations",
+        "stalemate in korea",
+        "1952 election",
+        "ridgway replaces macarthur"
+      ]
+    },
+    "219": {
+      "0": [
+        "digitalization",
+        "public service delivery",
+        "e-government",
+        "government operations",
+        "data privacy",
+        "cybersecurity",
+        "productivity",
+        "digital divide",
+        "automation",
+        "healthcare"
+      ],
+      "1": [
+        "telemedicine",
+        "remote patient monitoring",
+        "virtual healthcare",
+        "telenursing",
+        "real-time audio/video communication",
+        "healthcare accessibility",
+        "clinical efficiency",
+        "healthcare provider shortage",
+        "digitalization",
+        "hipaa-compliant video"
+      ],
+      "2": [
+        "professional associations",
+        "engineering societies",
+        "standards development",
+        "professional ethics",
+        "technology governance",
+        "sociotechnical management",
+        "technology transfer",
+        "innovation ecosystems",
+        "public policy",
+        "societal implications"
+      ],
+      "3": [
+        "depletion of resources",
+        "energy use",
+        "pollution increase",
+        "climate change",
+        "negative environmental effects",
+        "sustainable development",
+        "renewable energy",
+        "resource scarcity",
+        "energy crisis",
+        "technological literacy"
+      ]
+    },
+    "221": {
+      "0": [
+        "business manager",
+        "business owner",
+        "entrepreneurial roles",
+        "managerial roles",
+        "planning",
+        "organizing",
+        "leading",
+        "controlling",
+        "risk taking",
+        "innovation"
+      ],
+      "1": [
+        "risk management process",
+        "risk identification",
+        "risk assessment",
+        "risk mitigation",
+        "operational risk",
+        "financial risk management",
+        "risk tolerance",
+        "internal controls",
+        "performance monitoring",
+        "cost reduction"
+      ],
+      "2": [
+        "product quality kpis",
+        "quality",
+        "organizational efficiency",
+        "organizational effectiveness",
+        "minimizing costs",
+        "efficient use of resources",
+        "customer requirements",
+        "competitive advantage",
+        "operational excellence",
+        "performance monitoring"
+      ],
+      "3": [
+        "psychological empowerment",
+        "decision-making authority",
+        "employee engagement",
+        "job satisfaction",
+        "organizational commitment",
+        "employee autonomy",
+        "delegation of authority",
+        "training and coaching",
+        "productivity",
+        "employee retention"
+      ],
+      "4": [
+        "employee empowerment",
+        "employee motivation",
+        "low morale",
+        "staff retention",
+        "employee turnover",
+        "lack of delegation",
+        "autonomy",
+        "workplace stress",
+        "employee engagement",
+        "managerial control"
+      ],
+      "5": [
+        "strategy formulation",
+        "strategy implementation",
+        "strategic evaluation and control",
+        "competitive advantage",
+        "strategic intent",
+        "corporate strategy",
+        "environmental scanning",
+        "core competency",
+        "board of directors",
+        "organizational performance"
+      ]
+    },
+    "224": {
+      "0": [
+        "asylum seekers",
+        "economic migrant",
+        "persecution",
+        "political instability",
+        "violence",
+        "death threats",
+        "forced displacement",
+        "economic opportunity",
+        "financial stability",
+        "international protection"
+      ],
+      "1": [
+        "asylum seekers",
+        "legal permanent resident status",
+        "immigration detention",
+        "access to services",
+        "language barriers",
+        "employment barriers",
+        "housing insecurity",
+        "cultural barriers",
+        "discrimination",
+        "immigration courts"
+      ],
+      "2": [
+        "executive orders",
+        "legislative proposals",
+        "immigration and nationality act",
+        "daca",
+        "refugee act",
+        "sanctuary cities",
+        "immigration enforcement",
+        "lobbying",
+        "key stakeholders",
+        "advocacy organizations"
+      ],
+      "3": [
+        "public opinion",
+        "anti-immigration views",
+        "religious responses",
+        "asylum seekers",
+        "refugee policy",
+        "immigration categories",
+        "integration and assimilation",
+        "country-by-country comparison",
+        "immigration attitudes",
+        "humanitarian immigration"
+      ],
+      "4": [
+        "workers' rights",
+        "employment-based visas",
+        "temporary foreign workers",
+        "lawful permanent residence",
+        "minimum wage",
+        "overtime pay",
+        "occupational safety",
+        "workers' compensation",
+        "job training",
+        "public benefits"
+      ]
+    },
+    "225": {
+      "0": [
+        "gaming disorder",
+        "normative beliefs about aggression",
+        "general aggression model",
+        "empathy",
+        "aggressive scripts",
+        "media violence exposure",
+        "longitudinal studies",
+        "meta-analyses",
+        "family environment",
+        "violent media effects"
+      ],
+      "1": [
+        "violent video games",
+        "aggressive thoughts and behaviors",
+        "general aggression model",
+        "normative beliefs about aggression",
+        "family environment",
+        "social-cognitive theory",
+        "adolescent aggression",
+        "psychological development",
+        "risk factor",
+        "mediating effect"
+      ],
+      "2": [
+        "visual processing",
+        "attention filtering",
+        "hand-eye coordination",
+        "problem-solving capacity",
+        "creativity",
+        "positive emotional responses",
+        "relaxation",
+        "ptsd recovery",
+        "phobia treatment",
+        "virtual reality therapy"
+      ],
+      "3": [
+        "brief history of violence in video games",
+        "media violence",
+        "graphic content",
+        "video game ratings",
+        "entertainment software rating board",
+        "grand theft auto",
+        "moral panic",
+        "desensitization to aggression",
+        "violent media content",
+        "brown v. entertainment merchants association"
+      ]
+    },
+    "23": {
+      "0": [
+        "archduke franz ferdinand",
+        "july crisis",
+        "triple entente",
+        "central powers",
+        "trench warfare",
+        "western front",
+        "russian revolution",
+        "united states entry",
+        "treaty of versailles",
+        "armistice"
+      ],
+      "1": [
+        "treaty of versailles",
+        "axis powers",
+        "allied powers",
+        "invasion of poland",
+        "pearl harbor",
+        "holocaust",
+        "eastern front",
+        "battle of stalingrad",
+        "atomic bombings of hiroshima and nagasaki",
+        "united nations"
+      ],
+      "2": [
+        "trench warfare",
+        "war of attrition",
+        "artillery",
+        "poison gas",
+        "tanks",
+        "submarines",
+        "air warfare",
+        "atomic bomb",
+        "radar and communications",
+        "civilian casualties"
+      ],
+      "3": [
+        "civilian casualties",
+        "military casualties",
+        "genocide",
+        "war crimes",
+        "concentration camps",
+        "holocaust",
+        "eastern front",
+        "strategic bombing",
+        "atomic bombings",
+        "advances in technology and warfare"
+      ],
+      "4": [
+        "axis powers",
+        "invasion of poland",
+        "nazi dictatorship",
+        "appeasement",
+        "league of nations",
+        "holocaust",
+        "war crimes",
+        "atomic bombings",
+        "civilian casualties",
+        "atlantic charter"
+      ],
+      "5": [
+        "home fronts",
+        "women's roles",
+        "wartime economy",
+        "race relations",
+        "postwar world",
+        "human rights",
+        "genocide",
+        "war crimes",
+        "social and political consequences",
+        "public participation"
+      ]
+    },
+    "231": {
+      "0": [
+        "serbian nationalism",
+        "austro-hungarian tensions",
+        "bosnian annexation crisis",
+        "balkan wars",
+        "sarajevo assassination",
+        "franz ferdinand",
+        "serbian irredentists",
+        "july crisis",
+        "black hand",
+        "austria-hungary and serbia"
+      ],
+      "1": [],
+      "2": [
+        "national sovereignty",
+        "self-determination",
+        "global governance",
+        "international institutions",
+        "state nationalism",
+        "ethno-nationalism",
+        "global citizenship",
+        "multilateralism",
+        "democratic legitimacy",
+        "erosion of sovereignty"
+      ],
+      "3": [
+        "nationalism",
+        "world war i",
+        "national identities",
+        "cultural memory",
+        "war propaganda",
+        "conscription",
+        "self-determination",
+        "nation states",
+        "ethno-nationalism",
+        "balkan nationalism"
+      ]
+    },
+    "233": {
+      "0": [
+        "find community",
+        "social connection",
+        "supportive online communities",
+        "positive social media use",
+        "active social media use",
+        "self-expression",
+        "peer support",
+        "mental health resources",
+        "sense of belonging",
+        "positive examples"
+      ],
+      "1": [
+        "depression",
+        "anxiety",
+        "cyberbullying",
+        "fear of missing out",
+        "social comparison",
+        "negative self-perception",
+        "sleep deprivation",
+        "loneliness and isolation",
+        "suicidal ideation",
+        "self-harm"
+      ],
+      "2": [
+        "culture of comparison",
+        "negative self-esteem",
+        "cyberbullying",
+        "fear of missing out",
+        "sleep deprivation",
+        "perceived isolation",
+        "social media addiction",
+        "self-harm",
+        "suicidal ideation",
+        "passive social media use"
+      ]
+    },
+    "24": {
+      "0": [
+        "healthcare financing",
+        "payment systems",
+        "administrative overhead",
+        "provider payment incentives",
+        "medical technology",
+        "prescription drug prices",
+        "malpractice litigation",
+        "utilization of services",
+        "insurance coverage",
+        "workforce shortages"
+      ],
+      "1": [
+        "health insurance coverage",
+        "social determinants of health",
+        "socioeconomic status",
+        "geographic barriers",
+        "transportation barriers",
+        "health workforce shortages",
+        "health literacy",
+        "timeliness of care",
+        "racial and ethnic disparities",
+        "healthcare quality"
+      ],
+      "2": [
+        "positive rights",
+        "negative rights",
+        "social justice",
+        "universal healthcare",
+        "single-payer system",
+        "consumer-driven healthcare",
+        "public versus private control",
+        "healthcare reform",
+        "equity and access",
+        "rationing of care"
+      ],
+      "3": [
+        "healthcare access",
+        "health equity",
+        "social determinants of health",
+        "universal healthcare coverage",
+        "rural healthcare access",
+        "healthcare quality",
+        "primary care access",
+        "telehealth",
+        "health workforce shortages",
+        "patient outcomes"
+      ]
+    },
+    "245": {
+      "0": [
+        "overfishing",
+        "habitat loss",
+        "marine pollution",
+        "ocean acidification",
+        "ocean warming",
+        "ocean deoxygenation",
+        "coral bleaching",
+        "invasive species",
+        "nutrient pollution",
+        "marine debris"
+      ],
+      "1": [
+        "coral bleaching",
+        "ocean acidification",
+        "overfishing",
+        "nutrient pollution",
+        "marine debris",
+        "land-based pollution",
+        "coral disease",
+        "invasive species",
+        "harmful algal blooms",
+        "ecosystem services"
+      ],
+      "2": [
+        "carbon dioxide emissions",
+        "fossil fuels",
+        "carbonic acid",
+        "hydrogen ions",
+        "carbonate ions",
+        "calcifying organisms",
+        "calcium carbonate",
+        "coral reefs",
+        "shellfish",
+        "zooplankton"
+      ],
+      "3": [
+        "nutrient pollution",
+        "eutrophication",
+        "dinoflagellates",
+        "red tides",
+        "cyanobacteria",
+        "phytoplankton",
+        "algal toxins",
+        "fish die-offs",
+        "dead zones",
+        "ocean warming"
+      ],
+      "4": [
+        "habitat loss",
+        "coral reefs",
+        "seagrass meadows",
+        "mangroves",
+        "coastal ecosystems",
+        "human exploitation",
+        "marine conservation",
+        "overfishing",
+        "dredging",
+        "food web structure"
+      ],
+      "5": [
+        "overfishing",
+        "coral reefs",
+        "marine protected area networks",
+        "biodiversity",
+        "habitat loss",
+        "ecosystem services",
+        "fishing practices",
+        "marine pollution",
+        "management",
+        "international treaties"
+      ]
+    },
+    "247": {
+      "0": [
+        "conceptualization",
+        "historical background",
+        "first era of modern globalization",
+        "disrupted globalization",
+        "globalization undercurrents",
+        "decentralization accelerates",
+        "american-led globalization",
+        "two phases of globalization",
+        "schools of thought",
+        "historical context"
+      ],
+      "1": [
+        "comparative advantage",
+        "foreign direct investment",
+        "global value chains",
+        "trade openness",
+        "factor mobility",
+        "trade liberalization",
+        "export competitiveness",
+        "domestic value added",
+        "trade costs",
+        "international investment"
+      ],
+      "2": [
+        "poverty alleviation",
+        "job insecurity",
+        "income inequality",
+        "foreign investment",
+        "cross-cultural management",
+        "cultural diversity",
+        "indigenous cultures",
+        "labor conditions",
+        "technology transfer",
+        "price instability"
+      ],
+      "3": [
+        "international expansion",
+        "global market opportunity assessment",
+        "foreign direct investment",
+        "international trade",
+        "strategic alliances",
+        "market information service",
+        "farm-agribusiness linkages",
+        "raw material sourcing",
+        "exporting",
+        "cross-cultural management"
+      ]
+    },
+    "25": {
+      "0": [
+        "electors",
+        "electoral votes",
+        "270 votes",
+        "popular vote",
+        "winner-take-all",
+        "state apportionment",
+        "congressional district method",
+        "faithless electors",
+        "joint session of congress",
+        "contingent election"
+      ],
+      "1": [
+        "voter registration",
+        "demographics",
+        "age education income",
+        "race and ethnicity",
+        "competitiveness of races",
+        "costs of participation",
+        "political parties",
+        "campaign issues",
+        "voter identification",
+        "early voting"
+      ],
+      "2": [
+        "voter suppression",
+        "election fraud",
+        "voter fraud",
+        "foreign interference",
+        "claims of fraud",
+        "election certification",
+        "voter registration",
+        "mail voting",
+        "voter id requirements",
+        "public trust"
+      ],
+      "3": [
+        "voting rights act",
+        "national voter registration act",
+        "automatic voter registration",
+        "same-day registration",
+        "poll taxes",
+        "literacy tests",
+        "jim crow laws",
+        "voter identification requirements",
+        "early and absentee voting",
+        "fifteenth amendment"
+      ]
+    },
+    "258": {
+      "0": [
+        "euromaidan",
+        "crimea annexation",
+        "donbas conflict",
+        "minsk agreements",
+        "viktor yanukovych",
+        "russian intervention",
+        "geopolitical flash point",
+        "nato expansion",
+        "ukrainian sovereignty",
+        "hybrid warfare"
+      ],
+      "1": [
+        "ukraine crisis",
+        "russian military aggression",
+        "hybrid warfare",
+        "non-linear warfare",
+        "information operations",
+        "special operations forces",
+        "donbas",
+        "crimea",
+        "russian offensives",
+        "ukrainian counteroffensive"
+      ],
+      "2": [
+        "anti-tank warfare",
+        "anti-tank weapons",
+        "anti-tank tactics",
+        "guided missiles",
+        "mines and explosives",
+        "drones",
+        "active protection systems",
+        "tank mobility",
+        "camouflage and concealment",
+        "modern warfare"
+      ]
+    },
+    "273": {
+      "0": [
+        "resource curse",
+        "colonialism",
+        "illicit financial outflows",
+        "unequal growth",
+        "weak states",
+        "extractive economies",
+        "poor infrastructure",
+        "governance",
+        "land mismanagement",
+        "conflict"
+      ],
+      "1": [
+        "economic development",
+        "economic growth",
+        "poverty reduction",
+        "structural reforms",
+        "foreign aid",
+        "colonialism",
+        "natural resource exports",
+        "infrastructure investment",
+        "regional integration",
+        "economic underdevelopment"
+      ],
+      "2": [
+        "north africa",
+        "maghreb",
+        "western sahara",
+        "african continent",
+        "europe or africa",
+        "algeria",
+        "atlantic ocean",
+        "mediterranean sea"
+      ],
+      "3": [
+        "oil and gas",
+        "petroleum",
+        "timber",
+        "forestry",
+        "agriculture",
+        "cocoa",
+        "coffee",
+        "minerals",
+        "lumber",
+        "exports"
+      ],
+      "4": [
+        "how big is africa",
+        "biggest continent",
+        "all other continents",
+        "continent size comparison",
+        "geographic scale",
+        "world's largest continent"
+      ]
+    },
+    "278": {
+      "0": [
+        "ancien régime",
+        "financial crisis",
+        "estates-general",
+        "third estate",
+        "tennis court oath",
+        "storming of the bastille",
+        "declaration of the rights of man and citizen",
+        "reign of terror",
+        "directory",
+        "coup of 18 brumaire"
+      ],
+      "1": [
+        "ancien régime",
+        "estates-general",
+        "national assembly",
+        "constitutional monarchy",
+        "declaration of the rights of man",
+        "first republic",
+        "national convention",
+        "reign of terror",
+        "directory",
+        "constituent assembly"
+      ],
+      "2": [
+        "social contract",
+        "general will",
+        "declaration of the rights of man",
+        "popular sovereignty",
+        "enlightenment",
+        "constitutional monarchy",
+        "ancien régime",
+        "equality",
+        "republicanism",
+        "reign of terror"
+      ],
+      "3": [
+        "french revolution",
+        "constitutional monarchy",
+        "declaration of the rights of man",
+        "national assembly",
+        "constituent assembly",
+        "ancien régime",
+        "estates-general",
+        "enlightenment",
+        "popular sovereignty",
+        "constitutionalism"
+      ]
+    },
+    "28": {
+      "0": [
+        "mannerism",
+        "baroque",
+        "neoclassicism",
+        "romanticism",
+        "realism",
+        "impressionism",
+        "post-impressionism",
+        "cubism",
+        "surrealism",
+        "abstract expressionism"
+      ],
+      "1": [
+        "renaissance",
+        "baroque",
+        "romanticism",
+        "realism",
+        "impressionism",
+        "cubism",
+        "surrealism",
+        "neoclassicism",
+        "expressionism",
+        "modern art"
+      ],
+      "2": [
+        "art of oceania",
+        "oceanic art",
+        "pacific cultures",
+        "oceania",
+        "global art history"
+      ]
+    },
+    "300": {
+      "0": [
+        "greenhouse gas emissions",
+        "climate change mitigation",
+        "climate change adaptation",
+        "renewable energy",
+        "energy efficiency",
+        "climate resilience",
+        "climate finance",
+        "paris agreement",
+        "carbon footprint",
+        "net-zero emissions"
+      ],
+      "1": [
+        "west antarctic ice sheet",
+        "antarctic peninsula",
+        "greenhouse gas emissions",
+        "climate change mitigation",
+        "climate change adaptation",
+        "net-zero emissions",
+        "renewable energy",
+        "energy efficiency",
+        "antarctic krill",
+        "ocean acidification"
+      ],
+      "2": [
+        "climate change mitigation",
+        "climate change adaptation",
+        "action cheaper than inaction",
+        "economic damages",
+        "climate finance",
+        "climate resilience",
+        "collective action problem",
+        "developing world",
+        "extreme weather impacts",
+        "sea level rise"
+      ]
+    },
+    "31": {
+      "0": [
+        "electronic pollution",
+        "soil and groundwater pollution",
+        "toxic gases",
+        "hazardous materials",
+        "heavy metals",
+        "open burning",
+        "informal e-waste recycling",
+        "water contamination",
+        "air pollution",
+        "e-waste recycling workers"
+      ],
+      "1": [
+        "resource recovery",
+        "waste hierarchy",
+        "circular economy",
+        "landfill diversion",
+        "natural resource conservation",
+        "pollution reduction",
+        "job creation",
+        "recycled materials markets",
+        "waste valorization",
+        "sustainable waste management"
+      ],
+      "2": [
+        "e-waste recycling",
+        "electronic waste",
+        "resource recovery",
+        "circular economy",
+        "right to repair",
+        "extended producer responsibility",
+        "waste separation",
+        "shredding and sorting",
+        "magnetic separation",
+        "anaerobic digestion"
+      ],
+      "3": [
+        "waste hierarchy",
+        "waste minimization",
+        "waste audit",
+        "source separation",
+        "recycling contamination",
+        "composting",
+        "reuse and donation",
+        "e-waste takeback programs",
+        "hazardous waste disposal",
+        "circular economy"
+      ]
+    },
+    "323": {
+      "0": [
+        "first crusade",
+        "holy land",
+        "jerusalem",
+        "pope urban ii",
+        "crusader states",
+        "saladin",
+        "byzantine empire",
+        "religious pilgrimage",
+        "papal indulgences",
+        "medieval christianity"
+      ],
+      "1": [
+        "muslim response",
+        "fatimid egypt",
+        "seljuk sultanate",
+        "zengids",
+        "nur al-din",
+        "saladin",
+        "ayyubid dynasty",
+        "mamluks",
+        "islamic revival",
+        "muslim unity"
+      ],
+      "2": [
+        "first crusade",
+        "crusader states",
+        "sack of constantinople",
+        "muslim response",
+        "christianity and islam",
+        "jews and the crusades",
+        "holy land",
+        "reconquista",
+        "papal ideology",
+        "legacy"
+      ],
+      "3": [
+        "islamic golden age",
+        "classical muslim commerce",
+        "agriculture in the medieval islamic world",
+        "expansion of trade",
+        "urbanization",
+        "trade routes",
+        "hawala",
+        "waqf",
+        "caliphate economy",
+        "islamic capitalism"
+      ],
+      "4": [
+        "abbasid revolution",
+        "umayyad caliphate",
+        "khorasan",
+        "abu muslim",
+        "abbasid propaganda",
+        "mawali",
+        "non-arab muslims",
+        "al-saffah",
+        "750 ce",
+        "shi'a support"
+      ]
+    },
+    "333": {
+      "0": [
+        "scientific paradigms",
+        "mystical experience",
+        "organized religion",
+        "worldview",
+        "cultural change",
+        "historical variations",
+        "modern society",
+        "industrial societies",
+        "sorokin",
+        "new scientific paradigms"
+      ],
+      "1": [
+        "scientific institutions",
+        "federal government agencies",
+        "research funding",
+        "professional societies",
+        "experts versus representatives",
+        "progressive era",
+        "policy analysis",
+        "environmental change",
+        "human health",
+        "political ideology"
+      ],
+      "2": [
+        "social direction of science",
+        "science in society",
+        "scientific institutions",
+        "research funding",
+        "professional societies",
+        "federal government agencies",
+        "social dimensions of scientific knowledge",
+        "public attitudes",
+        "special interests",
+        "cultural and feminist studies of science"
+      ]
+    },
+    "341": {
+      "0": [
+        "working conditions",
+        "teacher compensation",
+        "teacher stress",
+        "principal support",
+        "economic cuts",
+        "high-poverty schools",
+        "teacher retention",
+        "teacher credentials",
+        "planning and paperwork",
+        "teacher preparation"
+      ],
+      "1": [
+        "teacher workload",
+        "paperwork",
+        "planning time",
+        "standardized testing",
+        "performance pressure",
+        "diverse learning needs",
+        "classroom management",
+        "technology integration",
+        "parental support",
+        "teacher burnout"
+      ],
+      "2": [
+        "teacher beliefs",
+        "reflective practice",
+        "teacher learning communities",
+        "professional development",
+        "teacher change",
+        "teacher learning",
+        "experienced teachers' craft knowledge",
+        "teacher values",
+        "teacher competence",
+        "teaching approaches"
+      ],
+      "3": [
+        "teacher quality",
+        "teacher competence",
+        "high-leverage practices",
+        "subject matter knowledge",
+        "classroom instruction",
+        "student learning",
+        "reflective teaching",
+        "classroom management",
+        "teacher behaviors",
+        "professional development"
+      ]
+    },
+    "346": {
+      "0": [
+        "juvenile court jurisdiction",
+        "age of jurisdiction",
+        "delinquent juvenile",
+        "juvenile justice system",
+        "adjudication of delinquency",
+        "transfer to criminal court",
+        "tried as an adult",
+        "statutory exclusion",
+        "juvenile offender",
+        "minimum age"
+      ],
+      "1": [
+        "transfer to criminal court",
+        "waiver to adult court",
+        "youth in adult prisons",
+        "blended sentences",
+        "juvenile court jurisdiction",
+        "recidivism",
+        "rehabilitation",
+        "developmental immaturity",
+        "serious violent offenses",
+        "constitutional protections"
+      ],
+      "2": [
+        "confidentiality",
+        "juvenile court records",
+        "confidential records",
+        "expunction",
+        "labeling",
+        "aftercare and reintegration",
+        "justice system involvement and employment",
+        "transfer to criminal court",
+        "youth in adult prisons",
+        "juvenile court"
+      ],
+      "3": [
+        "prevalence data",
+        "official record data",
+        "juvenile crime trends",
+        "juvenile delinquency statistics",
+        "self-report delinquency",
+        "youth offending rates",
+        "age-specific offenders",
+        "repeat offenders",
+        "juvenile justice system",
+        "racial disparity"
+      ],
+      "4": [
+        "parenting styles",
+        "authoritative parenting",
+        "authoritarian parenting",
+        "family interaction",
+        "positive discipline",
+        "child development",
+        "behavior management",
+        "juvenile justice",
+        "treatment versus punishment",
+        "school suspension"
+      ],
+      "5": [
+        "juvenile rheumatoid arthritis",
+        "oligoarticular",
+        "polyarticular",
+        "systemic-onset",
+        "enthesitis-related arthritis",
+        "psoriatic arthritis",
+        "uveitis",
+        "rheumatoid factor",
+        "pediatric rheumatology",
+        "autoimmune joint inflammation"
+      ]
+    },
+    "349": {
+      "0": [
+        "coup of 18 brumaire",
+        "directory government",
+        "first consul",
+        "siege of toulon",
+        "13 vendémiaire",
+        "italian campaign",
+        "french revolution",
+        "expedition to egypt",
+        "military victories",
+        "revolutionary government"
+      ],
+      "1": [
+        "italian campaign",
+        "egyptian expedition",
+        "war of the third coalition",
+        "battle of austerlitz",
+        "war of the fourth coalition",
+        "peninsular war",
+        "war of the fifth coalition",
+        "invasion of russia",
+        "war of the sixth coalition",
+        "battle of waterloo"
+      ],
+      "2": [
+        "french revolution",
+        "coup of 18 brumaire",
+        "first consul",
+        "french empire",
+        "napoleonic code",
+        "consulate",
+        "napoleonic wars",
+        "continental europe",
+        "sister republics",
+        "congress of vienna"
+      ],
+      "3": [
+        "first abdication",
+        "second exile",
+        "hundred days",
+        "battle of waterloo",
+        "allied powers",
+        "treaty of fontainebleau",
+        "war of the sixth coalition",
+        "abdication",
+        "final years"
+      ],
+      "4": [
+        "legacy",
+        "french perspectives",
+        "british perspectives",
+        "retour des cendres",
+        "public memory",
+        "historical reception",
+        "exile and death",
+        "napoleonic reforms",
+        "oppressive but popular ruler",
+        "triumphant return"
+      ],
+      "5": [
+        "legacy",
+        "memory",
+        "in fiction",
+        "wider impact",
+        "reaction in england",
+        "retour des cendres",
+        "napoleonic reenactment",
+        "military legacy",
+        "political effects",
+        "psychological"
+      ],
+      "6": [
+        "battle of france",
+        "german breakthrough",
+        "campaign in the low countries",
+        "allied reaction",
+        "weygand plan",
+        "battle of belgium",
+        "battle of the netherlands",
+        "dunkirk",
+        "phony war",
+        "french republic army"
+      ]
+    },
+    "360": {
+      "0": [
+        "crisis of the third century",
+        "civil wars",
+        "political division",
+        "growing social divisions",
+        "abuse of power",
+        "internal corruption",
+        "financial desperation",
+        "religious discord",
+        "usurpers",
+        "military ineffectiveness"
+      ],
+      "1": [
+        "visigoths",
+        "alaric",
+        "battle of adrianople",
+        "sack of rome",
+        "foederati",
+        "aetius",
+        "vandals",
+        "carthage",
+        "ricimer",
+        "odoacer"
+      ],
+      "2": [
+        "frontier warfare",
+        "military overstretch",
+        "financial desperation",
+        "crisis of the third century",
+        "loss of africa",
+        "barbarian invasions",
+        "civil wars",
+        "regular field armies",
+        "loss of gaul",
+        "tetrarchy"
+      ]
+    },
+    "37": {
+      "0": [
+        "single-parent families",
+        "family dynamics",
+        "authoritative parenting",
+        "child emotional well-being",
+        "child behavioral outcomes",
+        "parental stress",
+        "economic hardship",
+        "divorce and separation",
+        "stepfamilies",
+        "parental incarceration"
+      ],
+      "1": [
+        "attachment difficulties",
+        "adverse childhood experiences",
+        "traumatic stress",
+        "emotional regulation",
+        "executive functioning",
+        "brain development",
+        "social-emotional development",
+        "behavioral problems",
+        "posttraumatic stress disorder",
+        "out-of-home care"
+      ],
+      "2": [
+        "single-parent families",
+        "parent-child bonding",
+        "emotional health",
+        "behavioral problems",
+        "financial stress",
+        "child well-being",
+        "educational outcomes",
+        "family structure",
+        "work-family balance",
+        "parental involvement"
+      ],
+      "3": [
+        "healthy family dynamics",
+        "positive relationships",
+        "family engagement",
+        "parenting styles",
+        "emotional regulation",
+        "communication problems",
+        "trauma-informed",
+        "family resilience",
+        "marital education",
+        "conflict resolution"
+      ]
+    },
+    "372": {
+      "0": [
+        "early drug laws",
+        "first modern drug regulations",
+        "changing attitudes",
+        "drug prohibition campaign",
+        "temperance movement",
+        "alcohol prohibition",
+        "racialized drug laws",
+        "social control",
+        "international drug control treaties",
+        "single convention on narcotic drugs"
+      ],
+      "1": [
+        "drug prohibition",
+        "war on drugs",
+        "alcohol prohibition",
+        "harm reduction",
+        "decriminalization",
+        "drug control strategy",
+        "international treaties",
+        "social control",
+        "legalization",
+        "drug law enforcement"
+      ],
+      "2": [
+        "drug prohibition",
+        "war on drugs",
+        "drug trafficking",
+        "organized crime",
+        "violent crime",
+        "drug policy",
+        "incarceration",
+        "corruption",
+        "drug cartels",
+        "international drug control"
+      ],
+      "3": [
+        "12 steps",
+        "peer support",
+        "support groups",
+        "recovery meetings",
+        "addiction recovery",
+        "aftercare",
+        "relapse prevention",
+        "sponsor",
+        "community support",
+        "substance use disorder"
+      ]
+    },
+    "388": {
+      "0": [
+        "direct taxes",
+        "indirect taxes",
+        "individual income tax",
+        "corporate income tax",
+        "payroll taxes",
+        "sales and use tax",
+        "property taxes",
+        "excise taxes",
+        "estate and inheritance taxes",
+        "tax revenue"
+      ],
+      "1": [
+        "tax burden",
+        "tax incidence",
+        "income inequality",
+        "economic distortions",
+        "deadweight costs",
+        "tax compliance costs",
+        "progressive taxation",
+        "capital taxation",
+        "government spending",
+        "tax fairness"
+      ],
+      "2": [
+        "new income tax regime",
+        "old tax regime",
+        "optional tax rates",
+        "income tax slabs",
+        "tax deductions",
+        "tax exemptions",
+        "individual taxpayers",
+        "switch to new regime"
+      ],
+      "3": [
+        "individual income tax rates",
+        "general sales tax rates",
+        "property tax rates",
+        "state and local taxes",
+        "tax burden",
+        "tax collections",
+        "progressive tax",
+        "flat tax",
+        "tax exemptions",
+        "capital gains taxation"
+      ],
+      "4": [
+        "progressive taxation",
+        "flat tax",
+        "wealth tax",
+        "estate and gift tax",
+        "capital gains and dividends",
+        "effective tax rates",
+        "tax burden distribution",
+        "ability to pay",
+        "tax avoidance",
+        "tax enforcement"
+      ]
+    },
+    "394": {
+      "0": [
+        "crop yields",
+        "growing period",
+        "elevated carbon dioxide",
+        "extreme weather",
+        "drought and flood",
+        "pests diseases and weeds",
+        "heat stress",
+        "plant diversity",
+        "species distribution",
+        "food security"
+      ],
+      "1": [
+        "agriculture and food security",
+        "infrastructure damage",
+        "human health and productivity",
+        "extreme weather",
+        "sea level rise",
+        "water scarcity",
+        "insurance losses",
+        "tourism industry",
+        "electricity costs",
+        "financial markets"
+      ],
+      "2": [
+        "land reclamation",
+        "urban development",
+        "nitrogen loading",
+        "upstream agriculture",
+        "tidal flooding",
+        "sediment accretion",
+        "tidal creeks",
+        "wetland hydrology",
+        "shoreline stabilization",
+        "ecosystem services"
+      ],
+      "3": [
+        "ecosystem change",
+        "human consequences",
+        "human responses",
+        "agriculture",
+        "land use",
+        "water scarcity",
+        "drought",
+        "food security",
+        "human settlement",
+        "environmental degradation"
+      ]
+    },
+    "407": {
+      "0": [
+        "housing inventory",
+        "supply shortage",
+        "rental market",
+        "vacancy rate",
+        "property demand",
+        "home price growth",
+        "new construction",
+        "real estate investment",
+        "mortgage rates",
+        "housing affordability"
+      ],
+      "1": [
+        "inflation",
+        "housing affordability",
+        "housing supply shortage",
+        "rising mortgage rates",
+        "rental market",
+        "labor market",
+        "urbanization",
+        "income inequality",
+        "tariffs",
+        "government spending"
+      ],
+      "2": [
+        "single-family rental",
+        "american homes 4 rent",
+        "residential reits",
+        "institutional landlords",
+        "housing affordability",
+        "home prices",
+        "rental market",
+        "rental housing supply",
+        "rent-to-own",
+        "building equity"
+      ],
+      "3": [
+        "affordable housing",
+        "housing shortage",
+        "housing supply",
+        "rental vacancy rate",
+        "housing affordability",
+        "housing stock",
+        "residential vacancies",
+        "homeownership rates",
+        "housing costs",
+        "rental market"
+      ]
+    },
+    "41": {
+      "0": [
+        "scientific revolution",
+        "agricultural revolution",
+        "mercantilism",
+        "property rights",
+        "useful knowledge",
+        "enlightenment",
+        "laissez-faire",
+        "colonialism",
+        "guild system",
+        "widespread literacy"
+      ],
+      "1": [
+        "spinning jenny",
+        "water frame",
+        "power loom",
+        "watt steam engine",
+        "flying shuttle",
+        "spinning mule",
+        "cotton gin",
+        "bessemer process",
+        "richard arkwright",
+        "james watt"
+      ],
+      "2": [
+        "factory system",
+        "urbanization",
+        "working conditions",
+        "child labour",
+        "capitalism",
+        "steam power",
+        "textile manufacture",
+        "standards of living",
+        "social structure",
+        "population increase"
+      ],
+      "3": [
+        "social effects",
+        "working conditions",
+        "child labour",
+        "urbanization",
+        "factory system",
+        "standards of living",
+        "pollution",
+        "women and family life",
+        "economic growth",
+        "sanitation"
+      ]
+    },
+    "426": {
+      "0": [
+        "employee engagement",
+        "work-life balance",
+        "supervisor relationships",
+        "promotion opportunities",
+        "professional development",
+        "pay and benefits",
+        "workplace environment",
+        "recognition and appreciation",
+        "career advancement",
+        "organizational support"
+      ],
+      "1": [
+        "job satisfaction",
+        "career development",
+        "promotion opportunities",
+        "organizational support",
+        "workplace culture",
+        "meaningful work",
+        "employee engagement",
+        "work-life balance",
+        "supervisor relationships",
+        "personal growth"
+      ],
+      "2": [
+        "employee engagement",
+        "inspiring leadership",
+        "employee empowerment",
+        "performance incentives",
+        "profit sharing",
+        "decentralized management",
+        "organizational culture",
+        "recognition programs",
+        "two-way feedback",
+        "workplace safety"
+      ]
+    },
+    "43": {
+      "0": [
+        "atlantic slave trade",
+        "colonial america",
+        "chattel slavery",
+        "indentured servitude",
+        "slave codes",
+        "hereditary slavery",
+        "domestic slave trade",
+        "plantation economy",
+        "abolitionist movement",
+        "civil war emancipation"
+      ],
+      "1": [
+        "slave codes",
+        "three-fifths compromise",
+        "fugitive slave law",
+        "domestic slave trade",
+        "westward expansion",
+        "cotton gin",
+        "plantation regime",
+        "inheritance laws",
+        "territorial expansion",
+        "slave economy"
+      ],
+      "2": [
+        "underground railroad",
+        "immediate emancipation",
+        "slave rebellions",
+        "fugitive slave law",
+        "black abolitionist rhetoric",
+        "abolitionist newspapers",
+        "john brown's raid",
+        "emancipation proclamation",
+        "freedom suits",
+        "manumission"
+      ],
+      "3": [
+        "thirteenth amendment",
+        "emancipation proclamation",
+        "civil war",
+        "ratification",
+        "abolition",
+        "reconstruction",
+        "congressional action",
+        "constitutional amendment",
+        "emancipation",
+        "end of slavery"
+      ],
+      "4": [
+        "freedmen's bureau",
+        "black codes",
+        "radical reconstruction",
+        "military reconstruction",
+        "thirteenth amendment",
+        "fourteenth amendment",
+        "fifteenth amendment",
+        "enforcement acts",
+        "civil rights act of 1875",
+        "compromise of 1877"
+      ],
+      "5": [
+        "reconstruction",
+        "freedmen's bureau",
+        "black codes",
+        "sharecropping",
+        "convict leasing",
+        "racial violence",
+        "education of african americans",
+        "disenfranchisement",
+        "freedmen",
+        "meaning of black freedom"
+      ]
+    },
+    "46": {
+      "0": [
+        "economic effects",
+        "business closures",
+        "unemployment",
+        "displacement",
+        "mental health",
+        "housing recovery",
+        "reconstruction",
+        "racial disparities",
+        "insurance response",
+        "post-disaster recovery"
+      ],
+      "1": [
+        "emergency management",
+        "disaster recovery",
+        "preparedness",
+        "response and recovery",
+        "reconstruction planning",
+        "non-governmental organizations",
+        "mutual aid",
+        "supply chains",
+        "critical infrastructure",
+        "community resilience"
+      ],
+      "2": [
+        "emergency management",
+        "disaster recovery",
+        "business continuity",
+        "unified command",
+        "national incident management system",
+        "multi-agency planning",
+        "incident action planning",
+        "critical infrastructure",
+        "supply chain resilience",
+        "remote work"
+      ],
+      "3": [
+        "school closures",
+        "online learning",
+        "remote instruction",
+        "digital divide",
+        "educational inequity",
+        "student learning outcomes",
+        "special education services",
+        "disaster recovery",
+        "post-katrina reconstruction",
+        "emergency preparedness"
+      ],
+      "4": [
+        "emergency management",
+        "information and communications technology",
+        "federal communications assistance",
+        "online learning platforms",
+        "digital education",
+        "disaster recovery",
+        "emergency preparedness",
+        "remote learning",
+        "response capabilities",
+        "critical infrastructure"
+      ]
+    },
+    "464": {
+      "0": [
+        "sociological perspective",
+        "social networks",
+        "social norms",
+        "sense of community",
+        "gemeinschaft and gesellschaft",
+        "social capital",
+        "shared place",
+        "shared experiences",
+        "community boundaries",
+        "ecological community"
+      ],
+      "1": [
+        "social norms",
+        "social capital",
+        "community values",
+        "social structure",
+        "local social system",
+        "shared experiences",
+        "community institutions",
+        "civic participation",
+        "community cohesion",
+        "community governance"
+      ],
+      "2": [
+        "community organizing",
+        "grassroots action",
+        "community leadership",
+        "social action",
+        "community mobilization",
+        "locality development",
+        "community partnerships",
+        "civil society organizations",
+        "community-owned",
+        "leadership development"
+      ],
+      "3": [
+        "community boundaries",
+        "community definition",
+        "community assessment",
+        "needs assessment",
+        "community resources",
+        "participatory planning",
+        "stakeholder analysis",
+        "community governance",
+        "community organizing",
+        "shared experiences or concerns"
+      ],
+      "4": [
+        "community-based disaster risk reduction",
+        "participatory planning",
+        "community preparedness",
+        "local partners",
+        "early warning systems",
+        "disaster mitigation",
+        "grassroots action",
+        "social mobilization",
+        "local governance",
+        "community resilience"
+      ]
+    },
+    "467": {
+      "0": [
+        "extinct",
+        "extinct in the wild",
+        "species extinction",
+        "population goes extinct",
+        "last individual dies",
+        "iucn red list",
+        "conservation status",
+        "risk of extinction",
+        "critically endangered"
+      ],
+      "1": [
+        "habitat destruction",
+        "hunting",
+        "overhunting",
+        "low genetic diversity",
+        "low birth rate",
+        "disease",
+        "human activity",
+        "endangered species act",
+        "international crane foundation"
+      ],
+      "2": [
+        "habitat loss",
+        "human-wildlife conflict",
+        "illegal wildlife trade",
+        "low genetic diversity",
+        "prey depletion",
+        "livestock farmers",
+        "population fragmentation",
+        "snares",
+        "disease",
+        "conservation needs"
+      ],
+      "3": [
+        "overhunting",
+        "overexploitation",
+        "unsustainable hunting",
+        "trophy hunting",
+        "wildlife trade",
+        "habitat destruction",
+        "population decline",
+        "rhino horn poaching",
+        "pangolin",
+        "endangered species conservation"
+      ],
+      "4": [
+        "introduced species",
+        "new species introduction",
+        "anthropocene",
+        "holocene extinction",
+        "human activity",
+        "human causes of extinction",
+        "biodiversity",
+        "habitat destruction",
+        "ecological impacts",
+        "invasive species definition"
+      ],
+      "5": [
+        "iucn red list",
+        "conservation status",
+        "critically endangered",
+        "threatened with extinction",
+        "population decline",
+        "genetic vulnerability",
+        "low birth rate",
+        "extinction risk",
+        "species classification",
+        "listing criteria"
+      ]
+    },
+    "469": {
+      "0": [
+        "tuition rates",
+        "financial aid",
+        "in-state tuition",
+        "out-of-state tuition",
+        "grants and scholarships",
+        "student loans",
+        "cost of attendance",
+        "online program costs",
+        "state funding",
+        "college affordability calculator"
+      ],
+      "1": [
+        "employment outlook",
+        "career and salary outlook",
+        "median annual earnings",
+        "salary scores",
+        "job outlook",
+        "accreditation",
+        "online degree legitimacy",
+        "highest-paying jobs",
+        "career path",
+        "return on investment"
+      ],
+      "2": [
+        "colonial period",
+        "land-grant universities",
+        "gi bill",
+        "community colleges",
+        "federal legislation",
+        "systemic diversity",
+        "graduate programs",
+        "women and african americans at college",
+        "online education and moocs",
+        "higher education funding"
+      ],
+      "3": [
+        "online degree programs",
+        "online education",
+        "digital learning",
+        "flexibility",
+        "affordable online colleges",
+        "accredited online programs",
+        "tuition costs",
+        "financial aid",
+        "career and salary outlook",
+        "historically black colleges and universities"
+      ]
+    },
+    "47": {
+      "0": [
+        "intimate partner violence",
+        "power and control",
+        "cycle of abuse",
+        "substance abuse",
+        "alcohol and drug use",
+        "childhood abuse",
+        "intergenerational violence",
+        "social stress",
+        "attitudes to violence against women",
+        "coercion and threats"
+      ],
+      "1": [
+        "intimate partner violence",
+        "prevalence",
+        "incidence",
+        "gender differences",
+        "women and girls",
+        "men",
+        "age groups",
+        "indigenous women",
+        "rural and remote areas",
+        "same-sex relationships"
+      ],
+      "2": [
+        "power and control",
+        "economic abuse",
+        "coercion and threats",
+        "cycle of abuse",
+        "isolation",
+        "fear of repercussions",
+        "financial independence",
+        "barriers to leaving",
+        "using children",
+        "hope for change"
+      ],
+      "3": [
+        "intimate partner violence",
+        "elder abuse",
+        "child abuse",
+        "adverse childhood experiences",
+        "post-traumatic stress disorder",
+        "mental health",
+        "health impacts",
+        "emotional abuse",
+        "physical injuries",
+        "intergenerational violence"
+      ],
+      "4": [
+        "intimate partner violence",
+        "social influences",
+        "cultural view",
+        "custom and tradition",
+        "attitudes to violence against women",
+        "power and control",
+        "gender norms",
+        "intergenerational violence",
+        "colonial assimilation",
+        "underreporting"
+      ],
+      "5": [
+        "mandatory arrest policies",
+        "pro-arrest policies",
+        "police response",
+        "protective orders",
+        "prosecution and sentencing",
+        "violence against women act",
+        "victim reporting barriers",
+        "underreporting",
+        "victim support services",
+        "law enforcement training"
+      ]
+    },
+    "477": {
+      "0": [
+        "human genetic variation",
+        "racial classification",
+        "biological classification",
+        "genetic clusters",
+        "clines",
+        "ancestrally differentiated populations",
+        "colonialism",
+        "historical variability",
+        "social categories",
+        "race and genetics"
+      ],
+      "1": [
+        "social construction",
+        "racial classification",
+        "racial categories",
+        "ibge categories",
+        "color classification",
+        "racial stratification",
+        "racial disparities",
+        "racial mixing",
+        "whitening ideology",
+        "constructing race"
+      ],
+      "2": [
+        "human genetic variation",
+        "social construction",
+        "genetic clustering",
+        "clinal variation",
+        "population structure",
+        "ancestrally differentiated populations",
+        "within-group variation",
+        "between-group variation",
+        "biological classification",
+        "human subspecies"
+      ],
+      "3": [
+        "color-blindness",
+        "white privilege",
+        "institutional racism",
+        "interest convergence",
+        "critical legal studies",
+        "race as a social construct",
+        "free society",
+        "science reason and evidence",
+        "lived experience",
+        "individualism"
+      ],
+      "4": [
+        "social construction of race",
+        "racial classification",
+        "structural racism",
+        "racial stratification",
+        "prejudice bias and discrimination",
+        "color-blind racism",
+        "critical race theory",
+        "racial inequality",
+        "race and ethnicity",
+        "historical racism"
+      ]
+    },
+    "48": {
+      "0": [
+        "mikhail gorbachev",
+        "perestroika",
+        "glasnost",
+        "era of stagnation",
+        "nationalist movements",
+        "soviet republics break away",
+        "1991 august coup",
+        "central planning",
+        "afghan war",
+        "revolutions of 1989"
+      ],
+      "1": [
+        "perestroika",
+        "glasnost",
+        "great purge",
+        "collectivization",
+        "five-year plans",
+        "political repression",
+        "de-stalinization",
+        "democratic reform",
+        "communist party",
+        "dissolution of the soviet union"
+      ],
+      "2": [
+        "rapallo treaty",
+        "secret military cooperation",
+        "molotov-ribbentrop pact",
+        "german reunification",
+        "berlin blockade",
+        "berlin crisis",
+        "nazi-soviet non-aggression pact",
+        "cold war détente",
+        "arms control summits",
+        "gorbachev reforms"
+      ],
+      "3": [
+        "collectivization",
+        "rapid industrialization",
+        "great purge",
+        "propaganda",
+        "education",
+        "health",
+        "women",
+        "religion",
+        "de-stalinization",
+        "perestroika"
+      ],
+      "4": [
+        "cold war",
+        "comintern",
+        "eastern bloc",
+        "warsaw pact",
+        "nazi-soviet pact",
+        "berlin blockade",
+        "cuban missile crisis",
+        "sino-soviet split",
+        "brezhnev doctrine",
+        "soviet-afghan war"
+      ]
+    },
+    "49": {
+      "0": [
+        "slavery",
+        "secession",
+        "sectionalism",
+        "territorial expansion",
+        "states' rights",
+        "abolitionism",
+        "missouri compromise",
+        "kansas-nebraska act",
+        "dred scott decision",
+        "election of 1860"
+      ],
+      "1": [
+        "anaconda plan",
+        "union blockade",
+        "confederate independence",
+        "preservation of the union",
+        "capture richmond",
+        "emancipation proclamation",
+        "southern diplomacy",
+        "total war",
+        "sherman's march to the sea",
+        "confederate resources"
+      ],
+      "2": [
+        "slavery",
+        "secession crisis",
+        "election of 1860",
+        "fort sumter",
+        "kansas-nebraska act",
+        "dred scott decision",
+        "john brown's raid",
+        "gettysburg",
+        "vicksburg",
+        "appomattox surrender"
+      ],
+      "3": [
+        "union army",
+        "african american soldiers",
+        "black regiments",
+        "emancipation proclamation",
+        "recruiting volunteers",
+        "foreign-born soldiers",
+        "ethnic regiments",
+        "confederate army",
+        "militia act",
+        "soldiers in the north"
+      ],
+      "4": [
+        "reconstruction",
+        "emancipation",
+        "abolition of slavery",
+        "freedpeople",
+        "southern economy",
+        "economic consequences",
+        "war financing",
+        "industrialization",
+        "land grants",
+        "racial inequality"
+      ]
+    },
+    "497": {
+      "0": [
+        "biodiversity loss",
+        "species migration",
+        "coral bleaching",
+        "ocean acidification",
+        "habitat loss",
+        "species extinction",
+        "wildfires",
+        "droughts",
+        "invasive species",
+        "ecosystem disruption"
+      ],
+      "1": [
+        "non-native species",
+        "habitat alteration",
+        "native biodiversity",
+        "predation",
+        "competition",
+        "hybridization",
+        "aquatic nuisance species",
+        "ecosystem disruption",
+        "disease transmission",
+        "species introductions"
+      ],
+      "2": [
+        "pollination",
+        "food webs",
+        "ecosystem balance",
+        "trophic interactions",
+        "wild plants",
+        "crop production",
+        "wildlife habitats",
+        "ecosystem services",
+        "biodiversity loss",
+        "population decline"
+      ],
+      "3": [
+        "protected areas",
+        "habitat conservation",
+        "endangered species",
+        "wildlife conservation",
+        "invasive species",
+        "habitat destruction",
+        "overexploitation",
+        "pollution control",
+        "national level laws",
+        "international conservation"
+      ],
+      "4": [
+        "wildlife conservation",
+        "native plants",
+        "invasive species",
+        "habitat protection",
+        "sustainable consumption",
+        "reduce plastic consumption",
+        "avoid pesticides",
+        "report illegal hunting",
+        "wildlife-friendly yard",
+        "endangered species"
+      ]
+    },
+    "499": {
+      "0": [
+        "physician-assisted suicide",
+        "voluntary euthanasia",
+        "active euthanasia",
+        "passive euthanasia",
+        "patient autonomy",
+        "slippery slope",
+        "sanctity of life",
+        "palliative care",
+        "vulnerable patients",
+        "hippocratic oath"
+      ],
+      "1": [
+        "active euthanasia",
+        "voluntary euthanasia",
+        "legal definition",
+        "medical ethics",
+        "patient self-administration",
+        "physician administration",
+        "role of the physician",
+        "lethal medication",
+        "assisted suicide versus euthanasia",
+        "end-of-life decisions"
+      ],
+      "2": [
+        "physician-assisted suicide",
+        "patient autonomy",
+        "sanctity of life",
+        "slippery slope",
+        "hippocratic oath",
+        "palliative care",
+        "quality of life",
+        "vulnerable populations",
+        "medical ethics",
+        "voluntary euthanasia"
+      ],
+      "3": [
+        "physician-assisted suicide",
+        "medical ethics",
+        "sanctity of life",
+        "slippery slope arguments",
+        "patient autonomy",
+        "religious ethics",
+        "palliative care",
+        "pressure on vulnerable patients",
+        "hippocratic oath",
+        "legalisation"
+      ]
+    },
+    "502": {
+      "0": [
+        "chatbots",
+        "digital assistants",
+        "recommendation algorithms",
+        "smart home devices",
+        "workforce automation",
+        "deepfakes",
+        "privacy",
+        "algorithmic bias",
+        "health care",
+        "education"
+      ],
+      "1": [
+        "workforce development",
+        "retrain and educate",
+        "job automation",
+        "digital education",
+        "on-the-job training",
+        "augmented workforce",
+        "employee experience",
+        "recruitment and onboarding",
+        "workplace robots",
+        "mass unemployment"
+      ],
+      "2": [
+        "individualized learning",
+        "adaptive learning",
+        "smart content",
+        "voice assistants",
+        "ai-based solutions",
+        "teachers and schools",
+        "student learning",
+        "data privacy",
+        "algorithmic bias",
+        "human oversight"
+      ],
+      "3": [
+        "deepfakes",
+        "ai bias",
+        "copyright",
+        "music",
+        "art",
+        "news publishing and writing",
+        "creative workforce",
+        "job automation",
+        "data access",
+        "human oversight"
+      ]
+    },
+    "503": {
+      "0": [
+        "emotional intelligence",
+        "active listening",
+        "strategic thinking",
+        "decision-making",
+        "problem-solving",
+        "delegation",
+        "integrity",
+        "accountability",
+        "vision and purpose",
+        "conflict resolution"
+      ],
+      "1": [
+        "coaching leadership style",
+        "leader-coach",
+        "emotional intelligence",
+        "goal-setting",
+        "feedback and support",
+        "developing resilience",
+        "team performance",
+        "transformational leadership",
+        "leadership development",
+        "military leadership"
+      ],
+      "2": [
+        "personal qualities",
+        "characteristics of successful person",
+        "strengths assessment",
+        "self-awareness",
+        "objectives and performance indicators",
+        "tracking progress",
+        "outcome results",
+        "workforce well-being and satisfaction",
+        "employee commitment",
+        "individual development plans"
+      ]
+    },
+    "515": {
+      "0": [
+        "colorectal cancer",
+        "early-onset cancer",
+        "cancer incidence trends",
+        "age-standardized incidence",
+        "risk factors",
+        "screening",
+        "obesity",
+        "diet and gut bacteria",
+        "environmental chemicals",
+        "inflammation"
+      ],
+      "1": [
+        "radiofrequency radiation",
+        "epidemiologic studies",
+        "brain cancer",
+        "interphone study",
+        "danish study",
+        "million women study",
+        "non-ionizing radiation",
+        "experimental studies",
+        "radiofrequency exposure",
+        "children"
+      ],
+      "2": [
+        "age-standardized mortality rate",
+        "all cancers combined",
+        "mortality trends over time",
+        "cancer death rates",
+        "global cancer statistics",
+        "cancer deaths by age",
+        "mortality projections",
+        "five-year survival rates",
+        "globocan",
+        "cancer mortality decline"
+      ],
+      "3": [
+        "breast cancer mortality",
+        "cancer mortality",
+        "breast cancer deaths",
+        "uk countries",
+        "mortality trends",
+        "female breast cancer",
+        "cancer research uk",
+        "age-standardized mortality rate"
+      ],
+      "4": [
+        "lung cancer prognosis",
+        "survival statistics",
+        "five-year survival rate",
+        "non-small cell lung cancer",
+        "small cell lung cancer",
+        "seer stage",
+        "localized",
+        "regionalized",
+        "distant",
+        "tnm stage"
+      ]
+    },
+    "526": {
+      "0": [
+        "thermal expansion",
+        "ocean heating",
+        "melting glaciers",
+        "greenland ice sheet",
+        "antarctic ice sheet",
+        "ice sheet mass loss",
+        "ocean heat content",
+        "land water storage",
+        "greenhouse gas emissions",
+        "enhanced greenhouse effect"
+      ],
+      "1": [
+        "storm surge",
+        "coastal flooding",
+        "saltwater intrusion",
+        "beach erosion",
+        "coastal ecosystems",
+        "marine biodiversity",
+        "island nations",
+        "river deltas",
+        "property damage",
+        "managed retreat"
+      ],
+      "2": [
+        "climate change adaptation",
+        "managed retreat",
+        "coastal resilience",
+        "seawalls",
+        "natural infrastructure",
+        "stormwater pumps",
+        "raising roads",
+        "reducing emissions",
+        "coastal flooding",
+        "saltwater intrusion"
+      ]
+    },
+    "528": {
+      "0": [
+        "poverty",
+        "environmental degradation",
+        "environmental governance",
+        "weak regulation",
+        "rapid urbanization",
+        "population growth",
+        "resource extraction",
+        "food and water security",
+        "institutional capacity",
+        "rural and urban pollution"
+      ],
+      "1": [
+        "environmental governance",
+        "sustainable development",
+        "policy instruments",
+        "international environmental agreements",
+        "integrated strategies",
+        "environmental movement",
+        "environmental regulation",
+        "climate change mitigation",
+        "ecosystem approach",
+        "transitions to sustainability"
+      ],
+      "2": [
+        "environmental health",
+        "air pollution",
+        "climate change",
+        "water quality",
+        "natural disasters",
+        "vector-borne diseases",
+        "environmental stress",
+        "health inequalities",
+        "social cohesion",
+        "environmental hazards"
+      ],
+      "3": [
+        "ecosystem services",
+        "biodiversity conservation",
+        "human health",
+        "natural resources",
+        "air quality",
+        "climate change",
+        "sustainable development",
+        "future generations",
+        "environmental degradation",
+        "ecological balance"
+      ],
+      "4": [
+        "environmental economics",
+        "market failure",
+        "externality",
+        "common goods",
+        "public goods",
+        "environmental goods and services",
+        "environmental policy instruments",
+        "economic valuation",
+        "ecosystem services",
+        "collective action"
+      ]
+    },
+    "53": {
+      "0": [
+        "mental health",
+        "physical wellbeing",
+        "spiritual health",
+        "coping with stress",
+        "spiritual growth",
+        "sense of meaning and purpose",
+        "self-awareness",
+        "spiritual practices",
+        "religious involvement",
+        "identity development"
+      ],
+      "1": [
+        "spiritual suffering",
+        "spiritual pain",
+        "coping",
+        "meaning-making",
+        "mental health",
+        "well-being",
+        "spiritual care",
+        "inner peace",
+        "religious trauma",
+        "buddhist teachings"
+      ],
+      "2": [
+        "religion and culture",
+        "organized religion",
+        "religious identity",
+        "socially learned behavior",
+        "inner and outer aspects",
+        "cultural diversity",
+        "modernization",
+        "social justice",
+        "religious beliefs",
+        "institutional religion"
+      ],
+      "3": [
+        "philosophy of religion",
+        "religious epistemology",
+        "belief and knowledge",
+        "natural theology",
+        "religious experience",
+        "st. thomas aquinas",
+        "st. augustine",
+        "enlightenment rationalism",
+        "philosophical theology",
+        "science and religion"
+      ],
+      "4": [
+        "abrahamic faiths",
+        "asian traditions",
+        "traditional african religion",
+        "sufism",
+        "bahá’í faith",
+        "jainism",
+        "zoroastrianism",
+        "shintoism",
+        "taoism",
+        "indigenous spirituality"
+      ],
+      "5": [
+        "sacred texts",
+        "holy books",
+        "scriptures",
+        "bible",
+        "quran",
+        "torah",
+        "bhagavad gita",
+        "tripitaka",
+        "guru granth sahib",
+        "tao te ching"
+      ]
+    },
+    "55": {
+      "0": [
+        "gender stratification",
+        "occupational segregation",
+        "gender pay gap",
+        "gender role attitudes",
+        "social learning theory",
+        "gender stereotypes in media",
+        "patriarchy",
+        "glass ceiling",
+        "healthcare access",
+        "structural gender oppression"
+      ],
+      "1": [
+        "gender stratification",
+        "patriarchy",
+        "gender socialization",
+        "gender roles",
+        "sexism and discrimination",
+        "occupational segregation",
+        "gender pay gap",
+        "structural gender oppression",
+        "gender-based violence",
+        "gender stereotypes"
+      ],
+      "2": [
+        "gender socialization",
+        "gender roles",
+        "gender stereotypes",
+        "structural gender oppression",
+        "intersectionality",
+        "occupational segregation",
+        "racial pay gap",
+        "underrepresentation and misrepresentation",
+        "mass communication media",
+        "son preference"
+      ]
+    },
+    "56": {
+      "0": [
+        "ideological conflict",
+        "soviet expansionism",
+        "postwar europe",
+        "eastern bloc",
+        "containment",
+        "truman doctrine",
+        "marshall plan",
+        "yalta conference",
+        "potsdam conference",
+        "mutual mistrust"
+      ],
+      "1": [
+        "truman doctrine",
+        "marshall plan",
+        "berlin blockade and airlift",
+        "nato",
+        "korean war",
+        "warsaw pact",
+        "cuban missile crisis",
+        "vietnam war",
+        "soviet war in afghanistan",
+        "fall of the berlin wall"
+      ],
+      "2": [
+        "gorbachev reforms",
+        "perestroika",
+        "glasnost",
+        "soviet dissolution",
+        "revolutions of 1989",
+        "fall of the berlin wall",
+        "reagan-gorbachev summits",
+        "arms race reduction",
+        "soviet economic crisis",
+        "eastern europe breaks away"
+      ],
+      "3": [
+        "truman doctrine",
+        "containment",
+        "berlin blockade",
+        "nato",
+        "eastern bloc",
+        "radio free europe",
+        "soviet union",
+        "communism",
+        "economic aid",
+        "technological competition"
+      ],
+      "4": [
+        "nato",
+        "nuclear weapons",
+        "arms race",
+        "mutual assured destruction",
+        "space race",
+        "post-cold war nato",
+        "decolonization",
+        "sino-american rapprochement",
+        "u.s.-china relations",
+        "longstanding conflicts"
+      ]
+    },
+    "568": {
+      "0": [
+        "deepwater horizon",
+        "exxon valdez",
+        "marine mammals",
+        "seabirds",
+        "coral reefs",
+        "coastal wetlands",
+        "polycyclic aromatic hydrocarbons",
+        "food chain contamination",
+        "oil dispersants",
+        "benthic organisms"
+      ],
+      "1": [
+        "greenhouse gas emissions",
+        "textile waste",
+        "water pollution",
+        "microplastics",
+        "synthetic fibres",
+        "polyester",
+        "non-renewable resources",
+        "landfill",
+        "sustainable fashion",
+        "slow fashion"
+      ],
+      "2": [
+        "acid mine drainage",
+        "heavy metal contamination",
+        "water pollution",
+        "tailings",
+        "land rehabilitation",
+        "habitat loss",
+        "biodiversity loss",
+        "deforestation",
+        "surface water quality",
+        "groundwater contamination"
+      ],
+      "3": [
+        "greenhouse gas emissions",
+        "fossil fuel combustion",
+        "air pollution",
+        "water consumption",
+        "renewable energy",
+        "electricity generation",
+        "coal-fired power plants",
+        "oil spills",
+        "habitat loss",
+        "energy conservation"
+      ]
+    },
+    "571": {
+      "0": [
+        "prescription misuse",
+        "addiction risk factors",
+        "perceptions of safety",
+        "easy accessibility",
+        "social acceptability",
+        "mental health correlations",
+        "self-treatment",
+        "recreational use",
+        "tolerance and dependence",
+        "withdrawal symptoms"
+      ],
+      "1": [
+        "opioid use disorder",
+        "physical dependence",
+        "opioid withdrawal",
+        "craving",
+        "tolerance",
+        "relapse",
+        "medication-assisted treatment",
+        "methadone",
+        "buprenorphine",
+        "fentanyl"
+      ],
+      "2": [
+        "prescription opioid misuse",
+        "opioid prescribing",
+        "intensive pharmaceutical marketing",
+        "oxycontin",
+        "heroin transition",
+        "illicit fentanyl",
+        "overdose deaths",
+        "pain management",
+        "opioid epidemic history",
+        "national public health crisis"
+      ],
+      "3": [
+        "overdose deaths",
+        "opioid use disorder",
+        "prescription opioid misuse",
+        "fentanyl",
+        "heroin",
+        "addiction treatment",
+        "naloxone",
+        "public health consequences",
+        "social complications",
+        "rural communities"
+      ]
+    },
+    "58": {
+      "0": [
+        "radioactive waste disposal",
+        "greenhouse gas emissions",
+        "high energy density",
+        "baseload power",
+        "nuclear accidents",
+        "uranium fuel",
+        "decommissioning costs",
+        "nuclear proliferation",
+        "energy security",
+        "nuclear power plants"
+      ],
+      "1": [
+        "greenhouse gas emissions",
+        "low carbon electricity",
+        "fossil fuels",
+        "carbon-constrained world",
+        "life-cycle emissions",
+        "uranium mining",
+        "radioactive waste",
+        "nuclear accidents",
+        "clean air",
+        "energy transition"
+      ],
+      "2": [
+        "fukushima daiichi",
+        "three mile island",
+        "reactor safety",
+        "severe accident management",
+        "defence-in-depth",
+        "radiation exposure",
+        "long-term health effects",
+        "radioactive waste disposal",
+        "nuclear reactor incidents",
+        "safety relative to other energy sources"
+      ],
+      "3": [
+        "radioactive waste",
+        "greenhouse gas emissions",
+        "energy density",
+        "baseload power",
+        "capacity factor",
+        "uranium fuel",
+        "fusion reactors",
+        "tokamak",
+        "construction costs",
+        "fossil fuels"
+      ],
+      "4": [],
+      "5": []
+    },
+    "582": {
+      "0": [
+        "cellular senescence",
+        "telomere shortening",
+        "dna repair",
+        "mitochondrial dysfunction",
+        "oxidative stress",
+        "stem cell exhaustion",
+        "epigenetic changes",
+        "protein misfolding",
+        "immune senescence",
+        "organ system decline"
+      ],
+      "1": [
+        "young-old",
+        "middle-old",
+        "old-old",
+        "population aging",
+        "older adults",
+        "aged 65 and over",
+        "working-age population",
+        "demographic changes",
+        "fiscal sustainability",
+        "social insurance systems"
+      ],
+      "2": [
+        "life course perspective",
+        "social and psychological changes",
+        "ageism",
+        "subjective well-being",
+        "negative beliefs on aging",
+        "continuity theory",
+        "symbolic interactionism",
+        "emotion regulation",
+        "autobiographical memories",
+        "cultural factors"
+      ],
+      "3": [
+        "biological age",
+        "epigenetic clock",
+        "cellular senescence",
+        "telomere shortening",
+        "dna repair",
+        "mTOR inhibition",
+        "rapamycin",
+        "senolytics",
+        "human clinical trials",
+        "rejuvenation"
+      ]
+    },
+    "588": {
+      "0": [
+        "telehealth",
+        "electronic health records",
+        "health information technology",
+        "rural healthcare",
+        "digital biomarkers",
+        "mobile health",
+        "remote patient monitoring",
+        "health information exchange",
+        "broadband access",
+        "social determinants of health"
+      ],
+      "1": [
+        "air pollution",
+        "water quality",
+        "toxic substances",
+        "hazardous waste",
+        "climate change",
+        "natural disasters",
+        "disease transmission",
+        "environmental risk factors",
+        "sanitation",
+        "healthcare access"
+      ],
+      "2": [
+        "health information technology",
+        "electronic health records",
+        "technology upgrades",
+        "vendor considerations",
+        "rural healthcare",
+        "healthcare access",
+        "infrastructure",
+        "workflow integration",
+        "medical device lifecycle",
+        "equipment replacement costs"
+      ],
+      "3": [
+        "elemental speciation",
+        "human health risk assessment",
+        "essential trace minerals",
+        "bioavailability",
+        "iron deficiency anemia",
+        "zinc-copper interactions",
+        "heavy metal exposure",
+        "environmental contaminants",
+        "toxic elements",
+        "chronic disease risk"
+      ]
+    },
+    "592": {
+      "0": [
+        "strain theory",
+        "social control theory",
+        "differential association theory",
+        "labeling theory",
+        "social ecology",
+        "biological factors",
+        "psychological theories",
+        "family influences",
+        "peer influences",
+        "neighborhood characteristics"
+      ],
+      "1": [
+        "social norms",
+        "social control",
+        "crime and the law",
+        "legal sanctions",
+        "labeling theory",
+        "relativity of deviance",
+        "criminal act vs deviant act",
+        "socially constructed",
+        "types of crimes",
+        "victimless crime"
+      ],
+      "2": [
+        "victimization",
+        "social control",
+        "criminal justice",
+        "violent crime",
+        "white-collar crime",
+        "crime prevention",
+        "community characteristics",
+        "social disorganization",
+        "treatment of victims",
+        "public opinion"
+      ],
+      "3": [
+        "social control theory",
+        "social ecology",
+        "neighborhood and community characteristics",
+        "crime prevention",
+        "effective law enforcement",
+        "offender rehabilitation",
+        "cognitive-behavioral theory",
+        "protective factors",
+        "community institutions",
+        "restorative justice"
+      ],
+      "4": [
+        "cultural deviance",
+        "southern culture of violence",
+        "individualism and collectivism",
+        "social learning",
+        "differential association",
+        "social disorganization",
+        "strain theory",
+        "deviant subcultures",
+        "social control theory",
+        "labeling theory"
+      ]
+    },
+    "598": {
+      "0": [
+        "online harassment",
+        "rates of incidence",
+        "youth prevalence",
+        "adolescents",
+        "social media",
+        "cyberstalking",
+        "online bullying",
+        "victimization",
+        "intention repetition power imbalance",
+        "survey statistics"
+      ],
+      "1": [
+        "female victims",
+        "gender differences",
+        "online harassment",
+        "social media",
+        "online rumors",
+        "sexual remarks",
+        "appearance",
+        "lower self-esteem",
+        "powerlessness",
+        "mental health"
+      ],
+      "2": [
+        "depression",
+        "anxiety",
+        "low self-esteem",
+        "suicidal thoughts",
+        "self-harm",
+        "emotional damage",
+        "isolation",
+        "psychological impact",
+        "academic issues",
+        "powerlessness"
+      ],
+      "3": [
+        "online privacy settings",
+        "report cyberbullying",
+        "trusted adult",
+        "digital citizenship",
+        "parental monitoring",
+        "school cyberbullying policy",
+        "block the bully",
+        "document evidence",
+        "social media safety",
+        "bystander intervention"
+      ]
+    },
+    "6": {
+      "0": [
+        "self-esteem",
+        "social comparison",
+        "unrealistic beauty standards",
+        "eating disorders",
+        "depression",
+        "anxiety",
+        "fear of missing out",
+        "cyberbullying",
+        "passive social media use",
+        "body positivity"
+      ],
+      "1": [
+        "political polarization",
+        "cyberbullying",
+        "social comparison",
+        "privacy",
+        "data harvesting",
+        "mental health",
+        "self-image",
+        "flow of information",
+        "social relationships",
+        "gender roles"
+      ],
+      "2": [
+        "social networking",
+        "human interaction",
+        "virtual communities",
+        "political polarization",
+        "public discourse",
+        "flow of information",
+        "civic engagement",
+        "social comparison",
+        "self-presentation",
+        "viral content"
+      ],
+      "3": [
+        "social media marketing",
+        "influencer marketing",
+        "customer service",
+        "advertising campaigns",
+        "consumer response rates",
+        "return on investment",
+        "engagement metrics",
+        "viral content",
+        "brand reputation management",
+        "mobile social media"
+      ]
+    },
+    "60": {
+      "0": [
+        "free press",
+        "press freedom",
+        "social responsibility",
+        "watchdog journalism",
+        "government accountability",
+        "informed citizens",
+        "diverse perspectives",
+        "reliable journalism",
+        "media ethics",
+        "disinformation"
+      ],
+      "1": [
+        "declining trust in news media",
+        "political polarization",
+        "social media algorithms",
+        "disinformation campaigns",
+        "civic participation",
+        "press freedom",
+        "fact checking",
+        "media ownership concentration",
+        "public opinion",
+        "information literacy"
+      ],
+      "2": [
+        "fact checking",
+        "media literacy",
+        "confirmation bias",
+        "source credibility",
+        "reliable journalism",
+        "disinformation",
+        "propaganda model",
+        "news values",
+        "diverse perspectives",
+        "social media bots"
+      ],
+      "3": [
+        "press freedom",
+        "media ethics",
+        "social responsibility",
+        "fact checking",
+        "media literacy",
+        "news industry actions",
+        "technology company responsibilities",
+        "media ownership concentration",
+        "diverse perspectives",
+        "government accountability"
+      ]
+    },
+    "606": {
+      "0": [
+        "old firm",
+        "glasgow derby",
+        "scottish premiership",
+        "ibrox",
+        "celtic park",
+        "sectarianism",
+        "rangers f.c.",
+        "celtic f.c."
+      ],
+      "1": [
+        "football predictions",
+        "live football today",
+        "featured matches",
+        "recent developments",
+        "match results",
+        "championship play-off",
+        "international friendlies",
+        "premier league",
+        "team news",
+        "social media"
+      ]
+    },
+    "66": {
+      "0": [
+        "teleological theories",
+        "deontological theories",
+        "categorical imperative",
+        "ethical decision-making framework",
+        "professional ethics",
+        "ethical leadership",
+        "codes of ethics",
+        "duty-based ethics",
+        "act utilitarianism",
+        "rule utilitarianism"
+      ],
+      "1": [
+        "ethical decision-making",
+        "professional codes of ethics",
+        "ethical leadership",
+        "professional accountability",
+        "ethical frameworks",
+        "values-based practice",
+        "social work supervision",
+        "teacher professional standards",
+        "ethics of care",
+        "justice and care"
+      ],
+      "2": [
+        "ethical leadership",
+        "code of conduct",
+        "organizational culture",
+        "employee justice perceptions",
+        "trust in organization",
+        "procedural justice",
+        "ethical communication system",
+        "human resource management",
+        "fairness accountability trust",
+        "ethical framework"
+      ],
+      "3": [
+        "causes of unethical behavior",
+        "factors affecting individual ethics",
+        "organizational demands",
+        "social pressures",
+        "threatening situations",
+        "ethical dilemma",
+        "moral autonomy",
+        "conflicts of interest",
+        "ethical climate",
+        "moral development"
+      ]
+    },
+    "7": {
+      "0": [
+        "dynastic rule",
+        "qin empire",
+        "qing dynasty",
+        "revolution of 1911",
+        "may fourth movement",
+        "people's republic of china",
+        "chinese communist party",
+        "great leap forward",
+        "cultural revolution",
+        "reform and opening"
+      ],
+      "1": [
+        "reform and opening",
+        "deng xiaoping",
+        "special economic zones",
+        "foreign direct investment",
+        "state-owned enterprises",
+        "economic system reform",
+        "industrialization",
+        "energy security",
+        "energy resources",
+        "clean energy"
+      ],
+      "2": [
+        "energy policy",
+        "natural resources",
+        "resource shortage hypothesis",
+        "sino-african relations",
+        "economic leverage",
+        "non-interference",
+        "foreign policy",
+        "economic diplomacy",
+        "oil imports",
+        "global perceptions"
+      ],
+      "3": [
+        "chinese americans",
+        "chinese singaporeans",
+        "chinese in australia",
+        "overseas chinese",
+        "migration",
+        "immigration",
+        "discrimination and stereotypes",
+        "cultural centers",
+        "chinese associations",
+        "economic contributions"
+      ],
+      "4": [
+        "confucianism",
+        "guanxi",
+        "face",
+        "collectivism",
+        "religion and beliefs",
+        "ethnic and language groups",
+        "land and climate",
+        "surface features",
+        "major rivers",
+        "age of philosophies"
+      ]
+    },
+    "70": {
+      "0": [
+        "executive order 9066",
+        "pearl harbor",
+        "military necessity",
+        "west coast anti-asian prejudice",
+        "anti-japanese sentiment",
+        "racial discrimination",
+        "forced removal",
+        "exclusion orders",
+        "war relocation authority",
+        "niihau incident"
+      ],
+      "1": [
+        "meiji restoration",
+        "economic miracle",
+        "postwar growth",
+        "meiji period",
+        "industrialization",
+        "zaibatsu",
+        "american occupation",
+        "1947 constitution",
+        "war with russia",
+        "foreign relations"
+      ],
+      "2": [
+        "kokutai",
+        "spiritual mobilization",
+        "bushido",
+        "hakkō ichiu",
+        "greater east asia co-prosperity sphere",
+        "japanese propaganda",
+        "education and textbooks",
+        "privation",
+        "anti-western",
+        "attitudes to surrender"
+      ],
+      "3": [
+        "wa",
+        "social harmony",
+        "honne and tatemae",
+        "uchi and soto",
+        "social customs and protocol",
+        "personal space",
+        "social stratification",
+        "order hierarchy and consensus",
+        "shame culture",
+        "confucian values"
+      ],
+      "4": [
+        "japanese pop culture",
+        "anime conventions",
+        "anime fan culture",
+        "manga in the united states",
+        "cosplay",
+        "kawaii",
+        "global popularity",
+        "cultural influence",
+        "anime influence and sales",
+        "up-and-coming creators"
+      ]
+    },
+    "707": {
+      "0": [
+        "aluminum compounds",
+        "breast cancer risk",
+        "alzheimer's disease",
+        "parabens",
+        "propylene glycol",
+        "triclosan",
+        "phthalates",
+        "kidney disease",
+        "skin irritation",
+        "lymph nodes"
+      ],
+      "1": [
+        "sorbitol intolerance",
+        "gastrointestinal distress",
+        "abdominal bloating",
+        "osmotic laxative effect",
+        "diarrhea",
+        "ibs flare-ups",
+        "fructose malabsorption",
+        "fodmap",
+        "drug interactions",
+        "overdose effects"
+      ],
+      "2": [
+        "cholinesterase inhibition",
+        "acetylcholinesterase",
+        "muscarinic effects",
+        "nicotinic effects",
+        "central nervous system effects",
+        "respiratory failure",
+        "delayed neuropathy",
+        "pesticide exposure",
+        "atropine",
+        "pralidoxime"
+      ],
+      "3": [
+        "integrated health services",
+        "social determinants of health",
+        "community-based programs",
+        "cross-sector partnerships",
+        "health equity",
+        "care coordination",
+        "public health infrastructure",
+        "healthcare delivery system",
+        "health disparities reduction",
+        "population health"
+      ]
+    },
+    "72": {
+      "0": [
+        "agricultural expansion",
+        "cattle ranching",
+        "livestock ranching",
+        "palm oil production",
+        "soybean production",
+        "logging",
+        "slash-and-burn farming",
+        "infrastructure development",
+        "forest fires",
+        "small-scale agriculture"
+      ],
+      "1": [
+        "habitat loss",
+        "biodiversity loss",
+        "greenhouse gas emissions",
+        "carbon dioxide absorption",
+        "water cycle disruption",
+        "soil erosion",
+        "flooding",
+        "indigenous peoples",
+        "human-wildlife conflict",
+        "tropical diseases"
+      ],
+      "2": [
+        "habitat loss",
+        "species extinction",
+        "water cycle disruption",
+        "greenhouse gas emissions",
+        "soil erosion",
+        "local temperature",
+        "indigenous peoples",
+        "forest fires",
+        "carbon absorption",
+        "tipping points"
+      ],
+      "3": [
+        "reforestation",
+        "afforestation",
+        "agroforestry",
+        "community-based forest management",
+        "indigenous land rights",
+        "anti-deforestation legislation",
+        "protected area designations",
+        "sustainable agriculture",
+        "reduce emissions from deforestation and forest degradation",
+        "deforestation monitoring"
+      ]
+    },
+    "80": {
+      "0": [
+        "electric vehicle economics",
+        "battery costs",
+        "cost parity",
+        "consumer incentives",
+        "purchase subsidies",
+        "vehicle affordability",
+        "residual values",
+        "captive finance",
+        "supply chain localization",
+        "semiconductor shortages"
+      ],
+      "1": [
+        "battery recycling",
+        "life cycle analysis",
+        "carbon emissions",
+        "charging infrastructure",
+        "battery production",
+        "lithium",
+        "cobalt",
+        "electricity generation",
+        "purchase subsidies",
+        "fleet electrification"
+      ],
+      "2": [
+        "car buyer preferences",
+        "consumer habits",
+        "shopping style",
+        "vehicle affordability",
+        "purchase price",
+        "financing options",
+        "leasing vs buying",
+        "safety ratings",
+        "fuel economy",
+        "dealership experience"
+      ],
+      "3": [
+        "traffic safety",
+        "reduced traffic congestion",
+        "mobility for elderly and disabled",
+        "lower transportation costs",
+        "parking space",
+        "urban planning",
+        "environmental impact",
+        "ride-sharing",
+        "self-parking",
+        "insurance costs"
+      ]
+    },
+    "838": {
+      "0": [
+        "social networking sites",
+        "relationship maintenance",
+        "relationship dissolution",
+        "social media jealousy",
+        "online surveillance",
+        "facebook official",
+        "public displays of affection",
+        "relationship privacy",
+        "phubbing",
+        "romantic conflict"
+      ],
+      "1": [
+        "communication patterns",
+        "time zones",
+        "trust",
+        "jealousy",
+        "miscommunications",
+        "setting expectations",
+        "boundaries",
+        "visits",
+        "growing apart",
+        "loneliness"
+      ],
+      "2": [
+        "active listening",
+        "emotional intelligence",
+        "healthy communication patterns",
+        "conflict resolution",
+        "couple negotiation",
+        "setting boundaries",
+        "forgiveness ritual",
+        "fondness and admiration",
+        "accepting influence",
+        "rituals of connection"
+      ],
+      "3": [
+        "couple activities",
+        "rituals of connection",
+        "relationship maintenance",
+        "increasing intimacy",
+        "fondness and admiration",
+        "romantic relationships",
+        "long-term relationships",
+        "couple sports",
+        "date nights",
+        "relationship stability"
+      ],
+      "4": [
+        "social devaluation",
+        "social image",
+        "competency enhancement",
+        "relationship management",
+        "social skills",
+        "empathy",
+        "patient empowerment",
+        "more equal communication",
+        "shift in power balance",
+        "stigma"
+      ]
+    },
+    "839": {
+      "0": [
+        "research",
+        "systematic investigation",
+        "generalizable knowledge",
+        "public health surveillance",
+        "authorized operational activities",
+        "national security missions",
+        "common rule",
+        "human subjects",
+        "federal department or agency",
+        "information collection activities"
+      ],
+      "1": [
+        "fifth amendment",
+        "procedural due process",
+        "substantive due process",
+        "informational privacy",
+        "liberty interest",
+        "property interest",
+        "notice and hearing",
+        "what process is due",
+        "fundamental fairness",
+        "government as investigator"
+      ]
+    },
+    "84": {
+      "0": [
+        "adverse events",
+        "vaers",
+        "clinical trials",
+        "common side effects",
+        "serious side effects",
+        "allergic reactions",
+        "anaphylaxis",
+        "post-authorization surveillance",
+        "cdc monitoring",
+        "vaccine safety data"
+      ],
+      "1": [
+        "vaccine safety concerns",
+        "misinformation",
+        "mRNA vaccine myths",
+        "emergency use authorization",
+        "rapid vaccine development",
+        "side effects",
+        "fertility concerns",
+        "natural immunity",
+        "trust in public health",
+        "vaccine confidence"
+      ],
+      "2": [
+        "adult immunization schedule",
+        "adolescent vaccination schedule",
+        "childhood immunization schedule",
+        "catch-up vaccination",
+        "routine vaccination",
+        "recommended ages and intervals",
+        "live attenuated vaccine",
+        "inactivated vaccine",
+        "subunit vaccine",
+        "conjugate vaccine"
+      ],
+      "3": [
+        "smallpox vaccination",
+        "polio eradication",
+        "measles outbreaks",
+        "herd immunity",
+        "disease elimination",
+        "childhood immunization",
+        "vaccine effectiveness",
+        "population health",
+        "vaccination coverage",
+        "global vaccine equity"
+      ],
+      "4": [
+        "core vaccines",
+        "noncore vaccines",
+        "rabies vaccination",
+        "revaccination",
+        "initial vaccination series",
+        "companion animal health",
+        "distemper",
+        "parvovirus",
+        "leptospirosis",
+        "bordetella"
+      ]
+    },
+    "847": {
+      "0": [
+        "animal rights",
+        "animal welfare act",
+        "animal suffering",
+        "scientific criticism",
+        "unreliable results",
+        "human applicability",
+        "alternative methods",
+        "three rs principle",
+        "misleading animal experiments",
+        "in vitro methods"
+      ],
+      "1": [
+        "animal welfare act",
+        "three rs principle",
+        "human safety",
+        "save human lives",
+        "biological similarity",
+        "drug testing",
+        "toxicity testing",
+        "humane treatment",
+        "medical breakthroughs",
+        "alternatives to animal testing"
+      ]
+    },
+    "85": {
+      "0": [
+        "carbon dioxide",
+        "greenhouse effect",
+        "global warming pollution",
+        "methane emissions",
+        "air pollution",
+        "warming and drying trend",
+        "extreme weather",
+        "severe weather",
+        "forest management",
+        "renewable energy"
+      ],
+      "1": [
+        "energy density",
+        "reliable energy supply",
+        "affordability",
+        "existing infrastructure",
+        "economic impact",
+        "global electricity generation",
+        "internal combustion engine",
+        "energy transition",
+        "renewable energy alternatives",
+        "hard to quit"
+      ],
+      "2": [
+        "solar power",
+        "wind energy",
+        "hydroelectric power",
+        "energy storage",
+        "grid reliability",
+        "energy variability",
+        "geothermal energy",
+        "biomass energy",
+        "green hydrogen",
+        "electricity generation"
+      ]
+    },
+    "851": {
+      "0": [
+        "swing state",
+        "presidential election",
+        "republican primary",
+        "democratic primary",
+        "congressional races",
+        "polling",
+        "voter turnout",
+        "election administration",
+        "endorsements",
+        "campaign funding"
+      ],
+      "1": [
+        "sadiq khan",
+        "west midlands",
+        "combined authority",
+        "police and crime commissioners",
+        "electoral system",
+        "candidate selections",
+        "opinion polls",
+        "labour party",
+        "conservative party",
+        "voter registration"
+      ],
+      "2": [
+        "political polarization",
+        "voter turnout",
+        "party realignment",
+        "anti-incumbent sentiment",
+        "cost of living",
+        "immigration",
+        "electoral reform",
+        "campaign finance",
+        "swing states",
+        "populism"
+      ]
+    },
+    "882": {
+      "0": [
+        "iucn red list",
+        "threatened species",
+        "endangered species",
+        "species listing",
+        "extinction risk",
+        "conservation status",
+        "endangered species act"
+      ],
+      "1": [],
+      "2": [
+        "wind energy",
+        "wind farms",
+        "bird mortality",
+        "collision risk",
+        "raptors",
+        "eagles",
+        "vultures",
+        "turbine siting",
+        "mitigation measures",
+        "endangered species"
+      ],
+      "3": [
+        "endangered species act",
+        "species recovery",
+        "recovery plans",
+        "downlisting",
+        "delisting",
+        "recovery teams",
+        "critical habitat",
+        "habitat conservation plans",
+        "safe harbor agreements",
+        "red-cockaded woodpecker"
+      ]
+    },
+    "889": {
+      "0": [
+        "interest rates",
+        "inflation",
+        "balance of trade",
+        "current account",
+        "capital flows",
+        "central bank policy",
+        "money supply",
+        "economic indicators",
+        "purchasing power parity",
+        "political risk"
+      ],
+      "1": [
+        "currency hedging",
+        "currency risk",
+        "foreign exchange",
+        "multinational corporations",
+        "exchange-traded derivatives",
+        "forward rates",
+        "swaps",
+        "options",
+        "futures",
+        "foreign currency exposure"
+      ],
+      "2": [
+        "economic indicators",
+        "central bank policy",
+        "interest rates",
+        "macroeconomic data",
+        "political risk",
+        "current events",
+        "capital flows",
+        "currency correlations",
+        "market volatility",
+        "technical analysis"
+      ],
+      "3": [
+        "bond markets",
+        "government bonds",
+        "treasury and federal reserve",
+        "interest rates",
+        "capital flows",
+        "financial market functions",
+        "liquidity",
+        "monetary policy",
+        "sovereign debt",
+        "economic growth"
+      ]
+    },
+    "897": {
+      "0": [
+        "alcohol abuse",
+        "alcohol use disorder",
+        "hazardous drinking",
+        "social consequences",
+        "family violence",
+        "child abuse and neglect",
+        "community interventions",
+        "risk and protective factors",
+        "prevention programs",
+        "excessive drinking"
+      ],
+      "1": [
+        "genetic variation",
+        "hereditary factors",
+        "gender differences",
+        "biological influences",
+        "alcohol use disorder",
+        "alcohol metabolism",
+        "genetic differences",
+        "environment vs. dna",
+        "risk factors",
+        "family history"
+      ],
+      "2": [
+        "alcohol use disorder",
+        "substance abuse",
+        "addiction dependence",
+        "adolescent alcohol use",
+        "genetic predisposition",
+        "psychosocial risk factors",
+        "long-term health effects",
+        "medical complications",
+        "overdose deaths",
+        "injury and deaths"
+      ],
+      "3": [
+        "substance use disorder",
+        "risk and protective factors",
+        "community interventions",
+        "public health consequences",
+        "mental health",
+        "family and caregiving environment",
+        "child abuse and neglect",
+        "prenatal substance exposure",
+        "treatment and recovery",
+        "drug- and alcohol-induced deaths"
+      ]
+    },
+    "9": {
+      "0": [
+        "suffragist movement",
+        "women's suffrage",
+        "rosie the riveter",
+        "wartime labor",
+        "military service",
+        "home front",
+        "wage work",
+        "postwar gender roles",
+        "women's employment",
+        "social equality"
+      ],
+      "1": [
+        "women's suffrage",
+        "women's liberation movement",
+        "first-wave feminism",
+        "second-wave feminism",
+        "civil rights movement",
+        "equal rights amendment",
+        "abolitionist movement",
+        "reproductive rights",
+        "intersectionality",
+        "international women's rights"
+      ],
+      "2": [
+        "women's suffrage",
+        "property rights",
+        "reproductive rights",
+        "domestic violence",
+        "equal employment",
+        "workplace discrimination",
+        "sexual violence",
+        "family law",
+        "intersectionality",
+        "equal rights amendment"
+      ],
+      "3": [
+        "women in the workforce",
+        "women in workforce leadership",
+        "access to education and training",
+        "economic development",
+        "women in higher education",
+        "women in stem",
+        "gender equity",
+        "economic rights",
+        "female participation in the workforce",
+        "barriers to equal participation"
+      ],
+      "4": [
+        "overlapping systems of discrimination",
+        "interlocking matrix of oppression",
+        "transnational intersectionality",
+        "women human rights defenders",
+        "gender-based violence",
+        "reproductive rights",
+        "race class and gender",
+        "black feminist thought",
+        "women of color",
+        "kimberlé crenshaw"
+      ]
+    },
+    "915": {
+      "0": [
+        "gross margin",
+        "cost of goods sold",
+        "operating profit margin",
+        "ecommerce store",
+        "average order value",
+        "operating costs",
+        "customer loyalty program",
+        "vendor relationships",
+        "supplement retail"
+      ],
+      "1": [
+        "profit margin",
+        "cost per car",
+        "variable costs",
+        "fixed costs",
+        "annual income",
+        "owner earnings",
+        "startup costs",
+        "operating costs",
+        "touchless car wash",
+        "car wash franchise"
+      ],
+      "2": [
+        "profit margin",
+        "average vending machine profits",
+        "weekly revenue",
+        "operating costs",
+        "ongoing expenses",
+        "location profitability",
+        "vending machine route",
+        "startup costs",
+        "net income",
+        "commission requirements"
+      ],
+      "3": [
+        "vending machine business",
+        "average vending machine profits",
+        "vending machine costs",
+        "vending machine profit margin",
+        "cost per car",
+        "car wash variable costs",
+        "car wash fixed costs",
+        "operating costs",
+        "location commissions",
+        "equipment financing"
+      ]
+    },
+    "93": {
+      "0": [
+        "selective incorporation",
+        "fourteenth amendment",
+        "due process clause",
+        "equal protection clause",
+        "incorporation doctrine",
+        "supreme court interpretation",
+        "first amendment",
+        "fourth amendment",
+        "rights of the accused",
+        "reconstruction amendments"
+      ],
+      "1": [
+        "district of columbia v. heller",
+        "mcDonald v. chicago",
+        "new york state rifle & pistol association v. bruen",
+        "united states v. miller",
+        "individual right to keep and bear arms",
+        "self-defense",
+        "fourteenth amendment incorporation",
+        "united states v. cruikshank",
+        "presser v. illinois",
+        "historical tradition test"
+      ],
+      "2": [
+        "reasonable expectation of privacy",
+        "exclusionary rule",
+        "warrant requirement",
+        "probable cause",
+        "reasonable suspicion",
+        "warrantless searches",
+        "search and seizure",
+        "electronic surveillance",
+        "open fields doctrine",
+        "good faith exception"
+      ],
+      "3": [
+        "foreign intelligence surveillance act",
+        "fisa court",
+        "sneak and peek searches",
+        "roving wiretaps",
+        "pen register trap and trace",
+        "section 215",
+        "tangible things orders",
+        "electronic surveillance",
+        "judicial oversight",
+        "secret searches"
+      ],
+      "4": [
+        "bill of rights",
+        "fourteenth amendment",
+        "due process clause",
+        "selective incorporation",
+        "constitutional interpretation",
+        "judicial review",
+        "first amendment",
+        "fourth amendment",
+        "supreme court jurisprudence"
+      ]
+    },
+    "97": {
+      "0": [
+        "first party system",
+        "second party system",
+        "third party system",
+        "party realignment",
+        "democratic-republican party",
+        "jacksonian democracy",
+        "whig party",
+        "new deal coalition",
+        "southern realignment",
+        "reagan revolution"
+      ],
+      "1": [
+        "political positions",
+        "economic policy",
+        "social policy",
+        "health care",
+        "immigration",
+        "voting rights",
+        "abortion and reproductive rights",
+        "gun control",
+        "environmental policy",
+        "foreign policy"
+      ],
+      "2": [
+        "minor parties",
+        "independents",
+        "winner-take-all",
+        "ballot access laws",
+        "debate rules",
+        "proportional representation",
+        "election rules",
+        "major party marginalization",
+        "one-issue parties",
+        "two-party system"
+      ],
+      "3": [
+        "two-party system",
+        "election rules",
+        "proportional electoral system",
+        "primary elections",
+        "caucus system",
+        "critical elections",
+        "party realignment",
+        "party ideology",
+        "party polarization",
+        "electoral coalitions"
+      ],
+      "4": [
+        "two-party system",
+        "multi-party systems",
+        "proportional electoral system",
+        "election rules",
+        "primary elections",
+        "party systems",
+        "comparisons with other party systems",
+        "social cleavages",
+        "party polarization",
+        "third parties"
+      ]
+    },
+    "971": {
+      "0": [
+        "gender roles",
+        "gender identity",
+        "gender socialization",
+        "gender performativity",
+        "social constructionism",
+        "sex and gender distinction",
+        "gender stereotypes",
+        "cross-cultural differences",
+        "biological factors",
+        "gender as accomplishment"
+      ],
+      "1": [
+        "gender roles",
+        "gender identity",
+        "gender socialization",
+        "social constructionism",
+        "gender schema theory",
+        "gender stereotypes",
+        "self-concept",
+        "social role theory",
+        "gender performativity",
+        "sex differences"
+      ],
+      "2": [
+        "gender roles",
+        "gender socialization",
+        "gender stereotypes",
+        "gender schema theory",
+        "social constructionism",
+        "gender performativity",
+        "social role theory",
+        "self-categorization theory",
+        "intersectionality",
+        "identity development"
+      ],
+      "3": [
+        "gender roles",
+        "gender socialization",
+        "women's rights",
+        "gender inequality",
+        "workplace stereotypes",
+        "family roles",
+        "cultural norms",
+        "feminist theory",
+        "social role theory",
+        "intersectionality"
+      ]
+    },
+    "983": {
+      "0": [
+        "nonverbal communication",
+        "cultural context",
+        "language barriers",
+        "intercultural communication",
+        "communication accommodation",
+        "code-switching",
+        "verbal communication",
+        "body language",
+        "social context",
+        "interpersonal perception"
+      ],
+      "1": [
+        "nonverbal communication",
+        "facial expressions",
+        "body language",
+        "eye contact",
+        "gestures",
+        "social connection",
+        "conversational flow",
+        "vocalics",
+        "patient interactions",
+        "autism"
+      ],
+      "2": [
+        "ancient communication",
+        "petroglyphs",
+        "pictograms",
+        "ideograms",
+        "writing systems",
+        "printing technology",
+        "telegraph",
+        "telephone",
+        "radio and television",
+        "digital communication"
+      ]
+    },
+    "986": {
+      "0": [
+        "emotion regulation",
+        "task aversion",
+        "fear of failure",
+        "perfectionism",
+        "low self-efficacy",
+        "self-control",
+        "temporal discounting",
+        "future self",
+        "anxiety",
+        "impulsivity"
+      ],
+      "1": [
+        "task aversion",
+        "emotion regulation",
+        "fear of failure",
+        "perfectionism",
+        "future self",
+        "short-term rewards",
+        "feeling overwhelmed",
+        "distractibility",
+        "lack of self-control",
+        "work environment"
+      ]
+    },
+    "988": {
+      "0": [
+        "undocumented immigrants",
+        "border security",
+        "immigration enforcement",
+        "sanctuary cities",
+        "visa overstay",
+        "labor market",
+        "fiscal effects",
+        "national security threats",
+        "state and local cooperation",
+        "detention and deportation"
+      ],
+      "1": [
+        "undocumented immigrants",
+        "immigration enforcement",
+        "detention and deportation",
+        "employment exploitation",
+        "labor market discrimination",
+        "access to services",
+        "health insurance coverage",
+        "housing overcrowding",
+        "language barriers",
+        "asylum and refugee status"
+      ],
+      "2": [
+        "ice detainers",
+        "federal immigration authorities",
+        "state and local law enforcement",
+        "federal versus state role",
+        "immigration federalism",
+        "jurisdictional cooperation",
+        "deportation",
+        "federal grant funding",
+        "preemption",
+        "tenth amendment"
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+読み込み中...
+全トピック: 105   探索用サブセット: 35
+weights固定: title=2.0, headings=1.0, body=1.0   candidate_k=200
+
+=== 候補プール取得・IDF計算・mtermvectors取得（b_*非依存、1回だけ） ===
+  prepare: 5/35 (46s)  prepare: 10/35 (99s)  prepare: 15/35 (130s)  prepare: 20/35 (171s)  prepare: 25/35 (219s)  prepare: 30/35 (259s)  prepare: 35/35 (296s)
+prepare: 呼び出し 154 回 / キャッシュヒット 0 回 / 合計 296s
+
+=== 段階1: title×headings 5x5グリッド（body=0.4固定） ===
+  [stage1_title_headings] b_title=0.0 b_headings=0.0 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3284 P@100=0.6131  (9.5s)
+  [stage1_title_headings] b_title=0.0 b_headings=0.2 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3282 P@100=0.6143  (8.9s)
+  [stage1_title_headings] b_title=0.0 b_headings=0.4 b_body=0.4  recall@100=0.0539 recall@1000=0.1435 nDCG@10=0.3299 P@100=0.6149  (9.3s)
+  [stage1_title_headings] b_title=0.0 b_headings=0.6 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3318 P@100=0.6146  (9.6s)
+  [stage1_title_headings] b_title=0.0 b_headings=0.8 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3314 P@100=0.6146  (9.3s)
+  [stage1_title_headings] b_title=0.2 b_headings=0.0 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3284 P@100=0.6131  (9.5s)
+  [stage1_title_headings] b_title=0.2 b_headings=0.2 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3282 P@100=0.6143  (9.9s)
+  [stage1_title_headings] b_title=0.2 b_headings=0.4 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3299 P@100=0.6146  (9.9s)
+  [stage1_title_headings] b_title=0.2 b_headings=0.6 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3318 P@100=0.6146  (9.9s)
+  [stage1_title_headings] b_title=0.2 b_headings=0.8 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3314 P@100=0.6146  (9.5s)
+  [stage1_title_headings] b_title=0.4 b_headings=0.0 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3278 P@100=0.6131  (9.7s)
+  [stage1_title_headings] b_title=0.4 b_headings=0.2 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3286 P@100=0.6143  (9.5s)
+  [stage1_title_headings] b_title=0.4 b_headings=0.4 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3299 P@100=0.6146  (10.9s)
+  [stage1_title_headings] b_title=0.4 b_headings=0.6 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3318 P@100=0.6146  (9.5s)
+  [stage1_title_headings] b_title=0.4 b_headings=0.8 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3314 P@100=0.6146  (9.8s)
+  [stage1_title_headings] b_title=0.6 b_headings=0.0 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3279 P@100=0.6131  (9.7s)
+  [stage1_title_headings] b_title=0.6 b_headings=0.2 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3288 P@100=0.6143  (10.0s)
+  [stage1_title_headings] b_title=0.6 b_headings=0.4 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3299 P@100=0.6146  (9.8s)
+  [stage1_title_headings] b_title=0.6 b_headings=0.6 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3317 P@100=0.6146  (9.7s)
+  [stage1_title_headings] b_title=0.6 b_headings=0.8 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3314 P@100=0.6146  (9.5s)
+  [stage1_title_headings] b_title=0.8 b_headings=0.0 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3279 P@100=0.6131  (9.8s)
+  [stage1_title_headings] b_title=0.8 b_headings=0.2 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3288 P@100=0.6143  (9.6s)
+  [stage1_title_headings] b_title=0.8 b_headings=0.4 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3300 P@100=0.6146  (9.7s)
+  [stage1_title_headings] b_title=0.8 b_headings=0.6 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3317 P@100=0.6146  (9.6s)
+  [stage1_title_headings] b_title=0.8 b_headings=0.8 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3314 P@100=0.6146  (9.9s)
+
+段階1 最良(nDCG@10): b_title=0.0 b_headings=0.6  (nDCG@10=0.3318)
+段階1 最良(recall@1000): b_title=0.0 b_headings=0.0  (recall@1000=0.1435)
+
+=== 段階2: bodyのみ5通り （b_title=0.0, b_headings=0.6固定、nDCG@10最良点を採用） ===
+  [stage2_body] b_title=0.0 b_headings=0.6 b_body=0.0  recall@100=0.0505 recall@1000=0.1435 nDCG@10=0.2746 P@100=0.5800  (9.7s)
+  [stage2_body] b_title=0.0 b_headings=0.6 b_body=0.2  recall@100=0.0525 recall@1000=0.1435 nDCG@10=0.3128 P@100=0.5994  (10.0s)
+  [stage2_body] b_title=0.0 b_headings=0.6 b_body=0.4  recall@100=0.0538 recall@1000=0.1435 nDCG@10=0.3318 P@100=0.6146  (10.0s)
+  [stage2_body] b_title=0.0 b_headings=0.6 b_body=0.6  recall@100=0.0557 recall@1000=0.1435 nDCG@10=0.3447 P@100=0.6349  (10.0s)
+  [stage2_body] b_title=0.0 b_headings=0.6 b_body=0.8  recall@100=0.0573 recall@1000=0.1435 nDCG@10=0.3620 P@100=0.6526  (10.1s)
+
+========================================================================
+探索結果まとめ:
+  nDCG@10最良: b_title=0.0, b_headings=0.6, b_body=0.8  (nDCG@10=0.3620, recall@1000=0.1435)
+  recall@1000最良: b_title=0.0, b_headings=0.6, b_body=0.0  (recall@1000=0.1435, nDCG@10=0.2746)
+  参考(デフォルト b=0.4/0.4/0.4): nDCG@10=0.3299 recall@1000=0.1435
+-> /home/takeuchi/rag-experiment-doc/experiments/gemini_fewshot_each_boost/bm25f_field_b_search_result.json

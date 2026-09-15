@@ -1,0 +1,5 @@
+[09:52:30] subquery_repeat retrieval=champion 開始
+[11:21:38] subquery_repeat retrieval=champion 終了 (exit 0)
+[11:21:38] subquery_repeat retrieval=idfweighted 開始
+[12:43:28] subquery_repeat retrieval=idfweighted 終了 (exit 0)
+[12:43:28] SUBQUERY REPEAT ALL DONE

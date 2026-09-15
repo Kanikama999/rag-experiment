@@ -1,0 +1,60 @@
+読み込み中...
+対象 105 トピック
+  Subquery 451 本を準備 (1s)
+RETRIEVE_K=1000 QUERY_REPEAT=5 SPAN_END=100 SPAN_BOOST=15.0
+  baseline: 10/105 (5s)  baseline: 20/105 (10s)  baseline: 30/105 (14s)  baseline: 40/105 (19s)  baseline: 50/105 (24s)  baseline: 60/105 (29s)  baseline: 70/105 (34s)  baseline: 80/105 (38s)  baseline: 90/105 (43s)  baseline: 100/105 (47s)  baseline: 105/105 (49s)
+  fielded_recallopt: 10/105 (68s)  fielded_recallopt: 20/105 (152s)  fielded_recallopt: 30/105 (232s)  fielded_recallopt: 40/105 (298s)  fielded_recallopt: 50/105 (366s)  fielded_recallopt: 60/105 (446s)  fielded_recallopt: 70/105 (520s)  fielded_recallopt: 80/105 (591s)  fielded_recallopt: 90/105 (659s)  fielded_recallopt: 100/105 (724s)  fielded_recallopt: 105/105 (751s)
+  champion: 10/105 (152s)  champion: 20/105 (332s)  champion: 30/105 (514s)  champion: 40/105 (664s)  champion: 50/105 (823s)  champion: 60/105 (1002s)  champion: 70/105 (1156s)  champion: 80/105 (1317s)  champion: 90/105 (1473s)  champion: 100/105 (1629s)  champion: 105/105 (1697s)
+  idf_posboost_s5: キャッシュから融合 (105トピック)
+  bm25f_qtf: 既存runを読み込み (105トピック)
+run を保存: relevance_level_runs.json (29.1 MB)
+
+==============================================================================
+[coverage] grade>=1 を正解とみなす  (recall@100の上限=0.6451)
+  baseline             n= 22  recall_100=0.0942  recall_1000=0.2884  P_10=0.2727  P_100=0.1505  map=0.0587  ndcg_cut_10=0.1569  ndcg_cut_100=0.1614
+  fielded_recallopt    n= 22  recall_100=0.2090  recall_1000=0.5463  P_10=0.5909  P_100=0.3309  map=0.1921  ndcg_cut_10=0.4109  ndcg_cut_100=0.3798
+  champion             n= 22  recall_100=0.2373  recall_1000=0.5995  P_10=0.6045  P_100=0.3768  map=0.2314  ndcg_cut_10=0.4049  ndcg_cut_100=0.4131
+  idf_posboost_s5      n= 22  recall_100=0.2430  recall_1000=0.6220  P_10=0.6227  P_100=0.3891  map=0.2462  ndcg_cut_10=0.4254  ndcg_cut_100=0.4269
+  bm25f_qtf            n= 22  recall_100=0.1948  recall_1000=0.5538  P_10=0.4727  P_100=0.3186  map=0.1850  ndcg_cut_10=0.2796  ndcg_cut_100=0.3184
+
+==============================================================================
+[coverage] grade>=2 を正解とみなす  (recall@100の上限=1.0000)
+  baseline             n= 22  recall_100=0.1753  recall_1000=0.4064  P_10=0.1455  P_100=0.0700  map=0.0562
+  fielded_recallopt    n= 22  recall_100=0.3796  recall_1000=0.7433  P_10=0.3455  P_100=0.1600  map=0.1935
+  champion             n= 22  recall_100=0.4327  recall_1000=0.7826  P_10=0.3545  P_100=0.1864  map=0.2110
+  idf_posboost_s5      n= 22  recall_100=0.4400  recall_1000=0.7984  P_10=0.3864  P_100=0.1905  map=0.2249
+  bm25f_qtf            n= 22  recall_100=0.3506  recall_1000=0.7222  P_10=0.3045  P_100=0.1509  map=0.1638
+
+==============================================================================
+[coverage] grade>=3 を正解とみなす  (recall@100の上限=1.0000)
+  baseline             n= 22  recall_100=0.2960  recall_1000=0.5461  P_10=0.0682  P_100=0.0245  map=0.0565
+  fielded_recallopt    n= 22  recall_100=0.5927  recall_1000=0.8776  P_10=0.1455  P_100=0.0532  map=0.1923
+  champion             n= 22  recall_100=0.6891  recall_1000=0.9194  P_10=0.1636  P_100=0.0618  map=0.1868
+  idf_posboost_s5      n= 22  recall_100=0.6834  recall_1000=0.9164  P_10=0.1909  P_100=0.0627  map=0.2035
+  bm25f_qtf            n= 22  recall_100=0.4886  recall_1000=0.8635  P_10=0.0909  P_100=0.0436  map=0.0886
+
+==============================================================================
+[consensus] grade>=1 を正解とみなす  (recall@100の上限=0.0854)
+  baseline             n=105  recall_100=0.0327  recall_1000=0.1495  P_10=0.6038  P_100=0.3737  map=0.0552  ndcg_cut_10=0.2649  ndcg_cut_100=0.2868
+  fielded_recallopt    n=105  recall_100=0.0621  recall_1000=0.2715  P_10=0.9162  P_100=0.7046  map=0.1630  ndcg_cut_10=0.4970  ndcg_cut_100=0.5574
+  champion             n=105  recall_100=0.0689  recall_1000=0.3095  P_10=0.9390  P_100=0.7769  map=0.2049  ndcg_cut_10=0.5251  ndcg_cut_100=0.6092
+  idf_posboost_s5      n=105  recall_100=0.0696  recall_1000=0.3166  P_10=0.9352  P_100=0.7835  map=0.2124  ndcg_cut_10=0.5225  ndcg_cut_100=0.6117
+  bm25f_qtf            n=105  recall_100=0.0594  recall_1000=0.2834  P_10=0.8276  P_100=0.6594  map=0.1679  ndcg_cut_10=0.4243  ndcg_cut_100=0.4983
+
+==============================================================================
+[consensus] grade>=2 を正解とみなす  (recall@100の上限=1.0000)
+  baseline             n=105  recall_100=0.1602  recall_1000=0.4580  P_10=0.1495  P_100=0.0731  map=0.0552
+  fielded_recallopt    n=105  recall_100=0.3677  recall_1000=0.7090  P_10=0.4219  P_100=0.1652  map=0.1863
+  champion             n=105  recall_100=0.4185  recall_1000=0.7589  P_10=0.4629  P_100=0.1882  map=0.2289
+  idf_posboost_s5      n=105  recall_100=0.4208  recall_1000=0.7575  P_10=0.4590  P_100=0.1888  map=0.2287
+  bm25f_qtf            n=105  recall_100=0.3137  recall_1000=0.6872  P_10=0.3390  P_100=0.1394  map=0.1479
+
+==============================================================================
+[consensus] grade>=3 を正解とみなす  (recall@100の上限=1.0000)
+  baseline             n=105  recall_100=0.2013  recall_1000=0.4979  P_10=0.0533  P_100=0.0259  map=0.0406
+  fielded_recallopt    n=105  recall_100=0.4389  recall_1000=0.7503  P_10=0.1648  P_100=0.0560  map=0.1308
+  champion             n=105  recall_100=0.4752  recall_1000=0.7893  P_10=0.1819  P_100=0.0608  map=0.1427
+  idf_posboost_s5      n=105  recall_100=0.4691  recall_1000=0.7832  P_10=0.1829  P_100=0.0600  map=0.1419
+  bm25f_qtf            n=105  recall_100=0.3650  recall_1000=0.7165  P_10=0.1286  P_100=0.0463  map=0.0958
+
+結果を保存: relevance_level_result.json

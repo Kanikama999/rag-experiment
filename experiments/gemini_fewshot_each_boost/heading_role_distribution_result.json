@@ -1,0 +1,131 @@
+{
+  "role_patterns": {
+    "definition": "\\bwhat (is|are|was|were)\\b|\\bdefinition\\b|\\bdefined\\b|\\bmeaning\\b|\\bwhat does .* mean\\b",
+    "detail": "\\bhow (it|they|does|do) work|\\bexplained\\b|\\bin detail\\b|\\bdetails\\b|\\boverview\\b|\\babout\\b",
+    "origin": "\\bhistory\\b|\\borigin(s)?\\b|\\betymolog|\\bwhere .* (come|comes) from\\b|\\bbackground\\b",
+    "qa": "\\bfaq(s)?\\b|frequently asked|\\bq ?& ?a\\b|\\bquestions\\b|\\bpeople also ask\\b",
+    "summary": "\\bsummary\\b|\\bconclusion(s)?\\b|key takeaway|\\bin short\\b|bottom line|\\btl;?dr\\b|\\brecap\\b",
+    "caution": "\\bwarning(s)?\\b|\\bcaution\\b|\\brisk(s)?\\b|side effect|\\bprecaution|\\bimportant\\b|\\bnote\\b|\\bbeware\\b|\\bdanger",
+    "comparison": "\\bvs\\.?\\b|\\bversus\\b|difference(s)? between|\\bcompared? (to|with)\\b|\\bcomparison\\b",
+    "procedure": "\\bhow to\\b|\\bsteps?\\b|\\bguide\\b|\\binstructions\\b|\\btutorial\\b",
+    "cause": "\\bwhy\\b|\\bcause(s|d)?\\b|\\breason(s)?\\b|\\bdue to\\b"
+  },
+  "profiles": {
+    "coverage_relevant": {
+      "name": "coverage_relevant",
+      "n_docs": 3648,
+      "docs_with_any_heading_pct": 94.74,
+      "mean_headings_per_doc": 12.88,
+      "mean_uniq_headings_per_doc": 11.36,
+      "pct_docs_with_role": {
+        "definition": 16.83,
+        "detail": 16.17,
+        "origin": 10.99,
+        "qa": 3.84,
+        "summary": 10.55,
+        "caution": 12.42,
+        "comparison": 6.91,
+        "procedure": 6.72,
+        "cause": 19.54
+      },
+      "mean_role_headings_per_doc": {
+        "definition": 0.296,
+        "detail": 0.227,
+        "origin": 0.146,
+        "qa": 0.049,
+        "summary": 0.113,
+        "caution": 0.202,
+        "comparison": 0.109,
+        "procedure": 0.098,
+        "cause": 0.314
+      }
+    },
+    "coverage_nonrelevant": {
+      "name": "coverage_nonrelevant",
+      "n_docs": 1956,
+      "docs_with_any_heading_pct": 94.22,
+      "mean_headings_per_doc": 15.65,
+      "mean_uniq_headings_per_doc": 13.28,
+      "pct_docs_with_role": {
+        "definition": 17.64,
+        "detail": 17.74,
+        "origin": 8.95,
+        "qa": 6.75,
+        "summary": 10.53,
+        "caution": 16.1,
+        "comparison": 5.93,
+        "procedure": 10.74,
+        "cause": 16.51
+      },
+      "mean_role_headings_per_doc": {
+        "definition": 0.32,
+        "detail": 0.268,
+        "origin": 0.122,
+        "qa": 0.086,
+        "summary": 0.124,
+        "caution": 0.333,
+        "comparison": 0.097,
+        "procedure": 0.206,
+        "cause": 0.306
+      }
+    },
+    "consensus_relevant": {
+      "name": "consensus_relevant",
+      "n_docs": 5000,
+      "docs_with_any_heading_pct": 92.6,
+      "mean_headings_per_doc": 13.52,
+      "mean_uniq_headings_per_doc": 11.38,
+      "pct_docs_with_role": {
+        "definition": 17.06,
+        "detail": 14.92,
+        "origin": 12.98,
+        "qa": 6.1,
+        "summary": 8.74,
+        "caution": 9.16,
+        "comparison": 6.08,
+        "procedure": 8.36,
+        "cause": 15.18
+      },
+      "mean_role_headings_per_doc": {
+        "definition": 0.299,
+        "detail": 0.2,
+        "origin": 0.175,
+        "qa": 0.085,
+        "summary": 0.099,
+        "caution": 0.14,
+        "comparison": 0.088,
+        "procedure": 0.144,
+        "cause": 0.224
+      }
+    },
+    "corpus_random": {
+      "name": "corpus_random",
+      "n_docs": 5000,
+      "docs_with_any_heading_pct": 95.62,
+      "mean_headings_per_doc": 13.2,
+      "mean_uniq_headings_per_doc": 11.18,
+      "pct_docs_with_role": {
+        "definition": 13.98,
+        "detail": 16.44,
+        "origin": 6.24,
+        "qa": 7.06,
+        "summary": 5.56,
+        "caution": 5.6,
+        "comparison": 5.12,
+        "procedure": 17.88,
+        "cause": 8.48
+      },
+      "mean_role_headings_per_doc": {
+        "definition": 0.254,
+        "detail": 0.205,
+        "origin": 0.083,
+        "qa": 0.084,
+        "summary": 0.063,
+        "caution": 0.073,
+        "comparison": 0.084,
+        "procedure": 0.376,
+        "cause": 0.112
+      }
+    }
+  }
+}

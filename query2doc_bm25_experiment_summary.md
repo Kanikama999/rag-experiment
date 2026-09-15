@@ -8,7 +8,7 @@
 
 - **今回のパイプラインは本来のHyDE（dense embedding版）ではない。** 疑似文書をembeddingせず、テキストのままBM25クエリに連結しているだけ。実態は **Query2doc** / MuGI に近い「LLM生成疑似文書によるBM25向けクエリ拡張」。
 - narrative全体から複数本のQuery2doc疑似文書を生成し、**元クエリ（narrative）を5回リピートしてから連結**する方式（`query2doc_k`, QUERY_REPEAT=5）が、今回試した中で最も良い結果だった。
-- narrativeを**Decomposed_Query（分解した簡潔な質問文）に分割してからQuery2doc**する方式は、分割しない方式（narrative全体から複数疑似文書）に一貫して劣った。
+- narrativeを**Subquery（分解した簡潔な質問文）に分割してからQuery2doc**する方式は、分割しない方式（narrative全体から複数疑似文書）に一貫して劣った。
 - プロンプトを**zero-shot→few-shot（(query, document)の例を3件添付）に変えると、どちらの方式も全指標で改善**した。ただし優劣（非分解版が優位）は逆転しなかった。
 - 途中でLLMモデルを `openai/gpt-5.6-terra` → `google/gemini-3.7-flash` に切り替えている（理由は後述）。**過去の結果と比較する際はこの点に注意。**
 
@@ -67,12 +67,12 @@ TREC 2025 RAG Track の narrative形式クエリ（1クエリが数文の長い�
 | スクリプト | 役割 |
 |---|---|
 | `narrative_expansion.py` | narrative全体から独立にQuery2doc疑似文書をN_POOL=30本生成（1文書=1リクエスト、約200語/本、few-shot） |
-| `decompose_narrative.py` | narrativeを Decomposed_Query（簡潔な質問文、可変個数、平均4〜5個/トピック）に分解 |
-| `decomposed_query2doc_expansion.py` | 各Decomposed_Queryにつき1本のQuery2doc疑似文書を生成（few-shot） |
+| `decompose_narrative.py` | narrativeを Subquery（簡潔な質問文、可変個数、平均4〜5個/トピック）に分解 |
+| `decomposed_query2doc_expansion.py` | 各Subqueryにつき1本のQuery2doc疑似文書を生成（few-shot） |
 | `retriever.py` | `bm25_body()`（BM25検索）、`rrf_fuse()`（Reciprocal Rank Fusion, k=60） |
 | `evaluate_rep1.py` / `evaluate_rep5.py` | narrative全体プール版の評価。`query2doc_k`: `(narrativeをQUERY_REPEAT回繰り返し) + 疑似文書` をk本それぞれ検索しRRF融合 |
-| `evaluate_decomposed_rep1.py` | Decomposed_Query版の評価（`narrative + 疑似文書`を各Decomposed_Query分RRF融合、QUERY_REPEATなし） |
-| `evaluate_decomposed_variants.py` | Decomposed_Query版で、クエリ組み立て方を3通り比較 |
+| `evaluate_decomposed_rep1.py` | Subquery版の評価（`narrative + 疑似文書`を各Subquery分RRF融合、QUERY_REPEATなし） |
+| `evaluate_decomposed_variants.py` | Subquery版で、クエリ組み立て方を3通り比較 |
 
 **評価指標**: recall@100, recall@1000, nDCG@10, precision@100（`pytrec_eval`使用）、TOPK=1000。
 
@@ -88,7 +88,7 @@ TREC 2025 RAG Track の narrative形式クエリ（1クエリが数文の長い�
 
 few-shot化でrecall@1000もマイナスからプラスに転換。k本数は2〜3本程度でほぼ性能が飽和し、30本まで増やしても顕著な改善はなかった。
 
-### B. Decomposed_Query版（query2doc_dq, QUERY_REPEAT=5, consensus）
+### B. Subquery版（query2doc_dq, QUERY_REPEAT=5, consensus）
 
 | 条件 | recall@100 | recall@1000 | nDCG@10 | precision@100 |
 |---|---|---|---|---|
@@ -112,14 +112,14 @@ few-shot化でrecall@1000もマイナスからプラスに転換。k本数は2�
 ## 7. 今後の課題
 
 - **本物のHyDE（dense embedding）との比較実験が必要。** 今回はBM25限定なので、密検索（Contrieverやbi-encoder等）でのHyDEも別途試すべき。特にMuGIはdense/sparse両対応の拡張手法を提案しているので、そちらも参考になる。
-- Decomposed_Query版のk本数（現状1問=1本固定）を増やして、非分解版と同条件で比較する余地もある。
+- Subquery版のk本数（現状1問=1本固定）を増やして、非分解版と同条件で比較する余地もある。
 - `experiments/gemini_fewshot/`のrep1（QUERY_REPEAT=1）は未実行（rep5が本命だったため優先度を下げた）。
 
 ## 8. コスト・所要時間（gemini-3.7-flash、few-shot分含む）
 
 - narrative全体プール生成（105トピック×30本）: 約$1.5〜1.6
-- Decomposed_Query分解（105トピック）: 約$0.03
-- Decomposed_Query毎の疑似文書生成（451本）: 約$0.2
+- Subquery分解（105トピック）: 約$0.03
+- Subquery毎の疑似文書生成（451本）: 約$0.2
 - 評価（BM25検索のみ、LLM API不使用）: 追加コストなし
 
 ## 9. コード・データの場所

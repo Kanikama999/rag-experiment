@@ -1,0 +1,250 @@
+{
+  "definition": [
+    {
+      "stem": "defin",
+      "df": 46150,
+      "pct": 0.421
+    },
+    {
+      "stem": "definit",
+      "df": 304523,
+      "pct": 2.778
+    },
+    {
+      "stem": "mean",
+      "df": 327417,
+      "pct": 2.987
+    },
+    {
+      "stem": "what",
+      "df": 2176068,
+      "pct": 19.854
+    }
+  ],
+  "detail": [
+    {
+      "stem": "about",
+      "df": 1319332,
+      "pct": 12.037
+    },
+    {
+      "stem": "detail",
+      "df": 310459,
+      "pct": 2.833
+    },
+    {
+      "stem": "explain",
+      "df": 75189,
+      "pct": 0.686
+    },
+    {
+      "stem": "overview",
+      "df": 243776,
+      "pct": 2.224
+    },
+    {
+      "stem": "work",
+      "df": 554845,
+      "pct": 5.062
+    }
+  ],
+  "origin": [
+    {
+      "stem": "background",
+      "df": 109675,
+      "pct": 1.001
+    },
+    {
+      "stem": "etymolog",
+      "df": 53908,
+      "pct": 0.492
+    },
+    {
+      "stem": "histori",
+      "df": 466744,
+      "pct": 4.258
+    },
+    {
+      "stem": "origin",
+      "df": 233920,
+      "pct": 2.134
+    }
+  ],
+  "qa": [
+    {
+      "stem": "ask",
+      "df": 377112,
+      "pct": 3.441
+    },
+    {
+      "stem": "faq",
+      "df": 167486,
+      "pct": 1.528
+    },
+    {
+      "stem": "frequent",
+      "df": 221937,
+      "pct": 2.025
+    },
+    {
+      "stem": "question",
+      "df": 693956,
+      "pct": 6.331
+    }
+  ],
+  "summary": [
+    {
+      "stem": "conclud",
+      "df": 7747,
+      "pct": 0.071
+    },
+    {
+      "stem": "conclus",
+      "df": 290338,
+      "pct": 2.649
+    },
+    {
+      "stem": "overal",
+      "df": 59798,
+      "pct": 0.546
+    },
+    {
+      "stem": "recap",
+      "df": 12126,
+      "pct": 0.111
+    },
+    {
+      "stem": "summar",
+      "df": 4647,
+      "pct": 0.042
+    },
+    {
+      "stem": "summari",
+      "df": 228701,
+      "pct": 2.087
+    },
+    {
+      "stem": "takeawai",
+      "df": 48981,
+      "pct": 0.447
+    }
+  ],
+  "caution": [
+    {
+      "stem": "caution",
+      "df": 16907,
+      "pct": 0.154
+    },
+    {
+      "stem": "danger",
+      "df": 43768,
+      "pct": 0.399
+    },
+    {
+      "stem": "effect",
+      "df": 269943,
+      "pct": 2.463
+    },
+    {
+      "stem": "import",
+      "df": 243186,
+      "pct": 2.219
+    },
+    {
+      "stem": "precaut",
+      "df": 37625,
+      "pct": 0.343
+    },
+    {
+      "stem": "risk",
+      "df": 131130,
+      "pct": 1.196
+    },
+    {
+      "stem": "side",
+      "df": 174052,
+      "pct": 1.588
+    },
+    {
+      "stem": "warn",
+      "df": 127111,
+      "pct": 1.16
+    }
+  ],
+  "comparison": [
+    {
+      "stem": "between",
+      "df": 245334,
+      "pct": 2.238
+    },
+    {
+      "stem": "compar",
+      "df": 166649,
+      "pct": 1.52
+    },
+    {
+      "stem": "comparison",
+      "df": 99746,
+      "pct": 0.91
+    },
+    {
+      "stem": "differ",
+      "df": 384826,
+      "pct": 3.511
+    },
+    {
+      "stem": "versu",
+      "df": 26100,
+      "pct": 0.238
+    },
+    {
+      "stem": "vs",
+      "df": 300430,
+      "pct": 2.741
+    }
+  ],
+  "procedure": [
+    {
+      "stem": "guid",
+      "df": 429700,
+      "pct": 3.92
+    },
+    {
+      "stem": "how",
+      "df": 2411052,
+      "pct": 21.998
+    },
+    {
+      "stem": "instruct",
+      "df": 133743,
+      "pct": 1.22
+    },
+    {
+      "stem": "step",
+      "df": 410724,
+      "pct": 3.747
+    },
+    {
+      "stem": "tutori",
+      "df": 51000,
+      "pct": 0.465
+    }
+  ],
+  "cause": [
+    {
+      "stem": "caus",
+      "df": 246679,
+      "pct": 2.251
+    },
+    {
+      "stem": "reason",
+      "df": 122916,
+      "pct": 1.121
+    },
+    {
+      "stem": "why",
+      "df": 581338,
+      "pct": 5.304
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+読み込み中... model=gemini
+疑似文書がある 105 クエリ
+TOPK=1000 RETRIEVE_K=1000 QUERY_REPEAT=5 SPAN_END=100 SPAN_BOOST=15.0 RRF_K=60
+========================================================================
+  検索: 10/105 (122s)  検索: 20/105 (282s)  検索: 30/105 (427s)  検索: 40/105 (550s)  検索: 50/105 (688s)  検索: 60/105 (842s)  検索: 70/105 (982s)  検索: 80/105 (1125s)  検索: 90/105 (1250s)  検索: 100/105 (1362s)  検索: 105/105 (1408s)
+  bm25_equalweight_posboost_discourseboost: 検索 451 回 / キャッシュヒット 0 回
+トピック 105 / Subquery 451 本 （平均 4.3 本/トピック）
+
+========================================================================
+[診断A] Subquery単体の質と重み候補の トピック内 順位相関（Spearman）
+  ※トピック内で相関を取り、トピック間で平均する（難易度交絡を避けるため）
+  ※Subqueryが2本未満のトピックは相関が定義できないので除外
+
+  --- qrels=coverage ---
+    重み候補            質指標                   平均ρ      中央値ρ     ρ>0の割合  n_topics
+    sum_top100      ndcg_cut_10       -0.0513    0.0000      0.409        22
+    sum_top100      recall_100        -0.0492   -0.1526      0.455        22
+    mean_top100     ndcg_cut_10       -0.0513    0.0000      0.409        22
+    mean_top100     recall_100        -0.0492   -0.1526      0.455        22
+    max_score       ndcg_cut_10        0.1987    0.2500      0.682        22
+    max_score       recall_100         0.0504    0.2527      0.545        22
+    n_query_terms   ndcg_cut_10        0.2142    0.4500      0.636        22
+    n_query_terms   recall_100         0.1936    0.3026      0.636        22
+
+  --- qrels=consensus ---
+    重み候補            質指標                   平均ρ      中央値ρ     ρ>0の割合  n_topics
+    sum_top100      ndcg_cut_10        0.0364    0.1000      0.514       105
+    sum_top100      recall_100         0.1518    0.3078      0.590       105
+    mean_top100     ndcg_cut_10        0.0364    0.1000      0.514       105
+    mean_top100     recall_100         0.1518    0.3078      0.590       105
+    max_score       ndcg_cut_10        0.0693    0.2000      0.533       105
+    max_score       recall_100         0.1840    0.3162      0.590       105
+    n_query_terms   ndcg_cut_10       -0.0039   -0.0360      0.448       105
+    n_query_terms   recall_100        -0.0354   -0.0556      0.457       105
+
+========================================================================
+[診断B] トピック内での重み候補のばらつき（変動係数 CV = 標準偏差/平均）
+  ※CVが小さいほど「どのSubqueryも同じ重み」＝重み付けしても順位が動かない
+    重み候補                  平均CV      中央値CV           最大/最小の中央値
+    sum_top100          0.0909     0.0906               1.266
+    mean_top100         0.0909     0.0906               1.266
+    max_score           0.0863     0.0845               1.246
+    n_query_terms       0.0453     0.0454               1.127
+
+========================================================================
+[融合式の比較] 同じ検索結果を融合式だけ差し替えて実測
+
+### equal_rrf ###
+[equal_rrf / coverage] n=22  recall_100=0.2373  recall_1000=0.5995  ndcg_cut_10=0.4049  P_100=0.3768
+[equal_rrf / consensus] n=105  recall_100=0.0689  recall_1000=0.3095  ndcg_cut_10=0.5251  P_100=0.7769
+
+### raw_score_rrf ###
+[raw_score_rrf / coverage] n=22  recall_100=0.2376  recall_1000=0.6042  ndcg_cut_10=0.4088  P_100=0.3786
+[raw_score_rrf / consensus] n=105  recall_100=0.0692  recall_1000=0.3101  ndcg_cut_10=0.5270  P_100=0.7807
+
+### norm_score_rrf_t0.0 ###
+[norm_score_rrf_t0.0 / coverage] n=22  recall_100=0.2373  recall_1000=0.5995  ndcg_cut_10=0.4049  P_100=0.3768
+[norm_score_rrf_t0.0 / consensus] n=105  recall_100=0.0689  recall_1000=0.3095  ndcg_cut_10=0.5251  P_100=0.7769
+
+### norm_score_rrf_t0.25 ###
+[norm_score_rrf_t0.25 / coverage] n=22  recall_100=0.2371  recall_1000=0.5995  ndcg_cut_10=0.4065  P_100=0.3768
+[norm_score_rrf_t0.25 / consensus] n=105  recall_100=0.0690  recall_1000=0.3096  ndcg_cut_10=0.5269  P_100=0.7770
+
+### norm_score_rrf_t0.5 ###
+[norm_score_rrf_t0.5 / coverage] n=22  recall_100=0.2374  recall_1000=0.6005  ndcg_cut_10=0.4071  P_100=0.3777
+[norm_score_rrf_t0.5 / consensus] n=105  recall_100=0.0690  recall_1000=0.3095  ndcg_cut_10=0.5277  P_100=0.7780
+
+### norm_score_rrf_t1.0 ###
+[norm_score_rrf_t1.0 / coverage] n=22  recall_100=0.2372  recall_1000=0.5997  ndcg_cut_10=0.4077  P_100=0.3773
+[norm_score_rrf_t1.0 / consensus] n=105  recall_100=0.0690  recall_1000=0.3092  ndcg_cut_10=0.5261  P_100=0.7785
+
+### norm_score_rrf_t2.0 ###
+[norm_score_rrf_t2.0 / coverage] n=22  recall_100=0.2356  recall_1000=0.5978  ndcg_cut_10=0.4110  P_100=0.3755
+[norm_score_rrf_t2.0 / consensus] n=105  recall_100=0.0690  recall_1000=0.3087  ndcg_cut_10=0.5297  P_100=0.7793
+
+### listw_sum100 ###
+[listw_sum100 / coverage] n=22  recall_100=0.2360  recall_1000=0.6028  ndcg_cut_10=0.4057  P_100=0.3759
+[listw_sum100 / consensus] n=105  recall_100=0.0690  recall_1000=0.3104  ndcg_cut_10=0.5238  P_100=0.7771
+
+### oracle_coverage_ndcg_cut_10 ###
+[oracle_coverage_ndcg_cut_10 / coverage] n=22  recall_100=0.2386  recall_1000=0.6053  ndcg_cut_10=0.4198  P_100=0.3809
+
+### oracle_coverage_recall_100 ###
+[oracle_coverage_recall_100 / coverage] n=22  recall_100=0.2430  recall_1000=0.6019  ndcg_cut_10=0.4070  P_100=0.3864
+
+### oracle_consensus_ndcg_cut_10 ###
+[oracle_consensus_ndcg_cut_10 / consensus] n=105  recall_100=0.0693  recall_1000=0.3105  ndcg_cut_10=0.5338  P_100=0.7810
+
+### oracle_consensus_recall_100 ###
+[oracle_consensus_recall_100 / consensus] n=105  recall_100=0.0695  recall_1000=0.3117  ndcg_cut_10=0.5267  P_100=0.7839
+
+診断結果を保存: /home/takeuchi/rag-experiment-doc/experiments/gemini_fewshot_each_boost/subquery_weight_signal_diagnosis_gemini_rep5.json

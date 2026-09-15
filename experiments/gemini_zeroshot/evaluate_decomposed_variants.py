@@ -1,9 +1,9 @@
 """
-Decomposed_Query の Query2doc 疑似文書を検索クエリにどう組み込むかで3通りを比較する:
+Subquery の Query2doc 疑似文書を検索クエリにどう組み込むかで3通りを比較する:
 
 - query2doc: narrative（repeat）+ Query2doc疑似文書 を連結して検索（evaluate_decomposed_rep1.py の decomposed_query2doc と同じ構造）
-- dq_pseudodoc: Decomposed_Query（分解質問文）+ Query2doc疑似文書 を連結して検索（narrativeは使わない）
-- query2doc_dq: narrative（repeat）+ Decomposed_Query + Query2doc疑似文書 を連結して検索
+- dq_pseudodoc: Subquery（分解質問文）+ Query2doc疑似文書 を連結して検索（narrativeは使わない）
+- query2doc_dq: narrative（repeat）+ Subquery + Query2doc疑似文書 を連結して検索
 
 narrativeを含む2条件（query2doc, query2doc_dq）は、evaluate_rep5.py と同様
 QUERY_REPEAT 回繰り返してから連結する（dq_pseudodoc は narrative を使わないので対象外）。
@@ -106,7 +106,7 @@ def fuse(lists, topk):
 
 
 def dq_pseudodoc_pairs(entry):
-    """(Decomposed_Query, Query2doc疑似文書) のペアを、欠落文書を除いて返す。"""
+    """(Subquery, Query2doc疑似文書) のペアを、欠落文書を除いて返す。"""
     return [(dq, hd) for dq, hd in zip(entry["decomposed_queries"], entry["query2doc_docs"])
             if hd and hd.strip()]
 

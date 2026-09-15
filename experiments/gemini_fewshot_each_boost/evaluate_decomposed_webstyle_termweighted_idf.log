@@ -1,0 +1,73 @@
+読み込み中...
+
+疑似文書がある 105 クエリ
+  qrels[coverage]: 22 qids / うち対象内 22 qids
+  qrels[consensus]: 105 qids / うち対象内 105 qids
+条件: baseline, webstyle_narrative_fielded_recallopt, webstyle_narrative_fielded_recallopt_confidence, webstyle_narrative_fielded_recallopt_surprisal, webstyle_narrative_fielded_recallopt_surprisal_idf   TOPK=1000   RETRIEVE_K=3000   QUERY_REPEAT=5
+========================================================================
+  baseline: 20/105 (13s)  baseline: 40/105 (25s)  baseline: 60/105 (37s)  baseline: 80/105 (49s)  baseline: 100/105 (62s)  baseline: 105/105 (65s)
+  webstyle_narrative_fielded_recallopt: 20/105 (204s)  webstyle_narrative_fielded_recallopt: 40/105 (410s)  webstyle_narrative_fielded_recallopt: 60/105 (653s)  webstyle_narrative_fielded_recallopt: 80/105 (882s)  webstyle_narrative_fielded_recallopt: 100/105 (1107s)  webstyle_narrative_fielded_recallopt: 105/105 (1145s)
+  webstyle_narrative_fielded_recallopt_confidence: 20/105 (208s)  webstyle_narrative_fielded_recallopt_confidence: 40/105 (533s)  webstyle_narrative_fielded_recallopt_confidence: 60/105 (839s)  webstyle_narrative_fielded_recallopt_confidence: 80/105 (1067s)  webstyle_narrative_fielded_recallopt_confidence: 100/105 (1266s)  webstyle_narrative_fielded_recallopt_confidence: 105/105 (1305s)
+  webstyle_narrative_fielded_recallopt_surprisal: 20/105 (212s)  webstyle_narrative_fielded_recallopt_surprisal: 40/105 (424s)  webstyle_narrative_fielded_recallopt_surprisal: 60/105 (649s)  webstyle_narrative_fielded_recallopt_surprisal: 80/105 (855s)  webstyle_narrative_fielded_recallopt_surprisal: 100/105 (1034s)  webstyle_narrative_fielded_recallopt_surprisal: 105/105 (1071s)
+  webstyle_narrative_fielded_recallopt_surprisal_idf: 20/105 (191s)  webstyle_narrative_fielded_recallopt_surprisal_idf: 40/105 (381s)  webstyle_narrative_fielded_recallopt_surprisal_idf: 60/105 (570s)  webstyle_narrative_fielded_recallopt_surprisal_idf: 80/105 (746s)  webstyle_narrative_fielded_recallopt_surprisal_idf: 100/105 (910s)  webstyle_narrative_fielded_recallopt_surprisal_idf: 105/105 (941s)
+
+bm25_body: 呼び出し 105 回 / キャッシュヒット 0 回
+bm25_keyterms: 呼び出し 0 回 / キャッシュヒット 0 回
+bm25_title: 呼び出し 0 回 / キャッシュヒット 0 回
+bm25_headings: 呼び出し 0 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded: 呼び出し 0 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded_hboost: 呼び出し 0 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded_regboost: 呼び出し 0 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded_recallopt: 呼び出し 451 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded_ndcgopt: 呼び出し 0 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded_recallopt_confidence: 呼び出し 451 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded_recallopt_surprisal: 呼び出し 451 回 / キャッシュヒット 0 回
+webstyle_narrative_fielded_recallopt_surprisal_idf: 呼び出し 451 回 / キャッシュヒット 0 回
+最終採点対象: 105 クエリ（全条件共通）
+
+--- docid 粒度チェック ---
+  [check/coverage] qrels docid 5599 件中 1447 件が run に出現
+  [check/consensus] qrels docid 119209 件中 20130 件が run に出現
+
+### baseline ###
+[baseline / coverage] n=22  recall_100=0.0942  recall_1000=0.2884  ndcg_cut_10=0.1569  P_100=0.1505
+[baseline / consensus] n=105  recall_100=0.0327  recall_1000=0.1495  ndcg_cut_10=0.2649  P_100=0.3737
+
+### webstyle_narrative_fielded_recallopt ###
+[webstyle_narrative_fielded_recallopt / coverage] n=22  recall_100=0.2193  recall_1000=0.5574  ndcg_cut_10=0.4094  P_100=0.3459
+[webstyle_narrative_fielded_recallopt / consensus] n=105  recall_100=0.0627  recall_1000=0.2749  ndcg_cut_10=0.4972  P_100=0.7079
+
+### webstyle_narrative_fielded_recallopt_confidence ###
+[webstyle_narrative_fielded_recallopt_confidence / coverage] n=22  recall_100=0.2192  recall_1000=0.5610  ndcg_cut_10=0.4253  P_100=0.3468
+[webstyle_narrative_fielded_recallopt_confidence / consensus] n=105  recall_100=0.0630  recall_1000=0.2767  ndcg_cut_10=0.4985  P_100=0.7105
+
+### webstyle_narrative_fielded_recallopt_surprisal ###
+[webstyle_narrative_fielded_recallopt_surprisal / coverage] n=22  recall_100=0.2056  recall_1000=0.5402  ndcg_cut_10=0.3887  P_100=0.3264
+[webstyle_narrative_fielded_recallopt_surprisal / consensus] n=105  recall_100=0.0611  recall_1000=0.2646  ndcg_cut_10=0.4890  P_100=0.6902
+
+### webstyle_narrative_fielded_recallopt_surprisal_idf ###
+[webstyle_narrative_fielded_recallopt_surprisal_idf / coverage] n=22  recall_100=0.2102  recall_1000=0.5565  ndcg_cut_10=0.4031  P_100=0.3332
+[webstyle_narrative_fielded_recallopt_surprisal_idf / consensus] n=105  recall_100=0.0611  recall_1000=0.2686  ndcg_cut_10=0.4758  P_100=0.6893
+
+========================================================================
+SUMMARY   対象: 105 クエリ
+
+[coverage]
+method                                          recall@100      recall@1000     nDCG@10         precision@100   
+----------------------------------------------------------------------------------------------------------------
+baseline                                        0.0942          0.2884          0.1569          0.1505          
+webstyle_narrative_fielded_recallopt            0.2193 (+0.1250)0.5574 (+0.2690)0.4094 (+0.2525)0.3459 (+0.1955)
+webstyle_narrative_fielded_recallopt_confidence 0.2192 (+0.1250)0.5610 (+0.2726)0.4253 (+0.2684)0.3468 (+0.1964)
+webstyle_narrative_fielded_recallopt_surprisal  0.2056 (+0.1114)0.5402 (+0.2518)0.3887 (+0.2318)0.3264 (+0.1759)
+webstyle_narrative_fielded_recallopt_surprisal_idf0.2102 (+0.1160)0.5565 (+0.2681)0.4031 (+0.2462)0.3332 (+0.1827)
+
+[consensus]
+method                                          recall@100      recall@1000     nDCG@10         precision@100   
+----------------------------------------------------------------------------------------------------------------
+baseline                                        0.0327          0.1495          0.2649          0.3737          
+webstyle_narrative_fielded_recallopt            0.0627 (+0.0300)0.2749 (+0.1254)0.4972 (+0.2322)0.7079 (+0.3342)
+webstyle_narrative_fielded_recallopt_confidence 0.0630 (+0.0303)0.2767 (+0.1273)0.4985 (+0.2336)0.7105 (+0.3368)
+webstyle_narrative_fielded_recallopt_surprisal  0.0611 (+0.0283)0.2646 (+0.1151)0.4890 (+0.2241)0.6902 (+0.3165)
+webstyle_narrative_fielded_recallopt_surprisal_idf0.0611 (+0.0284)0.2686 (+0.1191)0.4758 (+0.2109)0.6893 (+0.3156)
+========================================================================
+集計値を保存: /home/takeuchi/rag-experiment-doc/experiments/gemini_fewshot_each_boost/decomposed_query2doc_webstyle_termweighted_idf_eval_summary_rep5.json

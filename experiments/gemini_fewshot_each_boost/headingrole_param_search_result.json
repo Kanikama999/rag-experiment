@@ -1,0 +1,67 @@
+{
+  "search_qids_n": 18,
+  "stride": 6,
+  "span_end": 100,
+  "span_boost": 15.0,
+  "results": [
+    {
+      "label": "champion(posboost_only)",
+      "mode": "none",
+      "slop": 0,
+      "boost": 0.0,
+      "n": 18,
+      "recall_1000": 0.26531149858199754,
+      "ndcg_cut_10": 0.4999328243551301
+    },
+    {
+      "label": "aligned slop=4 boost=5.0",
+      "mode": "aligned",
+      "slop": 4,
+      "boost": 5.0,
+      "n": 18,
+      "recall_1000": 0.2651998272706424,
+      "ndcg_cut_10": 0.4923962864538443
+    },
+    {
+      "label": "aligned slop=8 boost=5.0",
+      "mode": "aligned",
+      "slop": 8,
+      "boost": 5.0,
+      "n": 18,
+      "recall_1000": 0.2646996787673473,
+      "ndcg_cut_10": 0.4929193235280439
+    },
+    {
+      "label": "aligned slop=15 boost=5.0",
+      "mode": "aligned",
+      "slop": 15,
+      "boost": 5.0,
+      "n": 18,
+      "recall_1000": 0.26443953287121513,
+      "ndcg_cut_10": 0.49379657716226216
+    },
+    {
+      "label": "aligned slop=15 boost=2.0",
+      "mode": "aligned",
+      "slop": 15,
+      "boost": 2.0,
+      "n": 18,
+      "recall_1000": 0.26559238483690417,
+      "ndcg_cut_10": 0.4958412664569373
+    },
+    {
+      "label": "aligned slop=15 boost=10.0",
+      "mode": "aligned",
+      "slop": 15,
+      "boost": 10.0,
+      "n": 18,
+      "recall_1000": 0.25925059196868666,
+      "ndcg_cut_10": 0.4915282262264967
+    }
+  ],
+  "champion": {
+    "recall_1000": 0.26531149858199754,
+    "ndcg_cut_10": 0.4999328243551301
+  },
+  "best_slop": 15
+}

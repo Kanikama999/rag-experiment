@@ -1,0 +1,95 @@
+読み込み中...
+重みと span_terms を準備中... (alpha [0.0, 0.25, 0.5, 0.75, 1.0, 1.5])
+  105 クエリ / 疑似文書 451 本 (49s)
+条件: baseline, alpha_0, alpha_0.25, alpha_0.5, alpha_0.75, alpha_1, alpha_1.5
+RETRIEVE_K=1000 QUERY_REPEAT=5 SPAN_END=100 SPAN_BOOST=15.0
+========================================================================
+  baseline: 10/105 (5s)  baseline: 20/105 (10s)  baseline: 30/105 (15s)  baseline: 40/105 (20s)  baseline: 50/105 (24s)  baseline: 60/105 (29s)  baseline: 70/105 (33s)  baseline: 80/105 (38s)  baseline: 90/105 (42s)  baseline: 100/105 (46s)  baseline: 105/105 (48s)
+  alpha_0: 10/105 (114s)  alpha_0: 20/105 (261s)  alpha_0: 30/105 (400s)  alpha_0: 40/105 (510s)  alpha_0: 50/105 (646s)  alpha_0: 60/105 (794s)  alpha_0: 70/105 (923s)  alpha_0: 80/105 (1050s)  alpha_0: 90/105 (1177s)  alpha_0: 100/105 (1286s)  alpha_0: 105/105 (1333s)
+  alpha_0.25: 10/105 (117s)  alpha_0.25: 20/105 (256s)  alpha_0.25: 30/105 (388s)  alpha_0.25: 40/105 (500s)  alpha_0.25: 50/105 (620s)  alpha_0.25: 60/105 (754s)  alpha_0.25: 70/105 (870s)  alpha_0.25: 80/105 (983s)  alpha_0.25: 90/105 (1089s)  alpha_0.25: 100/105 (1205s)  alpha_0.25: 105/105 (1257s)
+  alpha_0.5: 10/105 (147s)  alpha_0.5: 20/105 (317s)  alpha_0.5: 30/105 (488s)  alpha_0.5: 40/105 (632s)  alpha_0.5: 50/105 (792s)  alpha_0.5: 60/105 (960s)  alpha_0.5: 70/105 (1113s)  alpha_0.5: 80/105 (1263s)  alpha_0.5: 90/105 (1411s)  alpha_0.5: 100/105 (1550s)  alpha_0.5: 105/105 (1609s)
+  alpha_0.75: 10/105 (151s)  alpha_0.75: 20/105 (330s)  alpha_0.75: 30/105 (501s)  alpha_0.75: 40/105 (643s)  alpha_0.75: 50/105 (791s)  alpha_0.75: 60/105 (965s)  alpha_0.75: 70/105 (1114s)  alpha_0.75: 80/105 (1264s)  alpha_0.75: 90/105 (1405s)  alpha_0.75: 100/105 (1536s)  alpha_0.75: 105/105 (1591s)
+  alpha_1: 10/105 (131s)  alpha_1: 20/105 (279s)  alpha_1: 30/105 (435s)  alpha_1: 40/105 (567s)  alpha_1: 50/105 (711s)  alpha_1: 60/105 (900s)  alpha_1: 70/105 (1070s)  alpha_1: 80/105 (1243s)  alpha_1: 90/105 (1408s)  alpha_1: 100/105 (1545s)  alpha_1: 105/105 (1603s)
+  alpha_1.5: 10/105 (135s)  alpha_1.5: 20/105 (299s)  alpha_1.5: 30/105 (443s)  alpha_1.5: 40/105 (553s)  alpha_1.5: 50/105 (681s)  alpha_1.5: 60/105 (832s)  alpha_1.5: 70/105 (959s)  alpha_1.5: 80/105 (1087s)  alpha_1.5: 90/105 (1213s)  alpha_1.5: 100/105 (1324s)  alpha_1.5: 105/105 (1367s)
+最終採点対象: 105 クエリ（全条件共通）
+
+### baseline ###
+[baseline / coverage] n=22  recall_100=0.0942  recall_1000=0.2884  ndcg_cut_10=0.1569  P_100=0.1505
+[baseline / consensus] n=105  recall_100=0.0327  recall_1000=0.1495  ndcg_cut_10=0.2649  P_100=0.3737
+
+### alpha_0 ###
+[alpha_0 / coverage] n=22  recall_100=0.2378  recall_1000=0.5984  ndcg_cut_10=0.4049  P_100=0.3777
+[alpha_0 / consensus] n=105  recall_100=0.0690  recall_1000=0.3095  ndcg_cut_10=0.5257  P_100=0.7770
+
+### alpha_0.25 ###
+[alpha_0.25 / coverage] n=22  recall_100=0.2379  recall_1000=0.6026  ndcg_cut_10=0.4037  P_100=0.3777
+[alpha_0.25 / consensus] n=105  recall_100=0.0691  recall_1000=0.3114  ndcg_cut_10=0.5245  P_100=0.7796
+
+### alpha_0.5 ###
+[alpha_0.5 / coverage] n=22  recall_100=0.2382  recall_1000=0.6078  ndcg_cut_10=0.4061  P_100=0.3795
+[alpha_0.5 / consensus] n=105  recall_100=0.0691  recall_1000=0.3131  ndcg_cut_10=0.5243  P_100=0.7797
+
+### alpha_0.75 ###
+[alpha_0.75 / coverage] n=22  recall_100=0.2391  recall_1000=0.6095  ndcg_cut_10=0.4123  P_100=0.3809
+[alpha_0.75 / consensus] n=105  recall_100=0.0693  recall_1000=0.3147  ndcg_cut_10=0.5256  P_100=0.7825
+
+### alpha_1 ###
+[alpha_1 / coverage] n=22  recall_100=0.2390  recall_1000=0.6119  ndcg_cut_10=0.4144  P_100=0.3814
+[alpha_1 / consensus] n=105  recall_100=0.0695  recall_1000=0.3160  ndcg_cut_10=0.5251  P_100=0.7844
+
+### alpha_1.5 ###
+[alpha_1.5 / coverage] n=22  recall_100=0.2386  recall_1000=0.6182  ndcg_cut_10=0.4266  P_100=0.3818
+[alpha_1.5 / consensus] n=105  recall_100=0.0697  recall_1000=0.3185  ndcg_cut_10=0.5271  P_100=0.7871
+
+========================================================================
+SUMMARY  対象 105 クエリ
+
+[coverage]  実効重み = idf**(1+alpha)
+method        recall@100       recall@1000      nDCG@10          precision@100    
+----------------------------------------------------------------------------------
+baseline      0.0942           0.2884           0.1569           0.1505           
+alpha_0       0.2378 (+0.1435) 0.5984 (+0.3099) 0.4049 (+0.2480) 0.3777 (+0.2273) 
+alpha_0.25    0.2379 (+0.1437) 0.6026 (+0.3142) 0.4037 (+0.2468) 0.3777 (+0.2273) 
+alpha_0.5     0.2382 (+0.1440) 0.6078 (+0.3194) 0.4061 (+0.2492) 0.3795 (+0.2291) 
+alpha_0.75    0.2391 (+0.1448) 0.6095 (+0.3211) 0.4123 (+0.2554) 0.3809 (+0.2305) 
+alpha_1       0.2390 (+0.1447) 0.6119 (+0.3235) 0.4144 (+0.2575) 0.3814 (+0.2309) 
+alpha_1.5     0.2386 (+0.1444) 0.6182 (+0.3297) 0.4266 (+0.2697) 0.3818 (+0.2314) 
+
+  [coverage] alpha=0 からの変化
+    alpha_0.25   recall@100: +0.0001  recall@1000: +0.0042  nDCG@10: -0.0012  precision@100: +0.0000
+    alpha_0.5    recall@100: +0.0005  recall@1000: +0.0094  nDCG@10: +0.0013  precision@100: +0.0018
+    alpha_0.75   recall@100: +0.0013  recall@1000: +0.0111  nDCG@10: +0.0074  precision@100: +0.0032
+    alpha_1      recall@100: +0.0012  recall@1000: +0.0136  nDCG@10: +0.0096  precision@100: +0.0036
+    alpha_1.5    recall@100: +0.0009  recall@1000: +0.0198  nDCG@10: +0.0217  precision@100: +0.0041
+
+  [coverage] 指標ごとの最良 alpha
+    recall@100     alpha_0.75 (0.2391)
+    recall@1000    alpha_1.5 (0.6182)
+    nDCG@10        alpha_1.5 (0.4266)
+    precision@100  alpha_1.5 (0.3818)
+
+[consensus]  実効重み = idf**(1+alpha)
+method        recall@100       recall@1000      nDCG@10          precision@100    
+----------------------------------------------------------------------------------
+baseline      0.0327           0.1495           0.2649           0.3737           
+alpha_0       0.0690 (+0.0362) 0.3095 (+0.1600) 0.5257 (+0.2607) 0.7770 (+0.4033) 
+alpha_0.25    0.0691 (+0.0364) 0.3114 (+0.1619) 0.5245 (+0.2596) 0.7796 (+0.4059) 
+alpha_0.5     0.0691 (+0.0364) 0.3131 (+0.1637) 0.5243 (+0.2594) 0.7797 (+0.4060) 
+alpha_0.75    0.0693 (+0.0366) 0.3147 (+0.1652) 0.5256 (+0.2607) 0.7825 (+0.4088) 
+alpha_1       0.0695 (+0.0368) 0.3160 (+0.1666) 0.5251 (+0.2602) 0.7844 (+0.4107) 
+alpha_1.5     0.0697 (+0.0370) 0.3185 (+0.1691) 0.5271 (+0.2621) 0.7871 (+0.4134) 
+
+  [consensus] alpha=0 からの変化
+    alpha_0.25   recall@100: +0.0002  recall@1000: +0.0019  nDCG@10: -0.0011  precision@100: +0.0026
+    alpha_0.5    recall@100: +0.0002  recall@1000: +0.0036  nDCG@10: -0.0013  precision@100: +0.0027
+    alpha_0.75   recall@100: +0.0004  recall@1000: +0.0052  nDCG@10: -0.0000  precision@100: +0.0054
+    alpha_1      recall@100: +0.0005  recall@1000: +0.0065  nDCG@10: -0.0006  precision@100: +0.0073
+    alpha_1.5    recall@100: +0.0007  recall@1000: +0.0090  nDCG@10: +0.0014  precision@100: +0.0101
+
+  [consensus] 指標ごとの最良 alpha
+    recall@100     alpha_1.5 (0.0697)
+    recall@1000    alpha_1.5 (0.3185)
+    nDCG@10        alpha_1.5 (0.5271)
+    precision@100  alpha_1.5 (0.7871)
+========================================================================
+集計値を保存: /home/takeuchi/rag-experiment-doc/experiments/gemini_fewshot_each_boost/idf_alpha_sweep_result.json
