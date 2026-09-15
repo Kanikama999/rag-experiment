@@ -2,21 +2,6 @@
 
 TREC 2025 RAG Track（narrative形式のクエリ）に対する、LLM生成疑似文書によるクエリ拡張＋BM25/RRFの検索実験。
 
-## 用語について（重要）
-
-このリポジトリの手法は「HyDE」ではない。本来のHyDE（Gao et al. 2022, *Precise
-Zero-Shot Dense Retrieval without Relevance Labels*）は、生成した疑似文書を
-**dense retrieverでembeddingし、ベクトル類似度検索**にかける手法。
-
-ここで実装しているのは、疑似文書のテキストをそのまま**BM25（疎検索）のクエリ文字列**
-として（多くの場合、元クエリと連結して）使う方式であり、embeddingは一切使っていない。
-これは **Query2doc**（Wang et al. 2023）や **MuGI** が扱う「LLM生成疑似文書による
-疎検索向けクエリ拡張」に近い。元クエリを複数回繰り返してから連結する
-（`QUERY_REPEAT`）ことで性能が大きく改善する現象も、Query2doc/MuGIの知見と一致する。
-
-コード中では、生成した疑似文書そのものを指す変数・キー名に `query2doc` を使っている
-（例: `query2doc_docs`, `query2doc_results`, `query2doc_k`）。
-
 ## 全体の流れ
 
 ```
